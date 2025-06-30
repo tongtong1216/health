@@ -1,7 +1,7 @@
 DB_CONFIG = {
-    'host' : 'localhost',
+    'host' : 'frp-box.com',
     'user' : 'root',
     'password' : ':[m5{w_QtJx$H.HdF',
     'database' : 'health_care_system',
-    'port' : 3306
+    'port' : 31730
 }
