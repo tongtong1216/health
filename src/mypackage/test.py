@@ -1,6 +1,7 @@
 import bcrypt
 from data_managers.user_manager import UserManager
 from middle.login import Login
+from middle.register import Register
 
 username1 = "test123"
 password_str = "123456"
