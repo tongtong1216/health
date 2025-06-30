@@ -4,7 +4,7 @@ from .auto_dbcontext import AutoDBContext
 class UserManager:
     
     @classmethod
-    def create_user(username: str, password_hash: str) -> int:
+    def create_user(cls, username: str, password_hash: str) -> int:
         """
         在数据库中创建新用户(用户名和密码哈希)
         
