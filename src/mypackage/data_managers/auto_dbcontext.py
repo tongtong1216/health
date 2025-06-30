@@ -56,14 +56,7 @@ class AutoDBContext:
             return result
         
         except Error as e:
-            # 自动重试一次
-            try:
-                # 重建连接池后重试
-                with cls._lock:
-                    cls._pool = None
-                return cls.execute_query(query, params, commit)
-            except:
-                raise DatabaseError(f"Query failed: {e}") from e
+            raise DatabaseError(f"Query failed: {e}") from e
         finally:
             # 释放资源
             cursor.close()
