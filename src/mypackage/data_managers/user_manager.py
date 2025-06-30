@@ -55,7 +55,7 @@ class UserManager:
             - 登录失败时会增加失败次数,当失败次数≥5时设置锁定过期时间为1小时后
         """
         if success:
-            query = "UPDATE usr SET last_login = NOW(), failed_attempts = 0 WHERE usrname = %s"
+            query = "UPDATE usr SET last_login = NOW(), failed_attempts = 0 , lock_expires = NULL WHERE usrname = %s"
         else:
             query = """
             UPDATE usr
