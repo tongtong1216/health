@@ -95,3 +95,5 @@ class Health_report:
         report += f"运动量评估:近一周运动时间为{exercise_data['total_duration']},{exercise_eval}\n"
         report += f"睡眠质量评估:睡眠时间为:{sleep_time},{sleep_eval}\n"
         report += f"心率状况评估:静息心率为:{heart_rate},{heart_eval}\n"
+        report += f"血压状况评估:收缩压/舒张压为:{blood_pressure_data},{bp_eval}\n"
+        report += f"血糖状况评估:空腹血糖为:{blood_glucose},{glucose_eval}"
