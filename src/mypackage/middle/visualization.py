@@ -60,6 +60,26 @@ class Visualization:
             current_date += timedelta(days=1)
         
         return result_list
+    
+    @staticmethod
+    def weekly_data(username:str)->dict:
 
-       
+         #获取查询的日期范围
+        today = datetime.today().date()
+        start_date = today - timedelta(days=6)
+
+        current_date = start_date
+        total_duration = 0
+        total_goal = 0
+        #获取最近一周内的运动记录
+        while current_date <= today:
+            current_data = Visualization.daily_data(username,current_date)
+            total_duration += current_data['total_duration']
+            total_goal += current_data['total_goal']
+            current_date += timedelta(days=1)
+        
+        return {
+            'total_duration':total_duration,
+            'total_goal':total_goal
+        }
        
