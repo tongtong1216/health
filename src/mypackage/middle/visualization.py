@@ -4,6 +4,7 @@
 from  datetime import datetime,timedelta
 from data_managers.daily_exercise_manager import DailyExerciseManager
 from data_managers.exercise_types_manager import ExerciseTypesManager
+from data_managers.diet_records_manager import DietRecordsManager
 
 class Visualization:
 
@@ -11,21 +12,26 @@ class Visualization:
     def daily_data(username:str,day:datetime.date) -> dict:
 
         #获取一天运动记录
-        daily_records = DailyExerciseManager.get_user_exercise_records(username,day,day)
-        
+        daily_exercise_records = DailyExerciseManager.get_user_exercise_records(username,day,day)
+        #获取一天的饮食记录
+        daily_food_records = DietRecordsManager.get_user_diet_records(username,day,day)
         #没有运动记录时各项数据为0
         total_duration = 0
         total_goal = 0
-        total_calories = 0
+        total_calories_consumption = 0
+        total_calories_intake = 0
         #获取总运动时间
-        duration = [d["duration"] for d in daily_records]
+        duration = [d["duration"] for d in daily_exercise_records]
         total_duration = sum(duration)
-        #获取总卡路里
-        calories = [d["calories"] for d in daily_records]   
-        total_calories = sum(calories)
+        #获取总消耗卡路里
+        calories_consumption = [d["calories"] for d in daily_exercise_records]   
+        total_calories_consumption = sum(calories_consumption)
+        #获取总摄入卡路里
+        calories_intake = [d["calories"] for d in daily_food_records] 
+        total_calories_intake = sum(calories_intake)
 
         #获取总目标运动时间
-        names = [d["type_name"] for d in daily_records] 
+        names = [d["type_name"] for d in daily_exercise_records] 
         for name in names:
             type_data = ExerciseTypesManager.get_type_by_name(name)
             total_goal += type_data['type_goal']
@@ -33,7 +39,8 @@ class Visualization:
         return {
             'total_duration':total_duration,
             'total_goal':total_goal,
-            'total_calories':total_calories
+            'total_calories_consumption':total_calories_consumption,
+            'total_calories_intake':total_calories_intake
         }
     
     @staticmethod
