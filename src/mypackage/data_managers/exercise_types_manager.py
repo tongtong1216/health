@@ -16,12 +16,12 @@ class ExerciseTypesManager:
         return AutoDBContext.execute_query(query)
     
     @classmethod
-    def get_type_by_id(cls, type_id: int) -> Optional[Dict[str, Any]]:
+    def get_type_by_name(cls, type_name: str) -> Optional[Dict[str, Any]]:
         """
         根据运动类型ID获取单一运动类型的详细信息
         
         Args:
-            type_id: 要查询的运动类型ID(0-255)
+            type_name: 要查询的运动名称
                 
         Returns:
             Optional[Dict[str, Any]]: 
@@ -33,25 +33,25 @@ class ExerciseTypesManager:
                 - 未找到匹配记录时返回None
         """
             
-        query = "SELECT * FROM exercise_types WHERE type_id = %s"
-        result = AutoDBContext.execute_query(query, (type_id,))
+        query = "SELECT * FROM exercise_types WHERE type_name = %s"
+        result = AutoDBContext.execute_query(query, (type_name,))
         return result[0] if result else None
 
 
     @classmethod
-    def update_type_goal(cls, type_id: int, new_goal: int) -> int:
+    def update_type_goal(cls, type_name: str, new_goal: int) -> int:
         """
         更新指定运动类型的目标时长
         
         Args:
-            type_id: 要修改的运动类型ID
+            type_name: 要修改的运动类型名称
             new_goal: 新的每日目标运动时长（分钟）
             
         Returns:
             int: 受影响的行数(0表示更新失败)
         """
         
-        query = "UPDATE exercise_types SET type_goal = %s WHERE type_id = %s"
-        params = (new_goal, type_id)
+        query = "UPDATE exercise_types SET type_goal = %s WHERE type_name = %s"
+        params = (new_goal, type_name)
         
         return AutoDBContext.execute_query(query, params, commit=True)

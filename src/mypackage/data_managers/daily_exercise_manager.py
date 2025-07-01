@@ -8,14 +8,14 @@ class DailyExerciseManager:
     
     @classmethod
     def create_exercise_record(cls, username: str, exercise_date: date, 
-                              type_id: int, duration: int) -> int:
+                              type_name: str, duration: int) -> int:
         """
         创建或更新用户每日运动记录(基于唯一索引：用户/日期/类型)
         
         Args:
             username: 关联的用户名
             exercise_date: 运动日期 (格式:YYYY-MM-DD)
-            type_id: 运动类型ID (必须有效)
+            type_name: 运动名称
             duration: 运动时长 (分钟，范围 1-1440)
             
         Returns:
@@ -30,8 +30,8 @@ class DailyExerciseManager:
         if not user_id:
             return 0
             
-        # 验证运动类型ID有效性（需实现get_calorie_factor方法）
-        calorie_factor = cls.get_calorie_factor(type_id)
+        # 验证运动名称有效性
+        calorie_factor = cls.get_calorie_factor(type_name)
         if calorie_factor is None:
             return 0  # 无效的运动类型
             
@@ -41,13 +41,13 @@ class DailyExerciseManager:
         # 使用ON DUPLICATE KEY UPDATE处理唯一索引冲突
         query = """
         INSERT INTO daily_exercise 
-            (usr_id, exercise_date, type_id, duration, calories)
+            (usr_id, exercise_date, type_name, duration, calories)
         VALUES (%s, %s, %s, %s, %s)
         ON DUPLICATE KEY UPDATE
             duration = VALUES(duration),
             calories = VALUES(calories)
         """
-        params = (user_id, exercise_date, type_id, duration, calories)
+        params = (user_id, exercise_date, type_name, duration, calories)
         
         return AutoDBContext.execute_query(query, params, commit=True)
 
@@ -75,7 +75,7 @@ class DailyExerciseManager:
             return 0
             
         # 计算新的卡路里消耗值
-        calorie_factor = cls.get_calorie_factor(record['type_id'])
+        calorie_factor = cls.get_calorie_factor(record['type_name'])
         if calorie_factor is None:
             return 0
             
@@ -160,27 +160,23 @@ class DailyExerciseManager:
         return AutoDBContext.execute_query(query, tuple(params))
 
     @classmethod
-    def get_calorie_factor(cls, type_id: int) -> Optional[float]:
+    def get_calorie_factor(cls, type_name: str) -> Optional[float]:
         """
         获取运动类型的卡路里计算系数
         
         Args:
-            type_id: 运动类型ID
+            type_name: 运动名称
             
         Returns:
             Optional[float]: 卡路里系数,类型无效时返回None
             
-        Note:
-            需要实现ExerciseTypesManager类或对应方法
         """
-        # 假设从ExerciseTypesManager获取运动类型信息
-        # 实际实现需根据项目结构调整
 
-        type_info = ExerciseTypesManager.get_type_by_id(type_id)
+        type_info = ExerciseTypesManager.get_type_by_name(type_name)
         return type_info['calorie_factor'] if type_info else None
     
     @classmethod
-    def get_user_records_by_type(cls, username: str, type_id: int,
+    def get_user_records_by_type(cls, username: str, type_name: str,
                                 start_date: Optional[date] = None,
                                 end_date: Optional[date] = None) -> List[Dict[str, Any]]:
         """
@@ -188,7 +184,7 @@ class DailyExerciseManager:
         
         Args:
             username: 要查询的用户名
-            type_id: 运动类型ID (必须有效)
+            type_name: 运动名称 (必须有效)
             start_date: 起始日期 (可选)
             end_date: 结束日期 (可选)
             
@@ -196,17 +192,17 @@ class DailyExerciseManager:
             List[Dict]: 符合条件运动记录列表，按日期倒序排序
             
         Note:
-            - 必须提供有效的type_id
+            - 必须提供有效的type_name
             - 时间范围限定仅当同时提供start_date和end_date时生效
             - 如果未提供日期范围，则返回该类型所有记录
         """
         user_id = get_user_id(username)
-        if not user_id or not cls.validate_type_id(type_id):
+        if not user_id:
             return []
             
         # 基本条件：用户ID + 类型ID
-        conditions = ["usr_id = %s", "type_id = %s"]
-        params = [user_id, type_id]
+        conditions = ["usr_id = %s", "type_name = %s"]
+        params = [user_id, type_name]
         
         # 添加时间范围条件
         if start_date and end_date:
@@ -239,7 +235,7 @@ class DailyExerciseManager:
         Returns:
             List[Dict]: 周运动汇总列表，包含字段：
                 year_week: 年份和周数组合字符串 (格式:202342)
-                type_id: 运动类型ID
+                type_name: 运动名称
                 total_duration: 该周总运动时长(分钟)
                 total_calories: 该周总消耗卡路里
         """
@@ -258,12 +254,12 @@ class DailyExerciseManager:
         query = f"""
         SELECT 
             year_week, 
-            type_id, 
+            type_name, 
             total_duration, 
             total_calories
         FROM weekly_exercise
         WHERE {' AND '.join(conditions)}
-        ORDER BY year_week DESC, type_id
+        ORDER BY year_week DESC, type_name
         """
         return AutoDBContext.execute_query(query, tuple(params))
     
@@ -280,7 +276,7 @@ class DailyExerciseManager:
         Returns:
             List[Dict]: 月运动汇总列表，包含字段：
                 date_month: 年月 (格式:2023-10)
-                type_id: 运动类型ID
+                type_name: 运动名称
                 total_duration: 该月总运动时长(分钟)
                 total_calories: 该月总消耗卡路里
         """
@@ -301,11 +297,11 @@ class DailyExerciseManager:
         query = f"""
         SELECT 
             date_month, 
-            type_id, 
+            type_name, 
             total_duration, 
             total_calories
         FROM monthly_exercise
         WHERE {' AND '.join(conditions)}
-        ORDER BY date_month DESC, type_id
+        ORDER BY date_month DESC, type_name
         """
         return AutoDBContext.execute_query(query, tuple(params))
