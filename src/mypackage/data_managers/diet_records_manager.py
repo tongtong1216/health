@@ -139,7 +139,7 @@ class DietRecordsManager:
             f.food_name,
             f.unit
         FROM diet_records dr
-        JOIN foods f ON dr.food_id = f.food_id
+        JOIN foods f ON dr.food_name = f.food_name
         WHERE {' AND '.join(conditions)}
         ORDER BY intake_date DESC
         """
