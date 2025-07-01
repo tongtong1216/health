@@ -4,11 +4,9 @@ import os
 import platform
 import PySide6
 
-# IMPORT / GUI AND MODULES AND WIDGETS
-# ///////////////////////////////////////////////////////////////
-# from .resources.ui import *
 from src.mypackage.resources.ui import *
 from src.mypackage.loginwindow import LoginWindow
+from src.mypackage.registerwindow import RegisterWindow
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -19,11 +17,12 @@ widgets = None
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.login_w=LoginWindow()
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.login_window = LoginWindow(self)
+        self.register_window = RegisterWindow(self)
         global widgets
         widgets = self.ui
 
@@ -60,9 +59,10 @@ class MainWindow(QMainWindow):
         widgets.btn_diets.clicked.connect(self.buttonClick)
         #社交页面
         widgets.btn_social.clicked.connect(self.buttonClick)
-        #登陆功能
+        #注册登录功能
         widgets.btn_enter.clicked.connect(self.buttonClick)
         widgets.btn_log_in.clicked.connect(self.buttonClick)
+        widgets.btn_register.clicked.connect(self.buttonClick)
         #个人信息编辑页面
         widgets.btn_information.clicked.connect(self.buttonClick)
         #主题更改功能
@@ -186,8 +186,6 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        if btnName == "btn_log_in":
-            self.login_w.handle_login()
         #切换主题
         if btnName == "btn_change":
            self.toggleTheme()
