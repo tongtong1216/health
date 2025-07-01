@@ -16,8 +16,10 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
-from main import *
-from main import MainWindow
+# from  import *
+# from mypackage.main import MainWindow
+from ...main import *          # 替代 from .main import *
+from ...main import MainWindow
 
 
 # WITH ACCESS TO MAIN WINDOW WIDGETS

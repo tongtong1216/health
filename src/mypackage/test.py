@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from  datetime import datetime
 from middle.visualization import Visualization
 from middle.uplode import Uplode
@@ -18,3 +19,5 @@ if __name__ == "__main__":
     #result = DailyExerciseManager.get_user_exercise_records(username)
     #result = Uplode.uplode_food_data(username,today,foodname,quantity)
     print(result)
+=======
+>>>>>>> 7fb8ba95beb3c2ba0c2eae9afa235177d6f800c8

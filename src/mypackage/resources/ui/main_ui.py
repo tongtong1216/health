@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainEUmLrM.ui'
+## Form generated from reading UI file 'main.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDateEdit, QFrame, QGridLayout,
-    QGroupBox, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
-    QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QDateEdit, QFrame,
+    QGridLayout, QGroupBox, QHBoxLayout, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QStackedWidget, QTextEdit, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -592,7 +592,7 @@ class Ui_MainWindow(object):
         font1 = QFont()
         font1.setFamilies([u"Segoe UI Semibold"])
         font1.setPointSize(12)
-        font1.setWeight(QFont.Bold)
+        font1.setWeight(QFont.)
         font1.setItalic(False)
         self.titleLeftApp.setFont(font1)
         self.titleLeftApp.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
@@ -1117,46 +1117,75 @@ class Ui_MainWindow(object):
         self.enterpage.setObjectName(u"enterpage")
         self.verticalLayout_18 = QVBoxLayout(self.enterpage)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.label_2 = QLabel(self.enterpage)
+        self.log_inpage = QGroupBox(self.enterpage)
+        self.log_inpage.setObjectName(u"log_inpage")
+        self.log_inpage.setMaximumSize(QSize(820, 496))
+        self.log_inpage.setStyleSheet(u"")
+        self.verticalLayout_17 = QVBoxLayout(self.log_inpage)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.widget = QWidget(self.log_inpage)
+        self.widget.setObjectName(u"widget")
+        self.horizontalLayout_8 = QHBoxLayout(self.widget)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.label_2 = QLabel(self.widget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setMaximumSize(QSize(16777215, 45))
 
-        self.verticalLayout_18.addWidget(self.label_2)
+        self.horizontalLayout_8.addWidget(self.label_2)
 
-        self.username = QLineEdit(self.enterpage)
+        self.username = QLineEdit(self.widget)
         self.username.setObjectName(u"username")
-        self.username.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout_18.addWidget(self.username)
+        self.horizontalLayout_8.addWidget(self.username)
 
-        self.label_3 = QLabel(self.enterpage)
+
+        self.verticalLayout_17.addWidget(self.widget)
+
+        self.widget_2 = QWidget(self.log_inpage)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_9 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.label_3 = QLabel(self.widget_2)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setMaximumSize(QSize(16777215, 45))
 
-        self.verticalLayout_18.addWidget(self.label_3)
+        self.horizontalLayout_9.addWidget(self.label_3)
 
-        self.password = QLineEdit(self.enterpage)
+        self.password = QLineEdit(self.widget_2)
         self.password.setObjectName(u"password")
-        self.password.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout_18.addWidget(self.password)
+        self.horizontalLayout_9.addWidget(self.password)
 
-        self.login_text = QLabel(self.enterpage)
+
+        self.verticalLayout_17.addWidget(self.widget_2)
+
+        self.login_text = QLabel(self.log_inpage)
         self.login_text.setObjectName(u"login_text")
-        self.login_text.setMaximumSize(QSize(6666666, 50))
+        self.login_text.setStyleSheet(u"color: #FF0000;\n"
+"font-weight: bold;\n"
+"background-color: rgba(255, 255, 255, 0.7);")
+        self.login_text.setTextInteractionFlags(Qt.TextInteractionFlag.LinksAccessibleByMouse)
 
-        self.verticalLayout_18.addWidget(self.login_text)
+        self.verticalLayout_17.addWidget(self.login_text)
 
-        self.btn_log_in = QPushButton(self.enterpage)
+        self.widget_3 = QWidget(self.log_inpage)
+        self.widget_3.setObjectName(u"widget_3")
+        self.horizontalLayout_10 = QHBoxLayout(self.widget_3)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.checkBox_2 = QCheckBox(self.widget_3)
+        self.checkBox_2.setObjectName(u"checkBox_2")
+
+        self.horizontalLayout_10.addWidget(self.checkBox_2)
+
+
+        self.verticalLayout_17.addWidget(self.widget_3)
+
+        self.btn_log_in = QPushButton(self.log_inpage)
         self.btn_log_in.setObjectName(u"btn_log_in")
         self.btn_log_in.setCursor(QCursor(Qt.CursorShape.SizeAllCursor))
 
-        self.verticalLayout_18.addWidget(self.btn_log_in)
+        self.verticalLayout_17.addWidget(self.btn_log_in)
 
-        self.btn_register = QPushButton(self.enterpage)
-        self.btn_register.setObjectName(u"btn_register")
 
-        self.verticalLayout_18.addWidget(self.btn_register)
+        self.verticalLayout_18.addWidget(self.log_inpage)
 
         self.stackedWidget.addWidget(self.enterpage)
         self.informationpage = QWidget()
@@ -1662,11 +1691,12 @@ class Ui_MainWindow(object):
         self.calorie_value.setText("")
         self.btn_week_step_number_view.setText(QCoreApplication.translate("MainWindow", u"\u5468\u6b65\u6570\u7edf\u8ba1", None))
         self.btn_week_exercise_time_view.setText(QCoreApplication.translate("MainWindow", u"\u5468\u8fd0\u52a8\u65f6\u95f4\u7edf\u8ba1", None))
+        self.log_inpage.setTitle(QCoreApplication.translate("MainWindow", u"\u767b\u5f55\u9875\u9762", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u7528\u6237\u540d", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5bc6\u7801", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5bc6    \u7801", None))
         self.login_text.setText("")
+        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"\u8bb0\u4f4f\u5bc6\u7801", None))
         self.btn_log_in.setText(QCoreApplication.translate("MainWindow", u"\u767b\u5f55", None))
-        self.btn_register.setText(QCoreApplication.translate("MainWindow", u"\u6ce8\u518c", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0\uff1a", None))
         self.name.setText("")
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u6027\u522b\uff1a", None))
