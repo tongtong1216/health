@@ -2,6 +2,7 @@
 from data_managers.profile_manager import UserProfileManager
 from middle.visualization import Visualization
 from data_managers.metrics_manager import MetricsManagerUserHealth
+import random
 
 class Health_report:
 
@@ -97,3 +98,31 @@ class Health_report:
         report += f"心率状况评估:静息心率为:{heart_rate},{heart_eval}\n"
         report += f"血压状况评估:收缩压/舒张压为:{blood_pressure_data},{bp_eval}\n"
         report += f"血糖状况评估:空腹血糖为:{blood_glucose},{glucose_eval}"
+
+    @staticmethod
+    def health_tips(username:str)->str:
+
+        #获取今日的运动数据
+        today_data = Visualization.today_data(username)
+        #初始化运动时间目标完成状态
+        duration_status = "未完成"
+
+        #根据目标完成进度设置完成状态
+        if today_data['total_duration'] >= today_data['total_goal']:
+            duration_status = "已完成"
+        elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
+            duration_status = "几乎完成"
+        elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
+            duration_status = "已完成一半"
+
+        #完成任务后展示健康小提示
+        all_tips = ["早睡早起身体好","避免久坐多运动"]
+        tips = random.choice(all_tips)
+        if duration_status == "已完成":
+            return tips
+        else:
+            return f"今日任务:{duration_status}"
+            
+        
+
+
