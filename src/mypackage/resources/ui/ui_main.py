@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainrjlNnD.ui'
+## Form generated from reading UI file 'mainuXCMFr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -712,6 +712,13 @@ class Ui_MainWindow(object):
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignmentFlag.AlignTop)
 
+        self.widget_9 = QWidget(self.leftMenuFrame)
+        self.widget_9.setObjectName(u"widget_9")
+        self.horizontalLayout_16 = QHBoxLayout(self.widget_9)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+
+        self.verticalMenuLayout.addWidget(self.widget_9)
+
         self.bottomMenu = QFrame(self.leftMenuFrame)
         self.bottomMenu.setObjectName(u"bottomMenu")
         self.bottomMenu.setFrameShape(QFrame.Shape.NoFrame)
@@ -947,7 +954,7 @@ class Ui_MainWindow(object):
         self.btn_enter.setMaximumSize(QSize(28, 28))
         self.btn_enter.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon1 = QIcon()
-        icon1.addFile(u"images/icons/cil-user.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"../images/icons/cil-user.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_enter.setIcon(icon1)
 
         self.horizontalLayout_2.addWidget(self.btn_enter)
@@ -1018,6 +1025,7 @@ class Ui_MainWindow(object):
 
         self.contentBottom = QFrame(self.contentBox)
         self.contentBottom.setObjectName(u"contentBottom")
+        self.contentBottom.setFont(font)
         self.contentBottom.setFrameShape(QFrame.Shape.NoFrame)
         self.contentBottom.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.contentBottom)
@@ -1107,78 +1115,167 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.week_exercise_timepage)
         self.enterpage = QWidget()
         self.enterpage.setObjectName(u"enterpage")
+        self.verticalLayout_18 = QVBoxLayout(self.enterpage)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.log_inpage = QGroupBox(self.enterpage)
         self.log_inpage.setObjectName(u"log_inpage")
-        self.log_inpage.setGeometry(QRect(220, 140, 321, 221))
-        self.log_inpage.setStyleSheet(u"QGroupBox {\n"
-"    background-image: url(\"D:/python_study/Modern_GUI_PyDracula_PySide6_or_PyQt6-master/images/images/log_inbackground1.jpg\");\n"
-"    background-repeat: no-repeat;\n"
-"    background-position: center;\n"
-"    background-size: contain;  /* \u81ea\u52a8\u7f29\u653e\u56fe\u7247\u4ee5\u8986\u76d6\u6574\u4e2aQGroupBox */\n"
-"    border-radius: 10px;\n"
-"    margin-top: 1ex;background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"}")
-        self.label_2 = QLabel(self.log_inpage)
+        self.log_inpage.setMaximumSize(QSize(820, 496))
+        self.log_inpage.setStyleSheet(u"")
+        self.verticalLayout_17 = QVBoxLayout(self.log_inpage)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.widget = QWidget(self.log_inpage)
+        self.widget.setObjectName(u"widget")
+        self.widget.setEnabled(True)
+        self.horizontalLayout_8 = QHBoxLayout(self.widget)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.label_2 = QLabel(self.widget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(30, 40, 54, 16))
+
+        self.horizontalLayout_8.addWidget(self.label_2)
+
+
+        self.verticalLayout_17.addWidget(self.widget)
+
         self.username = QLineEdit(self.log_inpage)
         self.username.setObjectName(u"username")
-        self.username.setGeometry(QRect(90, 40, 113, 20))
+
+        self.verticalLayout_17.addWidget(self.username)
+
         self.label_3 = QLabel(self.log_inpage)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(30, 80, 54, 16))
+
+        self.verticalLayout_17.addWidget(self.label_3)
+
         self.password = QLineEdit(self.log_inpage)
         self.password.setObjectName(u"password")
-        self.password.setGeometry(QRect(90, 80, 113, 20))
-        self.checkBox_2 = QCheckBox(self.log_inpage)
+
+        self.verticalLayout_17.addWidget(self.password)
+
+        self.widget_3 = QWidget(self.log_inpage)
+        self.widget_3.setObjectName(u"widget_3")
+        self.horizontalLayout_10 = QHBoxLayout(self.widget_3)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.checkBox_2 = QCheckBox(self.widget_3)
         self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setGeometry(QRect(150, 110, 82, 20))
+
+        self.horizontalLayout_10.addWidget(self.checkBox_2)
+
+
+        self.verticalLayout_17.addWidget(self.widget_3)
+
         self.btn_log_in = QPushButton(self.log_inpage)
         self.btn_log_in.setObjectName(u"btn_log_in")
-        self.btn_log_in.setGeometry(QRect(100, 150, 75, 24))
         self.btn_log_in.setCursor(QCursor(Qt.CursorShape.SizeAllCursor))
+
+        self.verticalLayout_17.addWidget(self.btn_log_in)
+
+
+        self.verticalLayout_18.addWidget(self.log_inpage)
+
         self.stackedWidget.addWidget(self.enterpage)
         self.informationpage = QWidget()
         self.informationpage.setObjectName(u"informationpage")
+        self.verticalLayout_21 = QVBoxLayout(self.informationpage)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.frame_2 = QFrame(self.informationpage)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(80, 30, 581, 371))
         self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
-        self.label_5 = QLabel(self.frame_2)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.widget_4 = QWidget(self.frame_2)
+        self.widget_4.setObjectName(u"widget_4")
+        self.horizontalLayout_11 = QHBoxLayout(self.widget_4)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.label_5 = QLabel(self.widget_4)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(110, 40, 54, 16))
-        self.name = QLabel(self.frame_2)
+
+        self.horizontalLayout_11.addWidget(self.label_5)
+
+        self.name = QLabel(self.widget_4)
         self.name.setObjectName(u"name")
-        self.name.setGeometry(QRect(200, 40, 54, 16))
-        self.label_6 = QLabel(self.frame_2)
+
+        self.horizontalLayout_11.addWidget(self.name)
+
+
+        self.verticalLayout_19.addWidget(self.widget_4)
+
+        self.widget_5 = QWidget(self.frame_2)
+        self.widget_5.setObjectName(u"widget_5")
+        self.horizontalLayout_12 = QHBoxLayout(self.widget_5)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.label_6 = QLabel(self.widget_5)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(110, 80, 54, 16))
-        self.sex = QLabel(self.frame_2)
+
+        self.horizontalLayout_12.addWidget(self.label_6)
+
+        self.sex = QLabel(self.widget_5)
         self.sex.setObjectName(u"sex")
-        self.sex.setGeometry(QRect(230, 80, 54, 16))
-        self.label_7 = QLabel(self.frame_2)
+
+        self.horizontalLayout_12.addWidget(self.sex)
+
+
+        self.verticalLayout_19.addWidget(self.widget_5)
+
+        self.widget_6 = QWidget(self.frame_2)
+        self.widget_6.setObjectName(u"widget_6")
+        self.horizontalLayout_13 = QHBoxLayout(self.widget_6)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.label_7 = QLabel(self.widget_6)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(110, 120, 54, 16))
-        self.height = QLabel(self.frame_2)
+
+        self.horizontalLayout_13.addWidget(self.label_7)
+
+        self.height = QLabel(self.widget_6)
         self.height.setObjectName(u"height")
-        self.height.setGeometry(QRect(210, 120, 54, 16))
-        self.label_8 = QLabel(self.frame_2)
+
+        self.horizontalLayout_13.addWidget(self.height)
+
+
+        self.verticalLayout_19.addWidget(self.widget_6)
+
+        self.widget_7 = QWidget(self.frame_2)
+        self.widget_7.setObjectName(u"widget_7")
+        self.horizontalLayout_14 = QHBoxLayout(self.widget_7)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.label_8 = QLabel(self.widget_7)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(110, 150, 54, 16))
-        self.weight = QLabel(self.frame_2)
+
+        self.horizontalLayout_14.addWidget(self.label_8)
+
+        self.weight = QLabel(self.widget_7)
         self.weight.setObjectName(u"weight")
-        self.weight.setGeometry(QRect(230, 150, 54, 16))
-        self.label_9 = QLabel(self.frame_2)
+
+        self.horizontalLayout_14.addWidget(self.weight)
+
+
+        self.verticalLayout_19.addWidget(self.widget_7)
+
+        self.widget_8 = QWidget(self.frame_2)
+        self.widget_8.setObjectName(u"widget_8")
+        self.horizontalLayout_15 = QHBoxLayout(self.widget_8)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.label_9 = QLabel(self.widget_8)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(110, 190, 71, 16))
+
+        self.horizontalLayout_15.addWidget(self.label_9)
+
+        self.bithday = QLabel(self.widget_8)
+        self.bithday.setObjectName(u"bithday")
+
+        self.horizontalLayout_15.addWidget(self.bithday)
+
+
+        self.verticalLayout_19.addWidget(self.widget_8)
+
         self.btn_edit_information = QPushButton(self.frame_2)
         self.btn_edit_information.setObjectName(u"btn_edit_information")
-        self.btn_edit_information.setGeometry(QRect(200, 260, 101, 24))
-        self.bithday = QLabel(self.frame_2)
-        self.bithday.setObjectName(u"bithday")
-        self.bithday.setGeometry(QRect(270, 190, 54, 16))
+
+        self.verticalLayout_19.addWidget(self.btn_edit_information)
+
+
+        self.verticalLayout_21.addWidget(self.frame_2)
+
         self.stackedWidget.addWidget(self.informationpage)
         self.edit_informationpage = QWidget()
         self.edit_informationpage.setObjectName(u"edit_informationpage")
@@ -1513,7 +1610,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1581,7 +1678,7 @@ class Ui_MainWindow(object):
         self.btn_week_exercise_time_view.setText(QCoreApplication.translate("MainWindow", u"\u5468\u8fd0\u52a8\u65f6\u95f4\u7edf\u8ba1", None))
         self.log_inpage.setTitle(QCoreApplication.translate("MainWindow", u"\u767b\u5f55\u9875\u9762", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u7528\u6237\u540d", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5bc6\u7801", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5bc6    \u7801", None))
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"\u8bb0\u4f4f\u5bc6\u7801", None))
         self.btn_log_in.setText(QCoreApplication.translate("MainWindow", u"\u767b\u5f55", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0\uff1a", None))
@@ -1593,8 +1690,8 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u4f53\u91cd\uff1a", None))
         self.weight.setText("")
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u51fa\u751f\u65e5\u671f\uff1a", None))
-        self.btn_edit_information.setText(QCoreApplication.translate("MainWindow", u"\u7f16\u8f91\u4e2a\u4eba\u4fe1\u606f", None))
         self.bithday.setText("")
+        self.btn_edit_information.setText(QCoreApplication.translate("MainWindow", u"\u7f16\u8f91\u4e2a\u4eba\u4fe1\u606f", None))
         self.dateEdit.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy/MM/dd", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u6027\u522b", None))

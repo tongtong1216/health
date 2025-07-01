@@ -1,18 +1,3 @@
-# ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
 
 import sys
 import os
@@ -21,7 +6,9 @@ import PySide6
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-from modules import *
+# from .resources.ui import *
+from src.mypackage.resources.ui import *
+from src.mypackage.loginwindow import LoginWindow
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -32,7 +19,7 @@ widgets = None
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-
+        self.login_w=LoginWindow()
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
@@ -73,8 +60,9 @@ class MainWindow(QMainWindow):
         widgets.btn_diets.clicked.connect(self.buttonClick)
         #社交页面
         widgets.btn_social.clicked.connect(self.buttonClick)
-        #登陆页面
+        #登陆功能
         widgets.btn_enter.clicked.connect(self.buttonClick)
+        widgets.btn_log_in.clicked.connect(self.buttonClick)
         #个人信息编辑页面
         widgets.btn_information.clicked.connect(self.buttonClick)
         #主题更改功能
@@ -119,15 +107,16 @@ class MainWindow(QMainWindow):
 
     def toggleTheme(self):
         """切换黑白主题并更新按钮颜色"""
+        themes_dir = os.path.join(os.path.dirname(__file__), "resources", "themes")
         if self.current_theme == "light":
             # 切换到黑色主题
-            theme_file = os.path.join("themes", "py_dracula_dark.qss")
+            theme_file = os.path.join(themes_dir, "py_dracula_dark.qss")
             self.current_theme = "dark"
             widgets.btn_change.setText("change 🌞")
             text_color = "#ffffff"  # 黑色主题下的白色文字
         else:
             # 切换到白色主题
-            theme_file = os.path.join("themes", "py_dracula_light.qss")
+            theme_file = os.path.join(themes_dir, "py_dracula_light.qss")
             self.current_theme = "light"
             widgets.btn_change.setText("change 🌙 ")
             text_color = "#000000"  # 白色主题下的黑色文字
@@ -197,6 +186,8 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
+        if btnName == "btn_log_in":
+            self.login_w.handle_login()
         #切换主题
         if btnName == "btn_change":
            self.toggleTheme()
