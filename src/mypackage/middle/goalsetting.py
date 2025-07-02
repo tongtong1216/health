@@ -1,6 +1,5 @@
 from typing import Dict, Optional,Any
-from data_managers.exercise_types_manager import ExerciseTypesManager
-from data_managers.usrname_to_id import get_user_id
+from data_managers import *
 
 class GoalManager:
     @staticmethod
@@ -18,11 +17,7 @@ class GoalManager:
                 - 'success': bool 表示操作是否成功
                 - 'message': str 详细结果消息    #可以删掉只返回bool值  tungtungtungsahur    
         """
-        # 1. 验证用户存在
-        try:
-            user_id = get_user_id(username)
-        except ValueError:
-            return False
+        
         
         # 3. 验证目标时长有效性 (1-1440分钟)
         if not (1 <= new_goal <= 1440):
@@ -76,3 +71,18 @@ class GoalManager:
             }
         
         return {'success': True, 'goals': goals}
+    
+    @staticmethod
+    def update_goal(username: str, new_goal:int) -> int:
+        """
+        更新用户的总运动目标
+        
+        Args:
+            username: 用户名
+            new_goal: 新的总运动目标时长（分钟）
+            
+        Returns:
+            int: 执行更新操作受影响的行数
+        """
+        return UserProfileManager.update_profile(username=username, total_goal=new_goal)
+    
