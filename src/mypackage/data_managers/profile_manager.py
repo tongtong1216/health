@@ -8,7 +8,7 @@ class UserProfileManager:
     def create_profile(cls, username: str, nickname: str = "新用户", 
                       gender: str = "prefer_not_to_say", birthdate: Optional[str] = None,
                       height: Optional[float] = None, weight: Optional[float] = None,
-                      avatar_mime_type: str = "image/jpeg", avatar_base64: Optional[str] = None) -> int:
+                      avatar_mime_type: str = "image/jpeg", avatar_data: Optional[bytes] = None) -> int:
         """
         创建用户资料记录
         
@@ -20,7 +20,7 @@ class UserProfileManager:
             height: 身高(cm)
             weight: 体重(kg)
             avatar_mime_type: 头像MIME类型 (默认: 'image/jpeg')
-            avatar_base64: Base64编码的头像数据
+            avatar_data: bytes头像数据
             
         Returns:
             int: 执行插入操作受影响的行数(0或1)
@@ -32,14 +32,14 @@ class UserProfileManager:
         query = """
         INSERT INTO usr_profile (
             id, nickname, gender, birthdate, height, weight, 
-            avatar_mime_type, avatar_base64
+            avatar_mime_type, avatar_data
         ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         # 处理日期和数值类型
         params = (
             user_id, nickname, gender, birthdate, height, weight,
-            avatar_mime_type, avatar_base64
+            avatar_mime_type, avatar_data
         )
         
         return AutoDBContext.execute_query(query, params, commit=True)
@@ -77,7 +77,7 @@ class UserProfileManager:
                 - height: 身高(cm)
                 - weight: 体重(kg)
                 - avatar_mime_type: 头像MIME类型
-                - avatar_base64: Base64编码的头像数据
+                - avatar_data: bytes头像数据
                 - total_goal: 总目标
 
         Returns:
@@ -92,7 +92,7 @@ class UserProfileManager:
         params = []
         valid_fields = {
             'nickname', 'gender', 'birthdate', 'height', 
-            'weight', 'avatar_mime_type', 'avatar_base64', 'total_goal'
+            'weight', 'avatar_mime_type', 'avatar_data', 'total_goal'
         }
         
         for field, value in updates.items():
