@@ -1,5 +1,6 @@
 import bcrypt
 from ..data_managers import UserManager
+from Information import ProfileEditor
 
 class Register:
     @staticmethod    
@@ -30,6 +31,8 @@ class Register:
             password_hash = password_byte.decode('utf-8')
             #将用户信息存入数据库，表明注册成功，返回4
             UserManager.create_user(username, password_hash)
+            #创建用户资料
+            ProfileEditor.edit_profile(username, {})
             return 4
         #出现其他错误时返回3
         except Exception as e:
