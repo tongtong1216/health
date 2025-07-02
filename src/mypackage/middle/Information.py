@@ -84,7 +84,7 @@ class ProfileEditor:
         """
         # 过滤有效字段
         valid_updates = {}
-        valid_fields = {'nickname', 'gender', 'birthdate', 'height', 'weight'}
+        valid_fields = {'nickname', 'gender', 'birthdate', 'height', 'weight', 'avatar_data', 'avatar_mime_type'}
         
         for field, value in updates.items():
             if field in valid_fields:
@@ -114,14 +114,13 @@ class ProfileEditor:
         return UserProfileManager.get_profile(username)
     
     @staticmethod
-    def upload_avatar(username: str, image_path: str, mime_type: str) -> bool:
+    def upload_avatar(username: str, image_path: str) -> bool:
         """
         上传用户头像
         
         Args:
             username: 用户名
-            avatar_data: 头像的二进制数据
-            mime_type: 头像的MIME类型
+            image_path: 头像的本地地址
             
         Returns:
             bool: 操作是否成功
@@ -134,8 +133,7 @@ class ProfileEditor:
         avatar_data = image['image_data']
         mime_type = image['mime_type']
 
-        return UserProfileManager.update_profile(
-            username=username,
-            avatar_mime_type=mime_type,
-            avatar_data=avatar_data
+        return ProfileEditor.edit_profile(
+            username,
+            {'avatar_data': avatar_data, 'avatar_mime_type': mime_type}
         ) > 0
