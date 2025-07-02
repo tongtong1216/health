@@ -3,7 +3,18 @@ from data_managers import UserManager
 
 class Register:
     @staticmethod    
-    def register(username,password):
+    def register(username: str,password: str) -> int:
+        """        注册新用户
+        Args:
+            username (str): 用户名
+            password (str): 密码
+        Returns:
+            int: 返回值指示注册结果
+                1 - 输入为空
+                2 - 用户已存在
+                3 - 注册失败（其他错误）
+                4 - 注册成功
+        """
 
         #验证输入，输入为空时返回1
         if not username or not password:
