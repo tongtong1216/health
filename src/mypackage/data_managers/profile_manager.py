@@ -78,7 +78,8 @@ class UserProfileManager:
                 - weight: 体重(kg)
                 - avatar_mime_type: 头像MIME类型
                 - avatar_base64: Base64编码的头像数据
-                
+                - total_goal: 总目标
+
         Returns:
             int: 执行更新操作受影响的行数
         """
@@ -91,7 +92,7 @@ class UserProfileManager:
         params = []
         valid_fields = {
             'nickname', 'gender', 'birthdate', 'height', 
-            'weight', 'avatar_mime_type', 'avatar_base64'
+            'weight', 'avatar_mime_type', 'avatar_base64', 'total_goal'
         }
         
         for field, value in updates.items():
@@ -106,3 +107,4 @@ class UserProfileManager:
         params.append(user_id)
         
         return AutoDBContext.execute_query(query, params, commit=True)
+    
