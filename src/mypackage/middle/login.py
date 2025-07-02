@@ -4,7 +4,18 @@ from datetime import datetime
 class Login:
     
     @staticmethod
-    def login(username:str,password:str):
+    def login(username:str,password:str) -> int:
+        """        用户登录方法
+        :param username: 用户名
+        :param password: 密码
+        :return: 
+            1: 输入验证失败（用户名或密码为空）
+            2: 用户不存在
+            3: 用户被锁定
+            4: 密码错误
+            5: 其他错误
+            6: 登录成功
+        """
 
         #输入验证,当输入用户名或密码为空时返回1
         if not username or not password:

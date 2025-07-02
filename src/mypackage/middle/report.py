@@ -9,7 +9,26 @@ class Health_report:
 
     @staticmethod
     def health_analysis(username:str)->dict:
+        """健康数据分析方法
+        :param username: 用户名
+        :return:
+            dict: 包含用户健康数据分析结果的字典
+            {
+                'bmi': float, # 体重指数
+                'bmi_eval': str, # BMI评估结果
+                'exercise_data': int, # 最近一周运动时间总和（分钟）
+                'exercise_eval': str, # 运动量评估结果
+                'sleep_time': int, # 睡眠时长（分钟）
+                'sleep_eval': str, # 睡眠质量评估结果
+                'heart_rate': int, # 静息心率
+                'heart_eval': str, # 心率状况评估结果
+                'bp_data': str, # 血压值（收缩压/舒张压）
+                'bp_eval': str, # 血压状况评估结果
+                'blood_glucose': float, # 血糖值
+                'glucose_eval': str # 血糖状况评估结果
+            }
 
+        """
         #获取用户基本数据
         user_data = UserProfileManager.get_profile(username)
         weight_data = user_data['weight']
@@ -170,6 +189,11 @@ class Health_report:
 
     @staticmethod
     def health_tips(username:str)->str:
+        """健康建议方法
+        :param username: 用户名
+        :return: 
+            str: 包含用户健康建议的字符串
+        """
 
         #获取今日的运动数据
         today_data = Visualization.today_data(username)
