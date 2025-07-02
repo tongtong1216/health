@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainPmoRHz.ui'
+## Form generated from reading UI file 'mainweshdp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1100,23 +1100,28 @@ class Ui_MainWindow(object):
         self.widget_10.setObjectName(u"widget_10")
         self.horizontalLayout_25 = QHBoxLayout(self.widget_10)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.btn_creat_tips = QPushButton(self.widget_10)
+        self.btn_creat_tips.setObjectName(u"btn_creat_tips")
+
+        self.horizontalLayout_25.addWidget(self.btn_creat_tips)
+
         self.label_12 = QLabel(self.widget_10)
         self.label_12.setObjectName(u"label_12")
 
         self.horizontalLayout_25.addWidget(self.label_12)
 
-        self.lineEdit_2 = QLineEdit(self.widget_10)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.health_tips_line = QLineEdit(self.widget_10)
+        self.health_tips_line.setObjectName(u"health_tips_line")
 
-        self.horizontalLayout_25.addWidget(self.lineEdit_2)
+        self.horizontalLayout_25.addWidget(self.health_tips_line)
 
-        self.pushButton = QPushButton(self.widget_10)
-        self.pushButton.setObjectName(u"pushButton")
+        self.btn_health_tips = QPushButton(self.widget_10)
+        self.btn_health_tips.setObjectName(u"btn_health_tips")
 
-        self.horizontalLayout_25.addWidget(self.pushButton)
+        self.horizontalLayout_25.addWidget(self.btn_health_tips)
 
 
-        self.verticalLayout_22.addWidget(self.widget_10, 0, Qt.AlignmentFlag.AlignBottom)
+        self.verticalLayout_22.addWidget(self.widget_10)
 
         self.btn_goalsetting = QPushButton(self.sports_time_view)
         self.btn_goalsetting.setObjectName(u"btn_goalsetting")
@@ -1895,7 +1900,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1958,8 +1963,9 @@ class Ui_MainWindow(object):
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"\u65e5\u8fd0\u52a8\u65f6\u95f4\u53ef\u89c6\u5316", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"\u5468\u8fd0\u52a8\u65f6\u95f4\u53ef\u89c6\u5316", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u5361\u8def\u91cc\u6536\u652f\uff1a</span></p></body></html>", None))
+        self.btn_creat_tips.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u51fb\u67e5\u770b\u5065\u5eb7\u5c0f\u63d0\u793a", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5065\u5eb7\u5c0f\u63d0\u793a", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u4e2a", None))
+        self.btn_health_tips.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u4e2a", None))
         self.btn_goalsetting.setText(QCoreApplication.translate("MainWindow", u"\u8bbe\u7f6e\u6bcf\u65e5\u8fd0\u52a8\u65f6\u957f\u76ee\u6807", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u8bf7\u8f93\u5165\u6bcf\u65e5\u76ee\u6807\u8fd0\u52a8\u65f6\u957f\uff1a", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"min", None))

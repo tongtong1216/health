@@ -1,6 +1,6 @@
-from data_managers.profile_manager import UserProfileManager
-from middle.visualization import Visualization
-from data_managers.metrics_manager import MetricsManager
+from ..data_managers.profile_manager import UserProfileManager
+from .visualization import Visualization
+from ..data_managers.metrics_manager import MetricsManager
 from datetime import date
 import random
 

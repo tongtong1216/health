@@ -1,6 +1,6 @@
 import bcrypt
 from ..data_managers import UserManager
-from Information import ProfileEditor
+from .Information import ProfileEditor
 
 class Register:
     @staticmethod    
