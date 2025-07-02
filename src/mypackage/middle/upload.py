@@ -31,7 +31,7 @@ class Upload:
         return result
     
     @staticmethod
-    def upload_food_data(username:str,intake_date:datetime.date,foodname:str,quantity: float)->int:
+    def upload_food_data(username:str,foodname:str,quantity: float)->int:
 
         #获取今天的日期
         today = datetime.today().date()
