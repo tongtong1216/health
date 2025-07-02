@@ -5,6 +5,7 @@ from  datetime import datetime,timedelta
 from data_managers.daily_exercise_manager import DailyExerciseManager
 from data_managers.exercise_types_manager import ExerciseTypesManager
 from data_managers.diet_records_manager import DietRecordsManager
+from data_managers.profile_manager import UserProfileManager
 
 class Visualization:
 
@@ -15,9 +16,10 @@ class Visualization:
         daily_exercise_records = DailyExerciseManager.get_user_exercise_records(username,day,day)
         #获取一天的饮食记录
         daily_food_records = DietRecordsManager.get_user_diet_records(username,day,day)
+        #获取用户基本信息
+        user_data = UserProfileManager.get_profile(username)
         #没有运动记录时各项数据为0
         total_duration = 0
-        total_goal = 0
         total_calories_consumption = 0
         total_calories_intake = 0
         #获取总运动时间
@@ -31,14 +33,7 @@ class Visualization:
         total_calories_intake = sum(calories_intake)
 
         #获取总目标运动时间
-        names = [d["type_name"] for d in daily_exercise_records] 
-        for name in names:
-            type_data = ExerciseTypesManager.get_type_by_name(name)
-            if type_data['type_goal'] is None:
-                total_goal = -1
-                break
-            else:
-                total_goal += type_data['type_goal']
+        total_goal = user_data['total_goal']
 
         return {
             'total_duration':total_duration,

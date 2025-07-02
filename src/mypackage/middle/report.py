@@ -109,15 +109,13 @@ class Health_report:
         today_data = Visualization.today_data(username)
         #初始化运动时间目标完成状态
         duration_status = "未完成"
-        if today_data['total_goal'] == -1:
-            duration_status = "目标未设定"
-        else:
+
         #根据目标完成进度设置完成状态
-         if today_data['total_duration'] >= today_data['total_goal']:
+        if today_data['total_duration'] >= today_data['total_goal']:
             duration_status = "已完成"
-         elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
+        elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
             duration_status = "几乎完成"
-         elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
+        elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
             duration_status = "已完成一半"
 
         #完成任务后展示健康小提示

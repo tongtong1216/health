@@ -12,7 +12,7 @@ if __name__ == "__main__":
     password = "123456"
     today = datetime.today().date()
     type_name = "足球"
-    duration = 20
+    duration = 30
     foodname = "谷薯类"
     quantity = 100
     gender = "male"
@@ -33,5 +33,5 @@ if __name__ == "__main__":
     #result = MetricsManagerUserHealth.create_health_metrics(username,70,"123/65",4.2,8)
     #result = MetricsManagerUserHealth.get_health_metrics(username)
     #result = Health_report.health_report(username)
-    #result = Health_report.health_tips(username)
+    result = Health_report.health_tips(username)
     print(result)
