@@ -2,10 +2,9 @@
 #需实现获取今日运动时间和目标运动时间以及卡路里收支
 #需获取一周内的总运动时间和目标运动时间以及总卡路里收支
 from  datetime import datetime,timedelta
-from ..data_managers.daily_exercise_manager import DailyExerciseManager
-from ..data_managers.exercise_types_manager import ExerciseTypesManager
-from ..data_managers.diet_records_manager import DietRecordsManager
-from ..data_managers.profile_manager import UserProfileManager
+from data_managers.daily_exercise_manager import DailyExerciseManager
+from data_managers.diet_records_manager import DietRecordsManager
+from data_managers.profile_manager import UserProfileManager
 
 class Visualization:
 
@@ -88,4 +87,102 @@ class Visualization:
             'total_duration':total_duration,
             'total_goal':total_goal
         }
-       
+    
+    @staticmethod
+    def get_exercise_records(username,day):
+
+        #获取一天运动记录
+        exercise_records = DailyExerciseManager.get_user_exercise_records(username,day,day)
+        
+        result = [
+            {"运动日期":d["exercise_date"],"运动类型":d["type_name"],"运动时间":d["duration"],"卡路里消耗":d['calories']}
+            for d in exercise_records
+        ]
+        return result
+    
+    #获取今天的运动数据
+    @staticmethod
+    def get_today_exercise_records(username):
+        
+        today = datetime.today().date()
+
+        result = Visualization.get_exercise_records(username,today)
+
+        return result
+    
+    #获取最近一周的运动数据
+    @staticmethod
+    def get_week_exercise_records(username):
+        
+        today = datetime.today().date()
+        start_date = today - timedelta(days=6)
+
+        result = []
+        current_date = start_date
+
+        #获取最近一周内的运动记录
+        while current_date <= today:
+            current_data = Visualization.get_exercise_records(username,current_date)
+            names = [d["运动类型"] for d in current_data]
+            if names == []:
+                result.append({"运动日期":current_date,"运动类型":"无","运动时间":0,"卡路里消耗":0})
+            else:
+                for name in names:
+                    for item in current_data:
+                        if item.get("运动类型") == name:
+                            duration = item["运动时间"]
+                            calories = item["卡路里消耗"]
+                            result.append({"运动日期":current_date,"运动类型":name,"运动时间":duration,"卡路里消耗":calories})
+                            break
+            current_date += timedelta(days=1)
+        
+        return result
+
+    @staticmethod
+    def get_food_records(username,day):
+
+        food_records = DietRecordsManager.get_user_diet_records(username,day,day)
+
+        result = [
+            {"摄入日期":d["intake_date"],"食物名称":d["food_name"],"摄入数量":d["quantity"],"卡路里摄入":d['calories']}
+            for d in food_records
+        ]
+
+        return result
+    
+    #获取今天的饮食数据
+    @staticmethod
+    def get_today_food_records(username):
+        
+        today = datetime.today().date()
+
+        result = Visualization.get_food_records(username,today)
+
+        return result
+    
+    @staticmethod
+    def get_week_food_records(username):
+
+        today = datetime.today().date()
+        start_date = today - timedelta(days=6)
+
+        result = []
+        current_date = start_date
+
+        #获取最近一周内的饮食记录
+        while current_date <= today:
+            current_data = Visualization.get_food_records(username,current_date)
+            names = [d["食物名称"] for d in current_data]
+            if names == []:
+                result.append({"摄入日期":current_date,"食物名称":"无","摄入数量":0,"卡路里摄入":0})
+            else:
+                for name in names:
+                    for item in current_data:
+                        if item.get("食物名称") == name:
+                            quantity = item["摄入数量"]
+                            calories = item["卡路里摄入"]
+                            result.append({"摄入日期":current_date,"食物名称":name,"摄入数量":quantity,"卡路里摄入":calories})
+                            break
+            current_date += timedelta(days=1)
+        
+        return result

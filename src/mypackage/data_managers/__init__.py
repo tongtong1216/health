@@ -5,7 +5,7 @@ from .profile_manager import UserProfileManager
 from .food_manager import FoodManager
 from .diet_records_manager import DietRecordsManager
 from .metrics_manager import MetricsManager
+from .posts_manager import PostManager
 
 
-
-__all__ = ["UserManager", "DailyExerciseManager", "ExerciseTypesManager", "UserProfileManager", "FoodManager", "DietRecordsManager", "MetricsManager"]
+__all__ = ["UserManager", "DailyExerciseManager", "ExerciseTypesManager", "UserProfileManager", "FoodManager", "DietRecordsManager", "MetricsManager", "PostManager"]

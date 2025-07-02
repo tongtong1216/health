@@ -94,7 +94,7 @@ class ProfileEditor:
         valid_fields = {'nickname', 'gender', 'birthdate', 'height', 'weight', 'avatar_data', 'avatar_mime_type'}
         
         for field, value in updates.items():
-            if field in valid_fields:
+            if field in valid_fields and value is not "":
                 valid_updates[field] = value
         
         # 如果没有有效更新字段，直接返回成功
