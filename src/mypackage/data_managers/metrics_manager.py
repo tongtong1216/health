@@ -2,7 +2,7 @@ from typing import Optional, Dict, Any, Union
 from .auto_dbcontext import AutoDBContext
 from .usrname_to_id import get_user_id
 
-class MetricsManagerUserHealth:
+class MetricsManager:
     
     @classmethod
     def create_health_metrics(cls, username: str, 
