@@ -118,8 +118,13 @@ class ProfileEditor:
         Returns:
             Optional[Dict]: 用户资料字典,用户不存在或没有资料时返回None
         """
-        return UserProfileManager.get_profile(username)
-    
+        profile= UserProfileManager.get_profile(username)
+        if profile:
+            #将birthdate,weight,height转换为字符串
+            profile['birthdate'] = profile['birthdate'].strftime('%Y-%m-%d') if profile['birthdate'] else None
+            profile['weight'] = str(profile['weight']) if profile['weight'] is not None else None   
+            profile['height'] = str(profile['height']) if profile['height'] is not None else None    
+            
     @staticmethod
     def upload_avatar(username: str, image_path: str) -> bool:
         """
