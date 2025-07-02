@@ -32,7 +32,7 @@
 #
 #
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox,QLineEdit
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
 from .resources.ui.ui_main import Ui_MainWindow
 from .middle.login import Login
 
@@ -84,6 +84,7 @@ class LoginWindow:
         # 根据状态设置图标
         if status == 6:
             msg_box.setIcon(QMessageBox.Information)
+            self.main_window.current_username = username
         else:
             msg_box.setIcon(QMessageBox.Warning)
 
