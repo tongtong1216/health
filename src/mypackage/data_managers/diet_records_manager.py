@@ -134,12 +134,8 @@ class DietRecordsManager:
             params.append(end_date)
             
         query = f"""
-        SELECT 
-            dr.*, 
-            f.food_name,
-            f.unit
-        FROM diet_records dr
-        JOIN foods f ON dr.food_name = f.food_name
+        SELECT *
+        FROM diet_records
         WHERE {' AND '.join(conditions)}
         ORDER BY intake_date DESC
         """
@@ -155,7 +151,7 @@ class DietRecordsManager:
             
         Returns:
             Optional[Dict]: 包含食物信息的字典
-                food_id, food_name, calories_per_unit, unit
+                food_id, food_name, calories_per_unit
         """
         
         return FoodManager.get_food_by_name(food_name)
