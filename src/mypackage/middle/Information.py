@@ -1,6 +1,7 @@
 from typing import Dict, Any, Optional
 from data_managers.profile_manager import UserProfileManager 
 from data_managers.usrname_to_id import get_user_id
+from middle.read_image import read_image
 
 class ProfileEditor:
     @staticmethod
@@ -111,3 +112,30 @@ class ProfileEditor:
             Optional[Dict]: 用户资料字典,用户不存在或没有资料时返回None
         """
         return UserProfileManager.get_profile(username)
+    
+    @staticmethod
+    def upload_avatar(username: str, image_path: str, mime_type: str) -> bool:
+        """
+        上传用户头像
+        
+        Args:
+            username: 用户名
+            avatar_data: 头像的二进制数据
+            mime_type: 头像的MIME类型
+            
+        Returns:
+            bool: 操作是否成功
+        """
+        user_id = get_user_id(username)
+        if not user_id:
+            return False
+        
+        image = read_image(image_path)
+        avatar_data = image['image_data']
+        mime_type = image['mime_type']
+
+        return UserProfileManager.update_profile(
+            username=username,
+            avatar_mime_type=mime_type,
+            avatar_data=avatar_data
+        ) > 0
