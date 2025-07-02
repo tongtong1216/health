@@ -13,7 +13,7 @@ class FoodManager:
             
         Returns:
             Optional[Dict]: 食物信息字典，键包括:
-                food_id, food_name, calories_per_unit, unit
+                food_id, food_name, calories_per_unit
         """
         query = "SELECT * FROM foods WHERE food_name = %s"
         result = AutoDBContext.execute_query(query, (food_name,))
@@ -45,14 +45,12 @@ class FoodManager:
                             {
                                 "food_id": 1,
                                 "food_name": "苹果",
-                                "calories_per_unit": 52.00,
-                                "unit": "g"
+                                "calories_per_unit": 52.00
                             },
                             {
                                 "food_id": 2,
                                 "food_name": "牛奶",
-                                "calories_per_unit": 61.00,
-                                "unit": "ml"
+                                "calories_per_unit": 61.00
                             },
                             ...
                         ]
