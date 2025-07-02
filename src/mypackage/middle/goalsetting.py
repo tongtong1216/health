@@ -1,5 +1,5 @@
 from typing import Dict, Optional,Any
-from data_managers import *
+from ..data_managers import *
 
 class GoalManager:
     @staticmethod

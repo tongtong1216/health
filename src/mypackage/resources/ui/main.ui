@@ -1874,7 +1874,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -1900,7 +1900,7 @@ background-repeat: no-repeat;</string>
                                <x>20</x>
                                <y>10</y>
                                <width>361</width>
-                               <height>171</height>
+                               <height>151</height>
                               </rect>
                              </property>
                              <property name="title">
@@ -1913,7 +1913,7 @@ background-repeat: no-repeat;</string>
                                <x>410</x>
                                <y>10</y>
                                <width>361</width>
-                               <height>171</height>
+                               <height>151</height>
                               </rect>
                              </property>
                              <property name="title">
@@ -1967,13 +1967,62 @@ background-repeat: no-repeat;</string>
                             </layout>
                            </widget>
                           </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_goalsetting">
+                            <property name="text">
+                             <string>设置每日运动时长目标</string>
+                            </property>
+                           </widget>
+                          </item>
                          </layout>
                         </widget>
                        </item>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="week_step_numberpage"/>
-                     <widget class="QWidget" name="week_exercise_timepage"/>
+                     <widget class="QWidget" name="goalsettingpage">
+                      <layout class="QVBoxLayout" name="verticalLayout_23">
+                       <item>
+                        <widget class="QFrame" name="frame_6">
+                         <property name="frameShape">
+                          <enum>QFrame::Shape::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Shadow::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_26">
+                          <item>
+                           <widget class="QLabel" name="label_13">
+                            <property name="text">
+                             <string>请输入每日目标运动时长：</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="goalsetting_line"/>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="label_14">
+                            <property name="text">
+                             <string>min</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_goalsetting_confirm">
+                            <property name="text">
+                             <string>确认上传</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QWidget" name="widget_12" native="true"/>
+                       </item>
+                      </layout>
+                     </widget>
                      <widget class="QWidget" name="enterpage">
                       <layout class="QVBoxLayout" name="verticalLayout_18">
                        <item>

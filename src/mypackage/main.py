@@ -8,6 +8,7 @@ from src.mypackage.loginwindow import LoginWindow
 from src.mypackage.registerwindow import RegisterWindow
 from src.mypackage.uploadwindow import UploadWindow
 from src.mypackage.informationwindow import InformationWindow
+from src.mypackage.goalsettingwindow import GoalSettingWindow
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -28,6 +29,7 @@ class MainWindow(QMainWindow):
         self.register_window = RegisterWindow(self)
         self.upload_window = UploadWindow(self)
         self.information_window = InformationWindow(self)
+        self.goalsetting_window = GoalSettingWindow(self)
         # self.information_window = InformationWindow(self)
 
         global widgets
@@ -80,6 +82,8 @@ class MainWindow(QMainWindow):
         widgets.btn_ball_sports.clicked.connect(self.buttonClick)
         widgets.btn_outdoor_sports.clicked.connect(self.buttonClick)
         widgets.btn_light_activities.clicked.connect(self.buttonClick)
+        #切换到目标设定页面
+        widgets.btn_goalsetting.clicked.connect(self.buttonClick)
 
 
         # EXTRA LEFT BOX
@@ -252,6 +256,10 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
+        if btnName == "btn_goalsetting":
+            widgets.stackedWidget.setCurrentWidget(widgets.goalsettingpage)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
 
 
