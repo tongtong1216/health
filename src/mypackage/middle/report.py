@@ -2,15 +2,43 @@
 from data_managers.profile_manager import UserProfileManager
 from middle.visualization import Visualization
 from data_managers.metrics_manager import MetricsManager
+from datetime import date
 import random
 
 class Health_report:
 
     @staticmethod
-    def health_report(username:str)->str:
+    def health_report(username:str)->dict:
 
         #获取用户基本数据
         user_data = UserProfileManager.get_profile(username)
+        weight_data = user_data['weight']
+        height_data = user_data['height'] / 100
+        gender_data = user_data['gender']
+        birthday = user_data['birthdate']
+        #获取身高体重
+        if weight_data is None:
+            weight = "未录入"
+        else:
+            weight = weight_data
+        if height_data is None:
+            height = "未录入"
+        else:
+            height = height_data
+        #计算年龄
+        if birthday is None:
+            age = "未录入"
+        else:
+            today = date.today()
+            age = today.year - birthday.year
+
+        #解析性别
+        if gender_data == "male":
+            gender = "男性"
+        elif gender_data == "female":
+            gender = "女性"
+        else:
+            gender = "未录入"
         #获取用户近一周运动数据
         exercise_data = Visualization.weekly_data(username)
         #获取用户健康数据
@@ -26,11 +54,9 @@ class Health_report:
         dbp = int(dbp_data)
 
         #计算BMI
-        weight = user_data['weight']
-        height = user_data['height'] / 100
-        if weight is None or height is None:
+        if weight_data is None or height_data is None:
             bmi_eval = "无身高或体重记录"
-        bmi = weight / (height ** 2)
+        bmi = weight_data / (height_data ** 2)
         if bmi < 18.5:
             bmi_eval = "偏瘦"
         elif bmi < 24:
@@ -93,14 +119,16 @@ class Health_report:
             glucose_eval = "血糖偏高"
 
         #健康报告生成
-        report = f"{username}健康报告\n"
-        report += f"BMI指数:{bmi_round},{bmi_eval}\n"
-        report += f"运动量评估:近一周运动时间为{exercise_data['total_duration']},{exercise_eval}\n"
-        report += f"睡眠质量评估:睡眠时间为:{sleep_time},{sleep_eval}\n"
-        report += f"心率状况评估:静息心率为:{heart_rate},{heart_eval}\n"
-        report += f"血压状况评估:收缩压/舒张压为:{blood_pressure_data},{bp_eval}\n"
-        report += f"血糖状况评估:空腹血糖为:{blood_glucose},{glucose_eval}"
-        return report
+        return {
+            '标题':f"{username}健康报告",
+            '个人信息':f"年龄:{age},性别:{gender},身高:{height}米,体重:{weight}千克",
+            'bmi评估':f"BMI值{bmi_round},{bmi_eval}",
+            '运动量评估':f"最近一周锻炼时间:{exercise_data['total_duration']},运动量评估:{exercise_eval}",
+            '睡眠情况评估':f"睡眠时间:{sleep_time},睡眠情况评估:{sleep_eval}",
+            '静息心率状况评估':f"静息心率:{heart_rate},心率状况评估:{heart_eval}",
+            '血压状况评估':f"血压值（收缩压/舒张压）:{blood_pressure_data},血压状况评估:{bp_eval}",
+            '血糖状况评估':f"空腹血糖值:{blood_glucose},血糖状况评估:{glucose_eval}"
+        }
 
     @staticmethod
     def health_tips(username:str)->str:
