@@ -57,6 +57,13 @@ class ProfileEditor:
         height = profile_data.get('height')
         weight = profile_data.get('weight')
         
+        # 处理空字符串为None
+        if nickname == "": nickname = "新用户" 
+        if gender == "": gender = "prefer_not_to_say"
+        if birthdate == "": birthdate = None
+        if height == "": height = None
+        if weight == "": weight = None
+        
         # 调用UserProfileManager创建资料
         result = UserProfileManager.create_profile(
             username=username,
