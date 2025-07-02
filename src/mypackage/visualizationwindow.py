@@ -10,3 +10,10 @@ class VisualizationWindow:
 
         self.visualization_w=Visualization()
 
+        self.today_dict={
+            'total_duration': '',
+            'total_goal': '',
+            'total_calories_consumption': '',
+            'total_calories_intake': ''
+        }
+

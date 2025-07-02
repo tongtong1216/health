@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainbDnKFf.ui'
+## Form generated from reading UI file 'mainPmoRHz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1118,6 +1118,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_22.addWidget(self.widget_10, 0, Qt.AlignmentFlag.AlignBottom)
 
+        self.btn_goalsetting = QPushButton(self.sports_time_view)
+        self.btn_goalsetting.setObjectName(u"btn_goalsetting")
+
+        self.verticalLayout_22.addWidget(self.btn_goalsetting)
+
 
         self.horizontalLayout_6.addWidget(self.sports_time_view)
 
@@ -1125,9 +1130,45 @@ class Ui_MainWindow(object):
         self.week_step_numberpage = QWidget()
         self.week_step_numberpage.setObjectName(u"week_step_numberpage")
         self.stackedWidget.addWidget(self.week_step_numberpage)
-        self.week_exercise_timepage = QWidget()
-        self.week_exercise_timepage.setObjectName(u"week_exercise_timepage")
-        self.stackedWidget.addWidget(self.week_exercise_timepage)
+        self.goalsettingpage = QWidget()
+        self.goalsettingpage.setObjectName(u"goalsettingpage")
+        self.verticalLayout_23 = QVBoxLayout(self.goalsettingpage)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.frame_6 = QFrame(self.goalsettingpage)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_26 = QHBoxLayout(self.frame_6)
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.label_13 = QLabel(self.frame_6)
+        self.label_13.setObjectName(u"label_13")
+
+        self.horizontalLayout_26.addWidget(self.label_13)
+
+        self.goalsetting_line = QLineEdit(self.frame_6)
+        self.goalsetting_line.setObjectName(u"goalsetting_line")
+
+        self.horizontalLayout_26.addWidget(self.goalsetting_line)
+
+        self.label_14 = QLabel(self.frame_6)
+        self.label_14.setObjectName(u"label_14")
+
+        self.horizontalLayout_26.addWidget(self.label_14)
+
+        self.btn_goalsetting_confirm = QPushButton(self.frame_6)
+        self.btn_goalsetting_confirm.setObjectName(u"btn_goalsetting_confirm")
+
+        self.horizontalLayout_26.addWidget(self.btn_goalsetting_confirm)
+
+
+        self.verticalLayout_23.addWidget(self.frame_6)
+
+        self.widget_12 = QWidget(self.goalsettingpage)
+        self.widget_12.setObjectName(u"widget_12")
+
+        self.verticalLayout_23.addWidget(self.widget_12)
+
+        self.stackedWidget.addWidget(self.goalsettingpage)
         self.enterpage = QWidget()
         self.enterpage.setObjectName(u"enterpage")
         self.verticalLayout_18 = QVBoxLayout(self.enterpage)
@@ -1854,7 +1895,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1919,6 +1960,10 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u5361\u8def\u91cc\u6536\u652f\uff1a</span></p></body></html>", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5065\u5eb7\u5c0f\u63d0\u793a", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u4e2a", None))
+        self.btn_goalsetting.setText(QCoreApplication.translate("MainWindow", u"\u8bbe\u7f6e\u6bcf\u65e5\u8fd0\u52a8\u65f6\u957f\u76ee\u6807", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u8bf7\u8f93\u5165\u6bcf\u65e5\u76ee\u6807\u8fd0\u52a8\u65f6\u957f\uff1a", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"min", None))
+        self.btn_goalsetting_confirm.setText(QCoreApplication.translate("MainWindow", u"\u786e\u8ba4\u4e0a\u4f20", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u7528\u6237\u540d", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5bc6\u7801", None))
         self.login_text.setText("")
