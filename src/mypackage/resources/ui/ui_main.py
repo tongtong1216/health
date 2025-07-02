@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainSaHBXV.ui'
+## Form generated from reading UI file 'mainbDnKFf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1061,57 +1061,72 @@ class Ui_MainWindow(object):
 "background-repeat: no-repeat;")
         self.horizontalLayout_6 = QHBoxLayout(self.home)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.day_view = QFrame(self.home)
-        self.day_view.setObjectName(u"day_view")
-        self.day_view.setFrameShape(QFrame.Shape.StyledPanel)
-        self.day_view.setFrameShadow(QFrame.Shadow.Raised)
-        self.day_step_number_view = QFrame(self.day_view)
-        self.day_step_number_view.setObjectName(u"day_step_number_view")
-        self.day_step_number_view.setGeometry(QRect(40, 49, 221, 121))
-        self.day_step_number_view.setFrameShape(QFrame.Shape.StyledPanel)
-        self.day_step_number_view.setFrameShadow(QFrame.Shadow.Raised)
-        self.label_21 = QLabel(self.day_step_number_view)
-        self.label_21.setObjectName(u"label_21")
-        self.label_21.setGeometry(QRect(13, 50, 201, 20))
-        self.day_exercise_time_view = QFrame(self.day_view)
-        self.day_exercise_time_view.setObjectName(u"day_exercise_time_view")
-        self.day_exercise_time_view.setGeometry(QRect(420, 49, 261, 121))
-        self.day_exercise_time_view.setFrameShape(QFrame.Shape.StyledPanel)
-        self.day_exercise_time_view.setFrameShadow(QFrame.Shadow.Raised)
-        self.label_22 = QLabel(self.day_exercise_time_view)
-        self.label_22.setObjectName(u"label_22")
-        self.label_22.setGeometry(QRect(0, 30, 251, 51))
-        self.label_4 = QLabel(self.day_view)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(60, 190, 81, 16))
-        self.calorie_value = QLabel(self.day_view)
-        self.calorie_value.setObjectName(u"calorie_value")
-        self.calorie_value.setGeometry(QRect(150, 190, 71, 16))
-        self.btn_week_step_number_view = QPushButton(self.day_view)
-        self.btn_week_step_number_view.setObjectName(u"btn_week_step_number_view")
-        self.btn_week_step_number_view.setGeometry(QRect(100, 230, 75, 24))
-        self.btn_week_exercise_time_view = QPushButton(self.day_view)
-        self.btn_week_exercise_time_view.setObjectName(u"btn_week_exercise_time_view")
-        self.btn_week_exercise_time_view.setGeometry(QRect(490, 230, 101, 24))
+        self.sports_time_view = QFrame(self.home)
+        self.sports_time_view.setObjectName(u"sports_time_view")
+        self.sports_time_view.setFrameShape(QFrame.Shape.StyledPanel)
+        self.sports_time_view.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_22 = QVBoxLayout(self.sports_time_view)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.widget_11 = QWidget(self.sports_time_view)
+        self.widget_11.setObjectName(u"widget_11")
+        self.groupBox_3 = QGroupBox(self.widget_11)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        self.groupBox_3.setGeometry(QRect(20, 10, 361, 151))
+        self.groupBox_4 = QGroupBox(self.widget_11)
+        self.groupBox_4.setObjectName(u"groupBox_4")
+        self.groupBox_4.setGeometry(QRect(410, 10, 361, 151))
 
-        self.horizontalLayout_6.addWidget(self.day_view)
+        self.verticalLayout_22.addWidget(self.widget_11)
+
+        self.widget_3 = QWidget(self.sports_time_view)
+        self.widget_3.setObjectName(u"widget_3")
+        self.widget_3.setMaximumSize(QSize(16777215, 80))
+        self.horizontalLayout_24 = QHBoxLayout(self.widget_3)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.label_4 = QLabel(self.widget_3)
+        self.label_4.setObjectName(u"label_4")
+
+        self.horizontalLayout_24.addWidget(self.label_4)
+
+        self.lineEdit = QLineEdit(self.widget_3)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.horizontalLayout_24.addWidget(self.lineEdit)
+
+
+        self.verticalLayout_22.addWidget(self.widget_3, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.widget_10 = QWidget(self.sports_time_view)
+        self.widget_10.setObjectName(u"widget_10")
+        self.horizontalLayout_25 = QHBoxLayout(self.widget_10)
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.label_12 = QLabel(self.widget_10)
+        self.label_12.setObjectName(u"label_12")
+
+        self.horizontalLayout_25.addWidget(self.label_12)
+
+        self.lineEdit_2 = QLineEdit(self.widget_10)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.horizontalLayout_25.addWidget(self.lineEdit_2)
+
+        self.pushButton = QPushButton(self.widget_10)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.horizontalLayout_25.addWidget(self.pushButton)
+
+
+        self.verticalLayout_22.addWidget(self.widget_10, 0, Qt.AlignmentFlag.AlignBottom)
+
+
+        self.horizontalLayout_6.addWidget(self.sports_time_view)
 
         self.stackedWidget.addWidget(self.home)
         self.week_step_numberpage = QWidget()
         self.week_step_numberpage.setObjectName(u"week_step_numberpage")
-        self.week_step_number_view = QFrame(self.week_step_numberpage)
-        self.week_step_number_view.setObjectName(u"week_step_number_view")
-        self.week_step_number_view.setGeometry(QRect(60, 30, 711, 381))
-        self.week_step_number_view.setFrameShape(QFrame.Shape.StyledPanel)
-        self.week_step_number_view.setFrameShadow(QFrame.Shadow.Raised)
         self.stackedWidget.addWidget(self.week_step_numberpage)
         self.week_exercise_timepage = QWidget()
         self.week_exercise_timepage.setObjectName(u"week_exercise_timepage")
-        self.week_exercise_time_view = QFrame(self.week_exercise_timepage)
-        self.week_exercise_time_view.setObjectName(u"week_exercise_time_view")
-        self.week_exercise_time_view.setGeometry(QRect(70, 50, 721, 331))
-        self.week_exercise_time_view.setFrameShape(QFrame.Shape.StyledPanel)
-        self.week_exercise_time_view.setFrameShadow(QFrame.Shadow.Raised)
         self.stackedWidget.addWidget(self.week_exercise_timepage)
         self.enterpage = QWidget()
         self.enterpage.setObjectName(u"enterpage")
@@ -1178,10 +1193,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.label_5)
 
-        self.name = QLabel(self.widget_4)
-        self.name.setObjectName(u"name")
+        self.nickname = QLineEdit(self.widget_4)
+        self.nickname.setObjectName(u"nickname")
+        self.nickname.setReadOnly(True)
 
-        self.horizontalLayout_11.addWidget(self.name)
+        self.horizontalLayout_11.addWidget(self.nickname)
 
 
         self.verticalLayout_19.addWidget(self.widget_4)
@@ -1195,10 +1211,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addWidget(self.label_6)
 
-        self.sex = QLabel(self.widget_5)
-        self.sex.setObjectName(u"sex")
+        self.gender = QLineEdit(self.widget_5)
+        self.gender.setObjectName(u"gender")
+        self.gender.setReadOnly(True)
 
-        self.horizontalLayout_12.addWidget(self.sex)
+        self.horizontalLayout_12.addWidget(self.gender)
 
 
         self.verticalLayout_19.addWidget(self.widget_5)
@@ -1212,8 +1229,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.label_7)
 
-        self.height = QLabel(self.widget_6)
+        self.height = QLineEdit(self.widget_6)
         self.height.setObjectName(u"height")
+        self.height.setReadOnly(True)
 
         self.horizontalLayout_13.addWidget(self.height)
 
@@ -1229,8 +1247,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addWidget(self.label_8)
 
-        self.weight = QLabel(self.widget_7)
+        self.weight = QLineEdit(self.widget_7)
         self.weight.setObjectName(u"weight")
+        self.weight.setReadOnly(True)
 
         self.horizontalLayout_14.addWidget(self.weight)
 
@@ -1246,10 +1265,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_9)
 
-        self.bithday = QLabel(self.widget_8)
-        self.bithday.setObjectName(u"bithday")
+        self.birthdate = QLineEdit(self.widget_8)
+        self.birthdate.setObjectName(u"birthdate")
+        self.birthdate.setReadOnly(True)
 
-        self.horizontalLayout_15.addWidget(self.bithday)
+        self.horizontalLayout_15.addWidget(self.birthdate)
 
 
         self.verticalLayout_19.addWidget(self.widget_8)
@@ -1834,7 +1854,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1894,27 +1914,21 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u65e5\u6b65\u6570\u76f8\u5bf9\u76ee\u6807\u6b65\u6570\u767e\u5206\u6bd4\u53ef\u89c6\u5316", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u65e5\u8fd0\u52a8\u65f6\u95f4\u76f8\u5bf9\u76ee\u6807\u8fd0\u52a8\u65f6\u95f4\u767e\u5206\u6bd4\u53ef\u89c6\u5316", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"\u65e5\u8fd0\u52a8\u65f6\u95f4\u53ef\u89c6\u5316", None))
+        self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"\u5468\u8fd0\u52a8\u65f6\u95f4\u53ef\u89c6\u5316", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u5361\u8def\u91cc\u6536\u652f\uff1a</span></p></body></html>", None))
-        self.calorie_value.setText("")
-        self.btn_week_step_number_view.setText(QCoreApplication.translate("MainWindow", u"\u5468\u6b65\u6570\u7edf\u8ba1", None))
-        self.btn_week_exercise_time_view.setText(QCoreApplication.translate("MainWindow", u"\u5468\u8fd0\u52a8\u65f6\u95f4\u7edf\u8ba1", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5065\u5eb7\u5c0f\u63d0\u793a", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u4e2a", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u7528\u6237\u540d", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u5bc6\u7801", None))
         self.login_text.setText("")
         self.btn_log_in.setText(QCoreApplication.translate("MainWindow", u"\u767b\u5f55", None))
         self.btn_register.setText(QCoreApplication.translate("MainWindow", u"\u6ce8\u518c", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0\uff1a", None))
-        self.name.setText("")
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u6027\u522b\uff1a", None))
-        self.sex.setText("")
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u8eab\u9ad8\uff1a", None))
-        self.height.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u4f53\u91cd\uff1a", None))
-        self.weight.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u6635      \u79f0\uff1a", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u6027      \u522b\uff1a", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u8eab      \u9ad8\uff1a", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u4f53       \u91cd\uff1a", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u51fa\u751f\u65e5\u671f\uff1a", None))
-        self.bithday.setText("")
         self.btn_edit_information.setText(QCoreApplication.translate("MainWindow", u"\u7f16\u8f91\u4e2a\u4eba\u4fe1\u606f", None))
         self.dateEdit.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy/MM/dd", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0", None))

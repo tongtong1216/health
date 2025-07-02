@@ -1,5 +1,5 @@
 import bcrypt
-from data_managers import UserManager
+from ..data_managers import UserManager
 
 class Register:
     @staticmethod    

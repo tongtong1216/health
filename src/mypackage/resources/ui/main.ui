@@ -1617,7 +1617,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                   </property>
                   <property name="icon">
                    <iconset>
-                    <normaloff>../images/icons/cil-user.png</normaloff>../images/icons/cil-user.png</iconset>
+                    <normaloff>C:/Users/32529/.designer/images/icons/cil-user.png</normaloff>C:/Users/32529/.designer/images/icons/cil-user.png</iconset>
                   </property>
                  </widget>
                 </item>
@@ -1874,7 +1874,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -1884,251 +1884,172 @@ background-repeat: no-repeat;</string>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_6">
                        <item>
-                        <widget class="QFrame" name="day_view">
+                        <widget class="QFrame" name="sports_time_view">
                          <property name="frameShape">
                           <enum>QFrame::Shape::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Shadow::Raised</enum>
                          </property>
-                         <widget class="QFrame" name="day_step_number_view">
-                          <property name="geometry">
-                           <rect>
-                            <x>40</x>
-                            <y>49</y>
-                            <width>221</width>
-                            <height>121</height>
-                           </rect>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::Shape::StyledPanel</enum>
-                          </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Shadow::Raised</enum>
-                          </property>
-                          <widget class="QLabel" name="label_21">
-                           <property name="geometry">
-                            <rect>
-                             <x>13</x>
-                             <y>50</y>
-                             <width>201</width>
-                             <height>20</height>
-                            </rect>
-                           </property>
-                           <property name="text">
-                            <string>日步数相对目标步数百分比可视化</string>
-                           </property>
-                          </widget>
-                         </widget>
-                         <widget class="QFrame" name="day_exercise_time_view">
-                          <property name="geometry">
-                           <rect>
-                            <x>420</x>
-                            <y>49</y>
-                            <width>261</width>
-                            <height>121</height>
-                           </rect>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::Shape::StyledPanel</enum>
-                          </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Shadow::Raised</enum>
-                          </property>
-                          <widget class="QLabel" name="label_22">
-                           <property name="geometry">
-                            <rect>
-                             <x>0</x>
-                             <y>30</y>
-                             <width>251</width>
-                             <height>51</height>
-                            </rect>
-                           </property>
-                           <property name="text">
-                            <string>日运动时间相对目标运动时间百分比可视化</string>
-                           </property>
-                          </widget>
-                         </widget>
-                         <widget class="QLabel" name="label_4">
-                          <property name="geometry">
-                           <rect>
-                            <x>60</x>
-                            <y>190</y>
-                            <width>81</width>
-                            <height>16</height>
-                           </rect>
-                          </property>
-                          <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;卡路里收支：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                          </property>
-                         </widget>
-                         <widget class="QLabel" name="calorie_value">
-                          <property name="geometry">
-                           <rect>
-                            <x>150</x>
-                            <y>190</y>
-                            <width>71</width>
-                            <height>16</height>
-                           </rect>
-                          </property>
-                          <property name="text">
-                           <string/>
-                          </property>
-                         </widget>
-                         <widget class="QPushButton" name="btn_week_step_number_view">
-                          <property name="geometry">
-                           <rect>
-                            <x>100</x>
-                            <y>230</y>
-                            <width>75</width>
-                            <height>24</height>
-                           </rect>
-                          </property>
-                          <property name="text">
-                           <string>周步数统计</string>
-                          </property>
-                         </widget>
-                         <widget class="QPushButton" name="btn_week_exercise_time_view">
-                          <property name="geometry">
-                           <rect>
-                            <x>490</x>
-                            <y>230</y>
-                            <width>101</width>
-                            <height>24</height>
-                           </rect>
-                          </property>
-                          <property name="text">
-                           <string>周运动时间统计</string>
-                          </property>
-                         </widget>
+                         <layout class="QVBoxLayout" name="verticalLayout_22">
+                          <item>
+                           <widget class="QWidget" name="widget_11" native="true">
+                            <widget class="QGroupBox" name="groupBox_3">
+                             <property name="geometry">
+                              <rect>
+                               <x>20</x>
+                               <y>10</y>
+                               <width>361</width>
+                               <height>171</height>
+                              </rect>
+                             </property>
+                             <property name="title">
+                              <string>日运动时间可视化</string>
+                             </property>
+                            </widget>
+                            <widget class="QGroupBox" name="groupBox_4">
+                             <property name="geometry">
+                              <rect>
+                               <x>410</x>
+                               <y>10</y>
+                               <width>361</width>
+                               <height>171</height>
+                              </rect>
+                             </property>
+                             <property name="title">
+                              <string>周运动时间可视化</string>
+                             </property>
+                            </widget>
+                           </widget>
+                          </item>
+                          <item alignment="Qt::AlignmentFlag::AlignBottom">
+                           <widget class="QWidget" name="widget_3" native="true">
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_24">
+                             <item>
+                              <widget class="QLabel" name="label_4">
+                               <property name="text">
+                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;卡路里收支：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="lineEdit"/>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item alignment="Qt::AlignmentFlag::AlignBottom">
+                           <widget class="QWidget" name="widget_10" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout_25">
+                             <item>
+                              <widget class="QLabel" name="label_12">
+                               <property name="text">
+                                <string>健康小提示</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="lineEdit_2"/>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="pushButton">
+                               <property name="text">
+                                <string>下一个</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                         </layout>
                         </widget>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="week_step_numberpage">
-                      <widget class="QFrame" name="week_step_number_view">
-                       <property name="geometry">
-                        <rect>
-                         <x>60</x>
-                         <y>30</y>
-                         <width>711</width>
-                         <height>381</height>
-                        </rect>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::Shape::StyledPanel</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Shadow::Raised</enum>
-                       </property>
-                      </widget>
-                     </widget>
-                     <widget class="QWidget" name="week_exercise_timepage">
-                      <widget class="QFrame" name="week_exercise_time_view">
-                       <property name="geometry">
-                        <rect>
-                         <x>70</x>
-                         <y>50</y>
-                         <width>721</width>
-                         <height>331</height>
-                        </rect>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::Shape::StyledPanel</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Shadow::Raised</enum>
-                       </property>
-                      </widget>
-                     </widget>
+                     <widget class="QWidget" name="week_step_numberpage"/>
+                     <widget class="QWidget" name="week_exercise_timepage"/>
                      <widget class="QWidget" name="enterpage">
                       <layout class="QVBoxLayout" name="verticalLayout_18">
                        <item>
-                        <widget class="QGroupBox" name="log_inpage">
+                        <widget class="QLabel" name="label_2">
                          <property name="maximumSize">
                           <size>
-                           <width>820</width>
-                           <height>496</height>
+                           <width>16777215</width>
+                           <height>45</height>
                           </size>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
+                         <property name="text">
+                          <string>用户名</string>
                          </property>
-                         <property name="title">
-                          <string>登录页面</string>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="username">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>30</height>
+                          </size>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_17">
-                          <item>
-                           <widget class="QWidget" name="widget" native="true">
-                            <layout class="QHBoxLayout" name="horizontalLayout_8">
-                             <item>
-                              <widget class="QLabel" name="label_2">
-                               <property name="text">
-                                <string>用户名</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QLineEdit" name="username"/>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QWidget" name="widget_2" native="true">
-                            <layout class="QHBoxLayout" name="horizontalLayout_9">
-                             <item>
-                              <widget class="QLabel" name="label_3">
-                               <property name="text">
-                                <string>密    码</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QLineEdit" name="password"/>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QLabel" name="login_text">
-                            <property name="styleSheet">
-                             <string notr="true">color: #FF0000;
-font-weight: bold;
-background-color: rgba(255, 255, 255, 0.7);</string>
-                            </property>
-                            <property name="text">
-                             <string/>
-                            </property>
-                            <property name="textInteractionFlags">
-                             <set>Qt::TextInteractionFlag::LinksAccessibleByMouse</set>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QWidget" name="widget_3" native="true">
-                            <layout class="QHBoxLayout" name="horizontalLayout_10">
-                             <item>
-                              <widget class="QCheckBox" name="checkBox_2">
-                               <property name="text">
-                                <string>记住密码</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QPushButton" name="btn_log_in">
-                            <property name="cursor">
-                             <cursorShape>SizeAllCursor</cursorShape>
-                            </property>
-                            <property name="text">
-                             <string>登录</string>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_3">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>45</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>密码</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="password">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>30</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="login_text">
+                         <property name="maximumSize">
+                          <size>
+                           <width>6666666</width>
+                           <height>50</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_log_in">
+                         <property name="cursor">
+                          <cursorShape>SizeAllCursor</cursorShape>
+                         </property>
+                         <property name="text">
+                          <string>登录</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_register">
+                         <property name="text">
+                          <string>注册</string>
+                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -2150,14 +2071,14 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                              <item>
                               <widget class="QLabel" name="label_5">
                                <property name="text">
-                                <string>昵称：</string>
+                                <string>昵      称：</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLabel" name="name">
-                               <property name="text">
-                                <string/>
+                              <widget class="QLineEdit" name="nickname">
+                               <property name="readOnly">
+                                <bool>true</bool>
                                </property>
                               </widget>
                              </item>
@@ -2170,14 +2091,14 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                              <item>
                               <widget class="QLabel" name="label_6">
                                <property name="text">
-                                <string>性别：</string>
+                                <string>性      别：</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLabel" name="sex">
-                               <property name="text">
-                                <string/>
+                              <widget class="QLineEdit" name="gender">
+                               <property name="readOnly">
+                                <bool>true</bool>
                                </property>
                               </widget>
                              </item>
@@ -2190,14 +2111,14 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                              <item>
                               <widget class="QLabel" name="label_7">
                                <property name="text">
-                                <string>身高：</string>
+                                <string>身      高：</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLabel" name="height">
-                               <property name="text">
-                                <string/>
+                              <widget class="QLineEdit" name="height">
+                               <property name="readOnly">
+                                <bool>true</bool>
                                </property>
                               </widget>
                              </item>
@@ -2210,14 +2131,14 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                              <item>
                               <widget class="QLabel" name="label_8">
                                <property name="text">
-                                <string>体重：</string>
+                                <string>体       重：</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLabel" name="weight">
-                               <property name="text">
-                                <string/>
+                              <widget class="QLineEdit" name="weight">
+                               <property name="readOnly">
+                                <bool>true</bool>
                                </property>
                               </widget>
                              </item>
@@ -2235,9 +2156,9 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLabel" name="bithday">
-                               <property name="text">
-                                <string/>
+                              <widget class="QLineEdit" name="birthdate">
+                               <property name="readOnly">
+                                <bool>true</bool>
                                </property>
                               </widget>
                              </item>
@@ -2454,296 +2375,126 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                          <property name="frameShadow">
                           <enum>QFrame::Shadow::Raised</enum>
                          </property>
-                         <widget class="QGroupBox" name="groupBox">
-                          <property name="geometry">
-                           <rect>
-                            <x>40</x>
-                            <y>20</y>
-                            <width>741</width>
-                            <height>101</height>
-                           </rect>
-                          </property>
-                          <property name="title">
-                           <string>食物种类</string>
-                          </property>
-                          <widget class="QPushButton" name="btn_cereals_and_tubers">
-                           <property name="geometry">
-                            <rect>
-                             <x>20</x>
-                             <y>30</y>
-                             <width>75</width>
-                             <height>24</height>
-                            </rect>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QWidget:pressed {
+                         <layout class="QGridLayout" name="gridLayout">
+                          <item row="1" column="0">
+                           <widget class="QWidget" name="widget_2" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout_23">
+                             <item>
+                              <widget class="QLabel" name="label_10">
+                               <property name="text">
+                                <string>食物摄入量：</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="food_intake">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>1677721</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="inputMask">
+                                <string/>
+                               </property>
+                               <property name="maxLength">
+                                <number>8</number>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLabel" name="label_11">
+                               <property name="text">
+                                <string>g或ml</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_food_load">
+                               <property name="text">
+                                <string>确认上传</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item row="0" column="0">
+                           <widget class="QGroupBox" name="groupBox">
+                            <property name="title">
+                             <string>食物种类</string>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_22">
+                             <item>
+                              <widget class="QPushButton" name="btn_cereals_and_tubers">
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QWidget:pressed {
     background-color: #9D4EDD;  /* 浅紫色，RGB值可调整 */
     color: white;               /* 文字白色 */
 }
 
 </string>
-                           </property>
-                           <property name="text">
-                            <string>谷薯类</string>
-                           </property>
-                          </widget>
-                          <widget class="QPushButton" name="btn_vegetables_and_fruits">
-                           <property name="geometry">
-                            <rect>
-                             <x>130</x>
-                             <y>30</y>
-                             <width>91</width>
-                             <height>24</height>
-                            </rect>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QWidget:pressed {
+                               </property>
+                               <property name="text">
+                                <string>谷薯类</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_vegetables_and_fruits">
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QWidget:pressed {
     background-color: #9D4EDD;  /* 浅紫色，RGB值可调整 */
     color: white;               /* 文字白色 */
 }
 
 </string>
-                           </property>
-                           <property name="text">
-                            <string>蔬菜水果类</string>
-                           </property>
-                          </widget>
-                          <widget class="QPushButton" name="btn_animalderived_foods">
-                           <property name="geometry">
-                            <rect>
-                             <x>270</x>
-                             <y>30</y>
-                             <width>91</width>
-                             <height>24</height>
-                            </rect>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="text">
-                            <string>动物性食物</string>
-                           </property>
-                          </widget>
-                          <widget class="QPushButton" name="btn_soybeans_products_nuts">
-                           <property name="geometry">
-                            <rect>
-                             <x>400</x>
-                             <y>30</y>
-                             <width>121</width>
-                             <height>24</height>
-                            </rect>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="text">
-                            <string>豆制品，坚果类</string>
-                           </property>
-                          </widget>
-                          <widget class="QPushButton" name="btn_condiments">
-                           <property name="geometry">
-                            <rect>
-                             <x>560</x>
-                             <y>30</y>
-                             <width>141</width>
-                             <height>24</height>
-                            </rect>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="text">
-                            <string>油、盐、糖等调味品</string>
-                           </property>
-                          </widget>
-                         </widget>
-                         <widget class="QStackedWidget" name="diets_stackedWidget">
-                          <property name="geometry">
-                           <rect>
-                            <x>40</x>
-                            <y>159</y>
-                            <width>741</width>
-                            <height>301</height>
-                           </rect>
-                          </property>
-                          <widget class="QWidget" name="page">
-                           <widget class="QFrame" name="frame_6">
-                            <property name="geometry">
-                             <rect>
-                              <x>10</x>
-                              <y>30</y>
-                              <width>721</width>
-                              <height>261</height>
-                             </rect>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::Shape::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Shadow::Raised</enum>
-                            </property>
-                            <widget class="QLabel" name="label_10">
-                             <property name="geometry">
-                              <rect>
-                               <x>190</x>
-                               <y>45</y>
-                               <width>261</width>
-                               <height>81</height>
-                              </rect>
-                             </property>
-                             <property name="text">
-                              <string>根据不同食物种类切换展示的页面</string>
-                             </property>
-                            </widget>
+                               </property>
+                               <property name="text">
+                                <string>蔬菜水果类</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_animalderived_foods">
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="text">
+                                <string>动物性食物</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_soybeans_products_nuts">
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="text">
+                                <string>豆制品，坚果类</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_empty_calorie_foods">
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="text">
+                                <string>纯能量食物</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
                            </widget>
-                          </widget>
-                          <widget class="QWidget" name="vegetables_and_fruitspage">
-                           <widget class="QLabel" name="label_13">
-                            <property name="geometry">
-                             <rect>
-                              <x>330</x>
-                              <y>110</y>
-                              <width>54</width>
-                              <height>16</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>果蔬类展示</string>
-                            </property>
-                           </widget>
-                           <widget class="QPushButton" name="btn_bvegetables_and_fruits_next_page">
-                            <property name="geometry">
-                             <rect>
-                              <x>680</x>
-                              <y>250</y>
-                              <width>75</width>
-                              <height>24</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>下一页</string>
-                            </property>
-                           </widget>
-                          </widget>
-                          <widget class="QWidget" name="animalderived_foodspage">
-                           <widget class="QLabel" name="label_11">
-                            <property name="geometry">
-                             <rect>
-                              <x>280</x>
-                              <y>100</y>
-                              <width>181</width>
-                              <height>20</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>动物类食物展示</string>
-                            </property>
-                           </widget>
-                           <widget class="QPushButton" name="btn_animalderived_foods_next_page">
-                            <property name="geometry">
-                             <rect>
-                              <x>630</x>
-                              <y>240</y>
-                              <width>75</width>
-                              <height>24</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>下一页</string>
-                            </property>
-                           </widget>
-                          </widget>
-                          <widget class="QWidget" name="soybeans_products_nutspage">
-                           <widget class="QLabel" name="label_15">
-                            <property name="geometry">
-                             <rect>
-                              <x>240</x>
-                              <y>120</y>
-                              <width>171</width>
-                              <height>20</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>豆制品，坚果类展示</string>
-                            </property>
-                           </widget>
-                           <widget class="QPushButton" name="btn_soybeans_products_nuts_next_page">
-                            <property name="geometry">
-                             <rect>
-                              <x>670</x>
-                              <y>260</y>
-                              <width>75</width>
-                              <height>24</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>下一页</string>
-                            </property>
-                           </widget>
-                          </widget>
-                          <widget class="QWidget" name="condimentspage">
-                           <widget class="QLabel" name="label_12">
-                            <property name="geometry">
-                             <rect>
-                              <x>273</x>
-                              <y>110</y>
-                              <width>101</width>
-                              <height>20</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>调味品展示</string>
-                            </property>
-                           </widget>
-                           <widget class="QPushButton" name="btn_bcondiments_next_page">
-                            <property name="geometry">
-                             <rect>
-                              <x>670</x>
-                              <y>270</y>
-                              <width>75</width>
-                              <height>24</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>下一页</string>
-                            </property>
-                           </widget>
-                          </widget>
-                          <widget class="QWidget" name="cereals_and_tuberspage">
-                           <widget class="QLabel" name="label_14">
-                            <property name="geometry">
-                             <rect>
-                              <x>320</x>
-                              <y>120</y>
-                              <width>54</width>
-                              <height>16</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>谷薯类</string>
-                            </property>
-                           </widget>
-                           <widget class="QPushButton" name="btn_cereals_and_tubers_next_page">
-                            <property name="geometry">
-                             <rect>
-                              <x>650</x>
-                              <y>240</y>
-                              <width>75</width>
-                              <height>24</height>
-                             </rect>
-                            </property>
-                            <property name="text">
-                             <string>下一页</string>
-                            </property>
-                           </widget>
-                          </widget>
-                         </widget>
+                          </item>
+                         </layout>
                         </widget>
                        </item>
                       </layout>
@@ -2834,7 +2585,350 @@ background-color: rgba(255, 255, 255, 0.7);</string>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="sportspage">
-                      <layout class="QVBoxLayout" name="verticalLayout_20"/>
+                      <layout class="QVBoxLayout" name="verticalLayout_20">
+                       <item>
+                        <widget class="QFrame" name="frame_7">
+                         <property name="frameShape">
+                          <enum>QFrame::Shape::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Shadow::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_17">
+                          <item>
+                           <widget class="QGroupBox" name="groupBox_2">
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>999</height>
+                             </size>
+                            </property>
+                            <property name="title">
+                             <string>运动种类</string>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_8">
+                             <item>
+                              <widget class="QPushButton" name="btn_moderate_aerobic_exercise">
+                               <property name="text">
+                                <string>有氧运动</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_HIIT">
+                               <property name="text">
+                                <string>高强度间歇运动</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_strong_training">
+                               <property name="text">
+                                <string>力量训练</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_ball_sports">
+                               <property name="text">
+                                <string>球类运动</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_outdoor_sports">
+                               <property name="text">
+                                <string>户外运动</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_light_activities">
+                               <property name="text">
+                                <string>日常活动</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QWidget" name="widget" native="true">
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>600</height>
+                             </size>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_9">
+                             <item>
+                              <widget class="QLabel" name="label_23">
+                               <property name="text">
+                                <string>运动时长：</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="sports_time">
+                               <property name="inputMask">
+                                <string/>
+                               </property>
+                               <property name="maxLength">
+                                <number>4</number>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_sports_load">
+                               <property name="text">
+                                <string>确认上传</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item alignment="Qt::AlignmentFlag::AlignBottom">
+                           <widget class="QStackedWidget" name="sports_stackedWidget">
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>900</height>
+                             </size>
+                            </property>
+                            <widget class="QWidget" name="moderate_aerobic_exercisepage">
+                             <layout class="QHBoxLayout" name="horizontalLayout_10">
+                              <item>
+                               <widget class="QPushButton" name="btn_slow_rope_skipping">
+                                <property name="text">
+                                 <string>跳绳</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_regular_cycling">
+                                <property name="text">
+                                 <string>骑自行车</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_leisure_swimming">
+                                <property name="text">
+                                 <string>游泳</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_jogging">
+                                <property name="text">
+                                 <string>慢跑</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_brisk_walking">
+                                <property name="text">
+                                 <string>快步走</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                            <widget class="QWidget" name="HIITpage">
+                             <layout class="QHBoxLayout" name="horizontalLayout_17">
+                              <item>
+                               <widget class="QPushButton" name="btn_burpees">
+                                <property name="text">
+                                 <string>波比跳</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_spring_intervals">
+                                <property name="text">
+                                 <string>短跑冲刺</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_fast_jumping_jacks">
+                                <property name="text">
+                                 <string>开合跳</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_explosive_high_knees">
+                                <property name="text">
+                                 <string>高抬腿</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_fast_rope_skipping">
+                                <property name="text">
+                                 <string>快速跳绳</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                            <widget class="QWidget" name="strong_trainingpage">
+                             <layout class="QHBoxLayout" name="horizontalLayout_18">
+                              <item>
+                               <widget class="QPushButton" name="btn_dumbbell_training">
+                                <property name="text">
+                                 <string>哑铃/杠铃训练</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_push_ups">
+                                <property name="text">
+                                 <string>俯卧撑</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_squats">
+                                <property name="text">
+                                 <string>深蹲</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_plank">
+                                <property name="text">
+                                 <string>平板支撑</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_pull_ups">
+                                <property name="text">
+                                 <string>引体向上</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                            <widget class="QWidget" name="ball_sportspage">
+                             <layout class="QHBoxLayout" name="horizontalLayout_19">
+                              <item>
+                               <widget class="QPushButton" name="btn_basketball">
+                                <property name="text">
+                                 <string>篮球</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_footballsoccer">
+                                <property name="text">
+                                 <string>足球</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_badminton">
+                                <property name="text">
+                                 <string>羽毛球</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_table_tennis">
+                                <property name="text">
+                                 <string>乒乓球</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_tennis">
+                                <property name="text">
+                                 <string>网球</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_volleyball">
+                                <property name="text">
+                                 <string>排球</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                            <widget class="QWidget" name="outdoor_sportspage">
+                             <layout class="QHBoxLayout" name="horizontalLayout_20">
+                              <item>
+                               <widget class="QPushButton" name="btn_hiking">
+                                <property name="text">
+                                 <string>徒步</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_mountain_climbing">
+                                <property name="text">
+                                 <string>登山</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_mountain_biking">
+                                <property name="text">
+                                 <string>山地自行车</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_skiing">
+                                <property name="text">
+                                 <string>滑雪</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_rock_climbing">
+                                <property name="text">
+                                 <string>攀岩</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                            <widget class="QWidget" name="light_activitiespage">
+                             <layout class="QHBoxLayout" name="horizontalLayout_21">
+                              <item>
+                               <widget class="QPushButton" name="btn_walking">
+                                <property name="text">
+                                 <string>散步</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_dog_walking">
+                                <property name="text">
+                                 <string>遛狗</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="btn_gentle_yoya">
+                                <property name="text">
+                                 <string>瑜伽</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </widget>
                    </item>

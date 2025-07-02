@@ -1,4 +1,3 @@
-
 import sys
 import os
 import platform
@@ -8,6 +7,7 @@ from src.mypackage.resources.ui import *
 from src.mypackage.loginwindow import LoginWindow
 from src.mypackage.registerwindow import RegisterWindow
 from src.mypackage.uploadwindow import UploadWindow
+from src.mypackage.informationwindow import InformationWindow
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -23,9 +23,13 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.current_username = None
+
         self.login_window = LoginWindow(self)
         self.register_window = RegisterWindow(self)
         self.upload_window = UploadWindow(self)
+        self.information_window = InformationWindow(self)
+        # self.information_window = InformationWindow(self)
+
         global widgets
         widgets = self.ui
 
@@ -69,16 +73,6 @@ class MainWindow(QMainWindow):
         widgets.btn_change.clicked.connect(self.buttonClick)
         #个人信息编辑功能
         widgets.btn_edit_information.clicked.connect(self.buttonClick)
-        #周步数，运动时间切换
-        widgets.btn_week_step_number_view.clicked.connect(self.buttonClick)
-        widgets.btn_week_exercise_time_view.clicked.connect(self.buttonClick)
-        # #饮食录入功能
-        # widgets.btn_cereals_and_tubers.clicked.connect(self.buttonClick)
-        # widgets.btn_vegetables_and_fruits.clicked.connect(self.buttonClick)
-        # widgets.btn_animalderived_foods.clicked.connect(self.buttonClick)
-        # widgets.btn_soybeans_products_nuts.clicked.connect(self.buttonClick)
-        # widgets.btn_empty_calorie_foods.clicked.connect(self.buttonClick)
-        #运动录入功能
         #运动界面切换
         widgets.btn_moderate_aerobic_exercise.clicked.connect(self.buttonClick)
         widgets.btn_HIIT.clicked.connect(self.buttonClick)
@@ -86,36 +80,7 @@ class MainWindow(QMainWindow):
         widgets.btn_ball_sports.clicked.connect(self.buttonClick)
         widgets.btn_outdoor_sports.clicked.connect(self.buttonClick)
         widgets.btn_light_activities.clicked.connect(self.buttonClick)
-        # #运动选择
-        # widgets.btn_burpees.clicked.connect(self.buttonClick)
-        # widgets.btn_spring_intervals.clicked.connect(self.buttonClick)
-        # widgets.btn_fast_jumping_jacks.clicked.connect(self.buttonClick)
-        # widgets.btn_explosive_high_knees.clicked.connect(self.buttonClick)
-        # widgets.btn_fast_rope_skipping.clicked.connect(self.buttonClick)
-        # widgets.btn_basketball.clicked.connect(self.buttonClick)
-        # widgets.btn_footballsoccer.clicked.connect(self.buttonClick)
-        # widgets.btn_badminton.clicked.connect(self.buttonClick)
-        # widgets.btn_table_tennis.clicked.connect(self.buttonClick)
-        # widgets.btn_tennis.clicked.connect(self.buttonClick)
-        # widgets.btn_volleyball.clicked.connect(self.buttonClick)
-        # widgets.btn_walking.clicked.connect(self.buttonClick)
-        # widgets.btn_dog_walking.clicked.connect(self.buttonClick)
-        # widgets.btn_gentle_yoya.clicked.connect(self.buttonClick)
-        # widgets.btn_slow_rope_skipping.clicked.connect(self.buttonClick)
-        # widgets.btn_regular_cycling.clicked.connect(self.buttonClick)
-        # widgets.btn_leisure_swimming.clicked.connect(self.buttonClick)
-        # widgets.btn_jogging.clicked.connect(self.buttonClick)
-        # widgets.btn_brisk_walking.clicked.connect(self.buttonClick)
-        # widgets.btn_hiking.clicked.connect(self.buttonClick)
-        # widgets.btn_mountain_climbing.clicked.connect(self.buttonClick)
-        # widgets.btn_mountain_biking.clicked.connect(self.buttonClick)
-        # widgets.btn_skiing.clicked.connect(self.buttonClick)
-        # widgets.btn_rock_climbing.clicked.connect(self.buttonClick)
-        # widgets.btn_dumbbell_training.clicked.connect(self.buttonClick)
-        # widgets.btn_push_ups.clicked.connect(self.buttonClick)
-        # widgets.btn_squats.clicked.connect(self.buttonClick)
-        # widgets.btn_plank.clicked.connect(self.buttonClick)
-        # widgets.btn_pull_ups.clicked.connect(self.buttonClick)
+
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -142,6 +107,15 @@ class MainWindow(QMainWindow):
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
+    def update_information(self):
+        self.information_window.information_dict = self.information_window.profileeditor_w.get_user_profile(self.current_username)
+        self.ui.nickname.setText(self.information_window.information_dict['nickname'])
+        self.ui.gender.setText(self.information_window.information_dict['gender'])
+        self.ui.birthdate.setText(self.information_window.information_dict['birthdate'])
+        self.ui.height.setText(self.information_window.information_dict['height'])
+        self.ui.weight.setText(self.information_window.information_dict['weight'])
+        print("update")
+        print(self.information_window.information_dict)
 
     def toggleTheme(self):
         """切换黑白主题并更新按钮颜色"""
@@ -275,6 +249,7 @@ class MainWindow(QMainWindow):
             widgets.sports_stackedWidget.setCurrentWidget(widgets.light_activitiespage)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
 
 
 

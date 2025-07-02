@@ -13,9 +13,9 @@ class GoalManager:
             new_goal: 新的目标时长（分钟）
             
         Returns:
-            bool:操作是否成功
-               #tungtungtungsahur   
-                     
+            包含操作结果的字典:
+                - 'success': bool 表示操作是否成功
+                - 'message': str 详细结果消息    #可以删掉只返回bool值  tungtungtungsahur    
         """
         
         
@@ -44,11 +44,13 @@ class GoalManager:
         """
         exercise_info = ExerciseTypesManager.get_type_by_name(exercise_type)
         if not exercise_info:
-            return {'success': False, 'message': f"目标不存在"}
+            return {'success': False, 'message': f"运动类型 '{exercise_type}' 不存在"}
         
         return {
+            'success': True,
             'exercise_type': exercise_info['type_name'],
-            'current_goal': exercise_info['type_goal']
+            'current_goal': exercise_info['type_goal'],
+            'calorie_factor': exercise_info['calorie_factor']
         }
     
     @staticmethod
@@ -64,10 +66,11 @@ class GoalManager:
         
         for exercise in all_types:
             goals[exercise['type_name']] = {
-                'goal': exercise['type_goal']
+                'goal': exercise['type_goal'],
+                'calorie_factor': exercise['calorie_factor']
             }
         
-        return {'goals': goals}
+        return {'success': True, 'goals': goals}
     
     @staticmethod
     def update_goal(username: str, new_goal:int) -> int:

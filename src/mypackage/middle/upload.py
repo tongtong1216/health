@@ -1,6 +1,6 @@
 #上传运动数据
-from data_managers.daily_exercise_manager import DailyExerciseManager
-from data_managers.diet_records_manager import DietRecordsManager
+from ..data_managers.daily_exercise_manager import DailyExerciseManager
+from ..data_managers.diet_records_manager import DietRecordsManager
 from  datetime import datetime
 
 class Upload:

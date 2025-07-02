@@ -8,7 +8,7 @@ import random
 class Health_report:
 
     @staticmethod
-    def health_analysis(username:str)->dict:
+    def health_report(username:str)->dict:
         """健康数据分析方法
         :param username: 用户名
         :return:
@@ -33,7 +33,31 @@ class Health_report:
         user_data = UserProfileManager.get_profile(username)
         weight_data = user_data['weight']
         height_data = user_data['height'] / 100
-        
+        gender_data = user_data['gender']
+        birthday = user_data['birthdate']
+        #获取身高体重
+        if weight_data is None:
+            weight = "未录入"
+        else:
+            weight = weight_data
+        if height_data is None:
+            height = "未录入"
+        else:
+            height = height_data
+        #计算年龄
+        if birthday is None:
+            age = "未录入"
+        else:
+            today = date.today()
+            age = today.year - birthday.year
+
+        #解析性别
+        if gender_data == "male":
+            gender = "男性"
+        elif gender_data == "female":
+            gender = "女性"
+        else:
+            gender = "未录入"
         #获取用户近一周运动数据
         exercise_data = Visualization.weekly_data(username)
         #获取用户健康数据
@@ -115,72 +139,10 @@ class Health_report:
 
         #健康报告生成
         return {
-            'bmi':bmi_round,
-            'bmi_eval':bmi_eval,
-            'exercise_data':exercise_data['total_duration'],
-            'exercise_eval':exercise_eval,
-            'sleep_time':sleep_time,
-            'sleep_eval':sleep_eval,
-            'heart_rate':heart_rate,
-            'heart_eval':heart_eval,
-            'bp_data':blood_pressure_data,
-            'bp_eval':bp_eval,
-            'blood_glucose':blood_glucose,
-            'glucose_eval':glucose_eval
-        }
-    
-    @staticmethod
-    def health_report(username:str):
-
-        #获取用户基本数据
-        user_data = UserProfileManager.get_profile(username)
-        weight_data = user_data['weight']
-        height_data = user_data['height'] / 100
-        gender_data = user_data['gender']
-        birthday = user_data['birthdate']
-        #获取身高体重
-        if weight_data is None:
-            weight = "未录入"
-        else:
-            weight = weight_data
-        if height_data is None:
-            height = "未录入"
-        else:
-            height = height_data
-        #计算年龄
-        if birthday is None:
-            age = "未录入"
-        else:
-            today = date.today()
-            age = today.year - birthday.year
-
-        #解析性别
-        if gender_data == "male":
-            gender = "男性"
-        elif gender_data == "female":
-            gender = "女性"
-        else:
-            gender = "未录入"
-
-        health_data = Health_report.health_analysis(username)
-        bmi_round = health_data['bmi']
-        bmi_eval = health_data['bmi_eval']
-        duration = health_data['exercise_data']
-        exercise_eval = health_data['exercise_eval']
-        sleep_time = health_data['sleep_time']
-        sleep_eval = health_data['sleep_eval']
-        heart_rate = health_data['heart_rate']
-        heart_eval = health_data['heart_eval']
-        blood_pressure_data = health_data['bp_data']
-        bp_eval = health_data['bp_eval']
-        blood_glucose = health_data['blood_glucose']
-        glucose_eval = ['glucose_eval']
-
-        return{
             '标题':f"{username}健康报告",
             '个人信息':f"年龄:{age},性别:{gender},身高:{height}米,体重:{weight}千克",
             'bmi评估':f"BMI值{bmi_round},{bmi_eval}",
-            '运动量评估':f"最近一周锻炼时间:{duration},运动量评估:{exercise_eval}",
+            '运动量评估':f"最近一周锻炼时间:{exercise_data['total_duration']},运动量评估:{exercise_eval}",
             '睡眠情况评估':f"睡眠时间:{sleep_time},睡眠情况评估:{sleep_eval}",
             '静息心率状况评估':f"静息心率:{heart_rate},心率状况评估:{heart_eval}",
             '血压状况评估':f"血压值（收缩压/舒张压）:{blood_pressure_data},血压状况评估:{bp_eval}",
@@ -199,41 +161,22 @@ class Health_report:
         today_data = Visualization.today_data(username)
         #初始化运动时间目标完成状态
         duration_status = "未完成"
-        tips = "今天还没开始运动，抓紧时间完成目标吧"
+
         #根据目标完成进度设置完成状态
         if today_data['total_duration'] >= today_data['total_goal']:
             duration_status = "已完成"
-            tips = "恭喜你完成今日目标"
         elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
             duration_status = "几乎完成"
-            tips = "今天目标就要完成了，终点就在眼前"
         elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
             duration_status = "已完成一半"
-            tips = "今天目标已经完成一半了，继续努力"
-        
-        #获取健康数据
-        health_data = Health_report.health_analysis(username)
-        sleep_eval = health_data['sleep_eval']
-        heart_eval = health_data['heart_eval']
-        bp_eval = health_data['bp_eval']
-        glucose_eval = ['glucose_eval']
-        
-        result = {'目标完成状况':f"今日目标{duration_status}。{tips}"}
 
-        if sleep_eval == "睡眠时间不足" or sleep_eval == "睡眠时间过长":
-            result['睡眠状况'] = f"今日睡眠状况:{sleep_eval}"
-        
-        if heart_eval == "心率偏低" or heart_eval == "心率偏高":
-            result['心率状况'] = f"今日心率状况:{heart_eval}"
-        
-        if bp_eval != "正常":
-            result['血压状况'] = f"今日血压状况:{bp_eval}"
-        
-        if glucose_eval == "血糖较低" or glucose_eval == "血糖偏高":
-            result['空腹血糖状况'] = f"今日空腹血糖状况:{glucose_eval}"
-        
-        return result
- 
+        #完成任务后展示健康小提示
+        all_tips = ["早睡早起身体好","避免久坐多运动"]
+        tips = random.choice(all_tips)
+        if duration_status == "已完成":
+            return tips
+        else:
+            return f"今日任务完成情况:{duration_status}"
             
         
 

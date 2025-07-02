@@ -1,6 +1,6 @@
 from typing import Dict, Any, Optional
-from data_managers.profile_manager import UserProfileManager 
-from data_managers.usrname_to_id import get_user_id
+from ..data_managers.profile_manager import UserProfileManager
+from ..data_managers.usrname_to_id import get_user_id
 from middle.read_image import read_image
 
 class ProfileEditor:

@@ -2,10 +2,10 @@
 #需实现获取今日运动时间和目标运动时间以及卡路里收支
 #需获取一周内的总运动时间和目标运动时间以及总卡路里收支
 from  datetime import datetime,timedelta
-from data_managers.daily_exercise_manager import DailyExerciseManager
-from data_managers.exercise_types_manager import ExerciseTypesManager
-from data_managers.diet_records_manager import DietRecordsManager
-from data_managers.profile_manager import UserProfileManager
+from ..data_managers.daily_exercise_manager import DailyExerciseManager
+from ..data_managers.exercise_types_manager import ExerciseTypesManager
+from ..data_managers.diet_records_manager import DietRecordsManager
+from ..data_managers.profile_manager import UserProfileManager
 
 class Visualization:
 

@@ -1,4 +1,7 @@
 import sys
+
+from .informationwindow import InformationWindow
+from .middle.Information import ProfileEditor
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox,QLineEdit
 from .resources.ui.ui_main import Ui_MainWindow
 from .middle.register import Register
@@ -8,6 +11,9 @@ class RegisterWindow:
         self.main_window = main_window
         self.ui = main_window.ui
 
+        self.profileeditor_w = ProfileEditor()
+        self.information_w = InformationWindow(self.main_window)
+
         self.ui.btn_register.clicked.connect(self.handle_register)
 
         self.register_w = Register()
@@ -15,9 +21,32 @@ class RegisterWindow:
     def handle_register(self):
         username = self.ui.username.text()
         password = self.ui.password.text()
-
         status = self.register_w.register(username, password)
+        if(status == 4):
+            self.main_window.current_username = username
+            print(status)
+            self.ui.stackedWidget.setCurrentWidget(self.main_window.ui.edit_informationpage)
+            self.ui.btn_confirm.clicked.connect(
+                lambda: self.register_information(username, password, status)
+            )
+        else:
+            self.show_login_result(status,username)
 
+
+    def register_information(self,username,password,status):
+        selected_date = self.ui.dateEdit.date()
+        birthdate = selected_date.toString("yyyy-MM-dd")
+        print("regiser",birthdate)
+        information_dict = {
+            'nickname': self.ui.name_change.text(),
+            'gender': self.ui.sex_change.text(),
+            'birthdate': birthdate,
+            'height': self.ui.height_change.text(),
+            'weight': self.ui.weight_change.text(),
+        }
+        print("register",information_dict)
+        self.profileeditor_w.edit_profile(self.main_window.current_username, information_dict)
+        self.main_window.update_information()
         self.show_login_result(status, username)
 
     def show_login_result(self, status, username):
@@ -50,5 +79,3 @@ class RegisterWindow:
         # 在UI中显示文本
         self.ui.login_text.setText(message)
 
-        # 调试输出
-        print(f"登录状态: {status} - {message}")

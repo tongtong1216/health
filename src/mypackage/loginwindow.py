@@ -1,38 +1,8 @@
-# import sys
-# from PySide6.QtWidgets import QApplication, QMainWindow
-# from .resources.ui.ui_main import Ui_MainWindow
-# from .middle.login import Login
-#
-# class LoginWindow(QMainWindow):
-#     def __init__(self):
-#         super().__init__()
-#         self.ui = Ui_MainWindow()
-#         self.ui.setupUi(self)
-#         self.login_w=Login()
-#         self.ui.btn_log_in.clicked.connect(self.handle_login)
-#
-#
-#     #返回登录结果
-#     def handle_login(self):
-#         Username = self.ui.username.text()
-#         Password = self.ui.password.text()
-#         status=self.login_w.login(Username,Password)
-#         if status==1:
-#             self.ui.login_text.setText("登录失败，账户或密码不能为空")
-#         if status==2:
-#             self.ui.login_text.setText("登录失败，用户不存在")
-#         if status==3:
-#             self.ui.login_text.setText("用户已被锁定，请稍后再试")
-#         if status==4:
-#             self.ui.login_text.setText("登录失败，密码错误")
-#         if status==5:
-#             self.ui.login_text.setText("登录失败，系统错误")
-#         if status==6:
-#             self.ui.login_text.setText("登录成功")
-#
-#
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
+
+from .informationwindow import InformationWindow
+from .middle.Information import ProfileEditor
 from .resources.ui.ui_main import Ui_MainWindow
 from .middle.login import Login
 
@@ -85,6 +55,7 @@ class LoginWindow:
         if status == 6:
             msg_box.setIcon(QMessageBox.Information)
             self.main_window.current_username = username
+            self.information_window = InformationWindow(self.main_window)
         else:
             msg_box.setIcon(QMessageBox.Warning)
 
