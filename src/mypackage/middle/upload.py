@@ -13,9 +13,9 @@ class Upload:
         #获取今日的运动记录
         today_exercise_records = DailyExerciseManager.get_user_exercise_records(username,today,today)
 
-        #判断运动时间是否超过一天的时间，超过则返回4
+        #判断运动时间是否超过一天的时间，超过则返回3
         if duration > 1440:
-            return 4
+            return 3
         
         #获取该项运动的总时长
         old_duration = 0

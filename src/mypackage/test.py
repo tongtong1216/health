@@ -21,7 +21,7 @@ if __name__ == "__main__":
     weight = 65
     profile_data = {'nickname':"x",'gender':gender,'birthdate':birthdate,'height':height,'weight':weight}
     #result = Register.register(username,password)
-    #result = Upload.upload_exercise_data(username,type_name,duration)
+    result = Upload.upload_exercise_data(username,type_name,duration)
     #result = Upload.upload_food_data(username,foodname,quantity)
     #result = Visualization.today_data(username)
     #result = DailyExerciseManager.get_user_exercise_records(username)
@@ -33,5 +33,5 @@ if __name__ == "__main__":
     #result = MetricsManagerUserHealth.create_health_metrics(username,70,"123/65",4.2,8)
     #result = MetricsManagerUserHealth.get_health_metrics(username)
     #result = Health_report.health_report(username)
-    result = Health_report.health_tips(username)
+    #result = Health_report.health_tips(username)
     print(result)
