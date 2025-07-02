@@ -11,28 +11,48 @@ class InformationWindow:
 
         self.profileeditor_w = ProfileEditor()
 
-        self.information_dict={}
+        self.information_dict={
+            'nickname':'',
+            'gender':'',
+            'height':'',
+            'weight':'',
+            'birthday':'',
+        }
         self.ui.btn_confirm.clicked.connect(self.handle_edit_information)
 
 
-    # def update_information(self):
-    #     self.information_dict = self.profileeditor_w.get_user_profile(self.main_window.current_username)
-    #     self.ui.nickname.setText(self.information_dict['nickname'])
-    #     self.ui.gender.setText(self.information_dict['gender'])
-    #     self.ui.birthdate.setText(self.information_dict['birthdate'])
-    #     self.ui.height.setText(self.information_dict['height'])
-    #     self.ui.weight.setText(self.information_dict['weight'])
+    def update_information(self):
+        print("update1")
+        print(self.information_dict)
+        self.information_dict = self.profileeditor_w.get_user_profile(self.main_window.current_username)
+        print("update2")
+        print(self.information_dict)
+        height_str=str(self.information_dict['height'])
+        weight_str=str(self.information_dict['weight'])
+        self.ui.nickname.setText(self.information_dict['nickname'])
+        self.ui.gender.setText(self.information_dict['gender'])
+        self.ui.height.setText(height_str)
+        self.ui.weight.setText(weight_str)
+        self.ui.birthdate.setText(self.information_dict['birthdate'])
 
     def handle_edit_information(self):
-        self.information_dict["nickname"] = self.ui.nickname.text()
-        self.information_dict["gender"] = self.ui.gender.text()
-        self.information_dict["birthdate"] = self.ui.birthdate.text()
-        self.information_dict["height"] = self.ui.height.text()
-        self.information_dict["weight"] = self.ui.weight.text()
+        selected_date = self.ui.dateEdit.date()
+        birthdate = selected_date.toString("yyyy-MM-dd")
+        print(self.main_window.current_username)
+
+        self.information_dict["nickname"] = self.ui.name_change.text()
+        self.information_dict["gender"] = self.ui.sex_change.text()
+        self.information_dict["birthdate"] = birthdate
+        self.information_dict["height"] = self.ui.height_change.text()
+        self.information_dict["weight"] = self.ui.weight_change.text()
+        print("edit")
         print(self.information_dict)
+        print("下面为current_username")
+        print(self.main_window.current_username)
         status=self.profileeditor_w.edit_profile(self.main_window.current_username,self.information_dict)
+        print("edit")
         print(status)
-        self.main_window.update_information()
+        self.update_information()
         self.show_edit_result(status)
 
     def show_edit_result(self, status):

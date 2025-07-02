@@ -107,15 +107,15 @@ class MainWindow(QMainWindow):
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
-    def update_information(self):
-        self.information_window.information_dict = self.information_window.profileeditor_w.get_user_profile(self.current_username)
-        self.ui.nickname.setText(self.information_window.information_dict['nickname'])
-        self.ui.gender.setText(self.information_window.information_dict['gender'])
-        self.ui.birthdate.setText(self.information_window.information_dict['birthdate'])
-        self.ui.height.setText(self.information_window.information_dict['height'])
-        self.ui.weight.setText(self.information_window.information_dict['weight'])
-        print("update")
-        print(self.information_window.information_dict)
+    # def update_information(self):
+    #     self.information_window.information_dict = self.information_window.profileeditor_w.get_user_profile(self.current_username)
+    #     self.ui.nickname.setText(self.information_window.information_dict['nickname'])
+    #     self.ui.gender.setText(self.information_window.information_dict['gender'])
+    #     self.ui.birthdate.setText(self.information_window.information_dict['birthdate'])
+    #     self.ui.height.setText(self.information_window.information_dict['height'])
+    #     self.ui.weight.setText(self.information_window.information_dict['weight'])
+    #     print("update")
+    #     print(self.information_window.information_dict)
 
     def toggleTheme(self):
         """切换黑白主题并更新按钮颜色"""
@@ -189,6 +189,8 @@ class MainWindow(QMainWindow):
         #切换到信息编辑页面
         if btnName == "btn_information":
             widgets.stackedWidget.setCurrentWidget(widgets.informationpage)
+            self.information_window.update_information()
+            print("informationpage")
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
