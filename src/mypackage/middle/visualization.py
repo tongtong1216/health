@@ -9,7 +9,7 @@ from data_managers.diet_records_manager import DietRecordsManager
 class Visualization:
 
     @staticmethod
-    def daily_data(username:str,day:datetime.date) -> dict:
+    def daily_data(username:str,day) -> dict:
 
         #获取一天运动记录
         daily_exercise_records = DailyExerciseManager.get_user_exercise_records(username,day,day)
@@ -34,7 +34,11 @@ class Visualization:
         names = [d["type_name"] for d in daily_exercise_records] 
         for name in names:
             type_data = ExerciseTypesManager.get_type_by_name(name)
-            total_goal += type_data['type_goal']
+            if type_data['type_goal'] is None:
+                total_goal = -1
+                break
+            else:
+                total_goal += type_data['type_goal']
 
         return {
             'total_duration':total_duration,

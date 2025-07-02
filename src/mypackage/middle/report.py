@@ -1,7 +1,7 @@
 
 from data_managers.profile_manager import UserProfileManager
 from middle.visualization import Visualization
-from data_managers.metrics_manager import MetricsManagerUserHealth
+from data_managers.metrics_manager import MetricsManager
 import random
 
 class Health_report:
@@ -14,7 +14,7 @@ class Health_report:
         #获取用户近一周运动数据
         exercise_data = Visualization.weekly_data(username)
         #获取用户健康数据
-        health_data = MetricsManagerUserHealth.get_health_metrics(username)
+        health_data = MetricsManager.get_health_metrics(username)
         sleep_time = health_data['sleep_duration']#睡眠时长
         heart_rate = health_data['heart_rate']#静息心率
         blood_pressure_data = health_data['blood_pressure']#血压值（收缩压/舒张压）
@@ -26,9 +26,11 @@ class Health_report:
         dbp = int(dbp_data)
 
         #计算BMI
-        if user_data['weight'] is None or user_data['height'] is None:
+        weight = user_data['weight']
+        height = user_data['height'] / 100
+        if weight is None or height is None:
             bmi_eval = "无身高或体重记录"
-        bmi = user_data['weight'] / (user_data['height'] ** 2)
+        bmi = weight / (height ** 2)
         if bmi < 18.5:
             bmi_eval = "偏瘦"
         elif bmi < 24:
@@ -37,7 +39,7 @@ class Health_report:
             bmi_eval = "超重"
         else:
             bmi_eval = "肥胖"
-
+        bmi_round = round(bmi,2)
         #运动量评估
         if exercise_data['total_duration'] < exercise_data['total_goal'] *0.6:
             exercise_eval = "运动不足"
@@ -92,12 +94,13 @@ class Health_report:
 
         #健康报告生成
         report = f"{username}健康报告\n"
-        report += f"BMI指数:{bmi},{bmi_eval}\n"
+        report += f"BMI指数:{bmi_round},{bmi_eval}\n"
         report += f"运动量评估:近一周运动时间为{exercise_data['total_duration']},{exercise_eval}\n"
         report += f"睡眠质量评估:睡眠时间为:{sleep_time},{sleep_eval}\n"
         report += f"心率状况评估:静息心率为:{heart_rate},{heart_eval}\n"
         report += f"血压状况评估:收缩压/舒张压为:{blood_pressure_data},{bp_eval}\n"
         report += f"血糖状况评估:空腹血糖为:{blood_glucose},{glucose_eval}"
+        return report
 
     @staticmethod
     def health_tips(username:str)->str:
@@ -106,13 +109,15 @@ class Health_report:
         today_data = Visualization.today_data(username)
         #初始化运动时间目标完成状态
         duration_status = "未完成"
-
+        if today_data['total_goal'] == -1:
+            duration_status = "目标未设定"
+        else:
         #根据目标完成进度设置完成状态
-        if today_data['total_duration'] >= today_data['total_goal']:
+         if today_data['total_duration'] >= today_data['total_goal']:
             duration_status = "已完成"
-        elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
+         elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
             duration_status = "几乎完成"
-        elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
+         elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
             duration_status = "已完成一半"
 
         #完成任务后展示健康小提示
@@ -121,7 +126,7 @@ class Health_report:
         if duration_status == "已完成":
             return tips
         else:
-            return f"今日任务:{duration_status}"
+            return f"今日任务完成情况:{duration_status}"
             
         
 
