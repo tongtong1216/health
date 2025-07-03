@@ -26,6 +26,7 @@ class SocialWindow():
         self.ui.btn_confirmpost.clicked.connect(self.myposts)
         self.ui.btn_image_load.clicked.connect(self.select_image)
         self.ui.btn_post.clicked.connect(self.setimage)
+        self.ui.btn_pre_page.clicked.connect(self.pre_page)
 
 
     def setimage(self):
@@ -33,6 +34,8 @@ class SocialWindow():
 
     def like(self):
         self.social_w.increment_like_count(self.nowid)
+        posts = self.social_w.get_post_by_id(self.nowid, include_image=True)
+        self.ui.like_line.setText(str(posts['like_count']))
 
 
     def refresh(self):
@@ -40,6 +43,7 @@ class SocialWindow():
         posts=self.social_w.get_post_by_id(self.nowid,include_image=True)
         self.ui.textEdit_2.setText(str(posts['content']))
         self.ui.like_line.setText(str(posts['like_count']))
+        self.ui.lable_username.setText(str(posts['nickname']))
         image = QImage()
         if not image.loadFromData(posts['image_data']):
             self.ui.label_25.setText("无法加载图片数据")
@@ -48,19 +52,42 @@ class SocialWindow():
         self.ui.label_25.setPixmap(pixmap)
 
 
+    def pre_page(self):
+        self.ui.label_25.clear()
+        self.nowid = self.nowid + 1
+        id=self.social_w.get_max_post_id()
+        if(self.nowid>=id):
+            self.nowid=id
+        else:
+            posts = self.social_w.get_post_by_id(self.nowid, include_image=True)
+            self.ui.textEdit_2.setText(str(posts['content']))
+            self.ui.like_line.setText(str(posts['like_count']))
+            image_date=posts['image_data']
+            image = QImage()
+            if not image.loadFromData(image_date):
+                self.ui.label_24.setText("无法加载图片数据")
+                return False
+
+            pixmap = QPixmap.fromImage(image)
+            self.ui.label_25.setPixmap(pixmap)
 
     def next_page(self):
+        self.ui.label_25.clear()
         self.nowid=self.nowid-1
-        posts=self.social_w.get_post_by_id(self.nowid,include_image=True)
-        self.ui.textEdit_2.setText(str(posts['content']))
-        self.ui.like_line.setText(str(posts['like_count']))
-        image = QImage()
-        if not image.loadFromData(posts['image_data']):
-            self.ui.label_24.setText("无法加载图片数据")
-            return False
+        if(self.nowid<=0):
+            self.nowid=0
+        else:
+            posts = self.social_w.get_post_by_id(self.nowid, include_image=True)
+            self.ui.textEdit_2.setText(str(posts['content']))
+            self.ui.like_line.setText(str(posts['like_count']))
+            image_date = posts['image_data']
+            image = QImage()
+            if not image.loadFromData(image_date):
+                self.ui.label_24.setText("无法加载图片数据")
+                return False
 
-        pixmap = QPixmap.fromImage(image)
-        self.ui.label_24.setPixmap(pixmap)
+            pixmap = QPixmap.fromImage(image)
+            self.ui.label_25.setPixmap(pixmap)
 
 
     def myposts(self):

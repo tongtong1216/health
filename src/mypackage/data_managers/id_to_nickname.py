@@ -18,4 +18,4 @@ def id_to_nickname(user_id: int) -> str:
     
     if not result:
         raise ValueError(f"用户ID '{user_id}' 不存在")
-    return result[0]["usrname"]
+    return result[0]["nickname"]

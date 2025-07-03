@@ -36,9 +36,53 @@ class VisualizationWindow:
 
         # 初始化坐标轴
         self.ax = None
+        self.index=-1
+        self.diets_keys=[]
+        self.sports_keys=[]
+        self.sports_dict={}
+        self.diets_dict={}
 
         self.ui.btn_visual.clicked.connect(self.handle_visual)
         self.ui.btn_visual.clicked.connect(self.update_progress)
+
+        self.ui.btn_diets_visual.clicked.connect(self.diets_show)
+        self.ui.btn_sports_visual.clicked.connect(self.sports_show)
+
+        self.ui.pushButton_2.clicked.connect(self.next_diets)
+        self.ui.pushButton.clicked.connect(self.next_sports)
+
+
+
+    def next(self):
+        """获取下一个键"""
+        if not self.keys:
+            return None  # 空字典返回None
+
+        self.index = (self.index + 1) % len(self.keys)
+        return self.keys[self.index]
+
+    def diets_show(self):
+        self.diets_dict = self.visual_w.get_today_exercise_records(self.main_window.current_username)
+        self.diets_keys = list(self.diets_dict.keys())
+
+
+    def sports_show(self):
+        self.sports_dict=self.visual_w.get_today_exercise_records(self.main_window.current_username)
+        self.sports_keys=list(self.sports_dict.keys())
+
+
+
+    def next_sports(self):
+        key = self.next()
+        tip = self.sports_dict[key]
+        self.ui.lineEdit_2.setText(tip)
+
+
+    def next_diets(self):
+        key = self.next()
+        tip = self.diets_dict[key]
+        self.ui.lineEdit.setText(tip)
+
 
     def handle_visual(self):
         """完全去除图例的简洁组合图"""

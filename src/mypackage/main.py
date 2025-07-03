@@ -36,7 +36,7 @@ class MainWindow(QMainWindow):
         self.report_window = ReportWindow(self)
         self.visualization_window = VisualizationWindow(self)
         self.social_window = SocialWindow(self)
-        # self.information_window = InformationWindow(self)
+
 
         global widgets
         widgets = self.ui
@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
 
         # APP NAME
         # ///////////////////////////////////////////////////////////////
-        title = "PyDracula - Modern GUI"
+        title = "健康管理系统"
         description = "健康管理也能很有趣！打卡、挑战、数据可视化，让自律变轻松"
         # APPLY TEXTS
         self.setWindowTitle(title)
@@ -57,8 +57,6 @@ class MainWindow(QMainWindow):
 
         # SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
-
-
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
@@ -109,25 +107,14 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.show()
 
-        # SET CUSTOM THEME
-        # ///////////////////////////////////////////////////////////////
         # main.py
         self.current_theme = "dark"
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.stackedWidget.setCurrentWidget(widgets.home)
+        widgets.stackedWidget.setCurrentWidget(widgets.enterpage)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
-    # def update_information(self):
-    #     self.information_window.information_dict = self.information_window.profileeditor_w.get_user_profile(self.current_username)
-    #     self.ui.nickname.setText(self.information_window.information_dict['nickname'])
-    #     self.ui.gender.setText(self.information_window.information_dict['gender'])
-    #     self.ui.birthdate.setText(self.information_window.information_dict['birthdate'])
-    #     self.ui.height.setText(self.information_window.information_dict['height'])
-    #     self.ui.weight.setText(self.information_window.information_dict['weight'])
-    #     print("update")
-    #     print(self.information_window.information_dict)
 
     def toggleTheme(self):
         """切换黑白主题并更新按钮颜色"""

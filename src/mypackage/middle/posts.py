@@ -5,6 +5,8 @@ from typing import Dict, List, Optional, Any, Union
 from data_managers.posts_manager import PostManager
 from data_managers.usrname_to_id import get_user_id
 from .read_image import read_image
+from ..data_managers.id_to_nickname import id_to_nickname
+
 
 class PostService:
     @staticmethod
@@ -141,7 +143,7 @@ class PostService:
         """
         try:
             post = PostManager.get_post_by_id(post_id, include_image)
-            post['nickname'] = get_user_id(post['user_id'])
+            post['nickname'] = id_to_nickname(post['user_id'])
             return post
         except Exception :
             return 0

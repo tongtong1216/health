@@ -96,7 +96,7 @@ class Visualization:
         exercise_records = DailyExerciseManager.get_user_exercise_records(username,day,day)
         
         result = [
-            {"运动日期":d["exercise_date"],"运动类型":d["type_name"],"运动时间":d["duration"],"卡路里消耗":d['calories']}
+            {"运动日期":d["exercise_date"].strftime('%Y-%m-%d'),"运动类型":d["type_name"],"运动时间":d["duration"],"卡路里消耗":d['calories']}
             for d in exercise_records
         ]
         return result
@@ -133,7 +133,8 @@ class Visualization:
                         if item.get("运动类型") == name:
                             duration = item["运动时间"]
                             calories = item["卡路里消耗"]
-                            result.append({"运动日期":current_date,"运动类型":name,"运动时间":duration,"卡路里消耗":calories})
+                            date_str = str(current_date)
+                            result.append({"运动日期":date_str,"运动类型":name,"运动时间":duration,"卡路里消耗":calories})
                             break
             current_date += timedelta(days=1)
         
@@ -145,7 +146,7 @@ class Visualization:
         food_records = DietRecordsManager.get_user_diet_records(username,day,day)
 
         result = [
-            {"摄入日期":d["intake_date"],"食物名称":d["food_name"],"摄入数量":d["quantity"],"卡路里摄入":d['calories']}
+            {"摄入日期":d["intake_date"].strftime('%Y-%m-%d'),"食物名称":d["food_name"],"摄入数量":d["quantity"],"卡路里摄入":d['calories']}
             for d in food_records
         ]
 
@@ -182,7 +183,8 @@ class Visualization:
                         if item.get("食物名称") == name:
                             quantity = item["摄入数量"]
                             calories = item["卡路里摄入"]
-                            result.append({"摄入日期":current_date,"食物名称":name,"摄入数量":quantity,"卡路里摄入":calories})
+                            date_str = str(current_date)
+                            result.append({"摄入日期":date_str,"食物名称":name,"摄入数量":quantity,"卡路里摄入":calories})
                             break
             current_date += timedelta(days=1)
         

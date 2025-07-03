@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainNgfdTq.ui'
+## Form generated from reading UI file 'mainoWiWOr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1613,7 +1613,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_23.setStretch(2, 1)
         self.horizontalLayout_23.setStretch(3, 3)
 
-        self.gridLayout.addWidget(self.widget_2, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.widget_2, 2, 0, 1, 1)
 
         self.groupBox = QGroupBox(self.frame)
         self.groupBox.setObjectName(u"groupBox")
@@ -1663,6 +1663,33 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 1)
+
+        self.widget_27 = QWidget(self.frame)
+        self.widget_27.setObjectName(u"widget_27")
+        self.horizontalLayout_44 = QHBoxLayout(self.widget_27)
+        self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
+        self.label_31 = QLabel(self.widget_27)
+        self.label_31.setObjectName(u"label_31")
+
+        self.horizontalLayout_44.addWidget(self.label_31)
+
+        self.btn_diets_visual = QPushButton(self.widget_27)
+        self.btn_diets_visual.setObjectName(u"btn_diets_visual")
+
+        self.horizontalLayout_44.addWidget(self.btn_diets_visual)
+
+        self.lineEdit_2 = QLineEdit(self.widget_27)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.horizontalLayout_44.addWidget(self.lineEdit_2)
+
+        self.pushButton_2 = QPushButton(self.widget_27)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+
+        self.horizontalLayout_44.addWidget(self.pushButton_2)
+
+
+        self.gridLayout.addWidget(self.widget_27, 1, 0, 1, 1)
 
         self.gridLayout.setRowStretch(0, 4)
         self.gridLayout.setRowStretch(1, 1)
@@ -1777,9 +1804,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_31.addWidget(self.label_21)
 
+        self.lable_username = QLabel(self.widget_15)
+        self.lable_username.setObjectName(u"lable_username")
+
+        self.horizontalLayout_31.addWidget(self.lable_username)
+
         self.horizontalLayout_31.setStretch(0, 2)
         self.horizontalLayout_31.setStretch(1, 1)
         self.horizontalLayout_31.setStretch(2, 18)
+        self.horizontalLayout_31.setStretch(3, 2)
 
         self.verticalLayout_24.addWidget(self.widget_15)
 
@@ -1794,6 +1827,11 @@ class Ui_MainWindow(object):
         self.stackedWidget_2.addWidget(self.socialpage1)
 
         self.verticalLayout_25.addWidget(self.stackedWidget_2)
+
+        self.btn_pre_page = QPushButton(self.frame_4)
+        self.btn_pre_page.setObjectName(u"btn_pre_page")
+
+        self.verticalLayout_25.addWidget(self.btn_pre_page)
 
         self.btn_next_page = QPushButton(self.frame_4)
         self.btn_next_page.setObjectName(u"btn_next_page")
@@ -1875,6 +1913,28 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_17.addWidget(self.widget)
+
+        self.widget_26 = QWidget(self.frame_7)
+        self.widget_26.setObjectName(u"widget_26")
+        self.horizontalLayout_43 = QHBoxLayout(self.widget_26)
+        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
+        self.btn_sports_visual = QPushButton(self.widget_26)
+        self.btn_sports_visual.setObjectName(u"btn_sports_visual")
+
+        self.horizontalLayout_43.addWidget(self.btn_sports_visual)
+
+        self.lineEdit = QLineEdit(self.widget_26)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.horizontalLayout_43.addWidget(self.lineEdit)
+
+        self.pushButton = QPushButton(self.widget_26)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.horizontalLayout_43.addWidget(self.pushButton)
+
+
+        self.verticalLayout_17.addWidget(self.widget_26)
 
         self.sports_stackedWidget = QStackedWidget(self.frame_7)
         self.sports_stackedWidget.setObjectName(u"sports_stackedWidget")
@@ -2059,7 +2119,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.setStretch(0, 4)
         self.verticalLayout_17.setStretch(1, 1)
-        self.verticalLayout_17.setStretch(2, 4)
+        self.verticalLayout_17.setStretch(2, 1)
+        self.verticalLayout_17.setStretch(3, 4)
 
         self.verticalLayout_20.addWidget(self.frame_7)
 
@@ -2205,7 +2266,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget_2.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2308,6 +2370,9 @@ class Ui_MainWindow(object):
         self.btn_animalderived_foods.setText(QCoreApplication.translate("MainWindow", u"\u52a8\u7269\u6027\u98df\u7269", None))
         self.btn_soybeans_products_nuts.setText(QCoreApplication.translate("MainWindow", u"\u8c46\u5236\u54c1\uff0c\u575a\u679c\u7c7b", None))
         self.btn_empty_calorie_foods.setText(QCoreApplication.translate("MainWindow", u"\u7eaf\u80fd\u91cf\u98df\u7269", None))
+        self.label_31.setText("")
+        self.btn_diets_visual.setText(QCoreApplication.translate("MainWindow", u"\u5c55\u793a\u996e\u98df\u6570\u636e\uff1a", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u9879", None))
         self.label.setText("")
         self.btn_post.setText(QCoreApplication.translate("MainWindow", u"\u53d1\u5e16\u5b50", None))
         self.btn_refresh.setText(QCoreApplication.translate("MainWindow", u"\u5237\u65b0", None))
@@ -2318,6 +2383,8 @@ class Ui_MainWindow(object):
         self.label_29.setText("")
         self.btn_like.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u8d5e", None))
         self.label_21.setText("")
+        self.lable_username.setText("")
+        self.btn_pre_page.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u4e00\u9875", None))
         self.btn_next_page.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u9875", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"\u8fd0\u52a8\u79cd\u7c7b", None))
         self.btn_moderate_aerobic_exercise.setText(QCoreApplication.translate("MainWindow", u"\u6709\u6c27\u8fd0\u52a8", None))
@@ -2329,6 +2396,8 @@ class Ui_MainWindow(object):
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u52a8\u65f6\u957f\uff1a", None))
         self.sports_time.setInputMask("")
         self.btn_sports_load.setText(QCoreApplication.translate("MainWindow", u"\u786e\u8ba4\u4e0a\u4f20", None))
+        self.btn_sports_visual.setText(QCoreApplication.translate("MainWindow", u"\u5c55\u793a\u8fd0\u52a8\u6570\u636e\uff1a", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u9879", None))
         self.btn_slow_rope_skipping.setText(QCoreApplication.translate("MainWindow", u"\u8df3\u7ef3", None))
         self.btn_regular_cycling.setText(QCoreApplication.translate("MainWindow", u"\u9a91\u81ea\u884c\u8f66", None))
         self.btn_leisure_swimming.setText(QCoreApplication.translate("MainWindow", u"\u6e38\u6cf3", None))

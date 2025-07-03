@@ -19,6 +19,8 @@ class LoginWindow:
         # 连接登录按钮
         self.ui.btn_log_in.clicked.connect(self.handle_login)
 
+        self.ui.btn_logout.clicked.connect(self.handle_logout)
+
         # 初始化登录逻辑
         self.login_w = Login()
 
@@ -33,6 +35,11 @@ class LoginWindow:
         # 根据状态码显示结果
         self.show_login_result(status, username)
 
+    def handle_logout(self):
+        username=self.main_window.current_username
+        status=7
+        self.show_login_result(status, username)
+
     def show_login_result(self, status, username):
         """根据登录状态显示结果消息"""
         messages = {
@@ -41,7 +48,8 @@ class LoginWindow:
             3: ("账户锁定", "用户已被锁定，请稍后再试"),
             4: ("登录失败", "密码错误"),
             5: ("系统错误", "登录失败，系统错误"),
-            6: ("登录成功", f"欢迎回来，{username}!")
+            6: ("登录成功", f"欢迎回来，{username}!"),
+            7:("退出成功",f"期待再次与你相遇，{username}")
         }
 
         title, message = messages.get(status, ("未知状态", "发生未知错误"))
@@ -56,6 +64,11 @@ class LoginWindow:
             msg_box.setIcon(QMessageBox.Information)
             self.main_window.current_username = username
             self.information_window = InformationWindow(self.main_window)
+        elif status == 7:
+            msg_box.setIcon(QMessageBox.Information)
+            self.main_window.current_username = None
+            self.information_window = InformationWindow(self.main_window)
+            self.ui.stackedWidget.setCurrentWidget(self.ui.enterpage)
         else:
             msg_box.setIcon(QMessageBox.Warning)
 
