@@ -1874,7 +1874,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -1891,35 +1891,53 @@ background-repeat: no-repeat;</string>
                          <property name="frameShadow">
                           <enum>QFrame::Shadow::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_22">
+                         <layout class="QVBoxLayout" name="verticalLayout_22" stretch="4,1,1,1,2,1">
                           <item>
                            <widget class="QWidget" name="widget_11" native="true">
-                            <widget class="QGroupBox" name="groupBox_3">
+                            <widget class="QFrame" name="day_visual">
                              <property name="geometry">
                               <rect>
-                               <x>20</x>
+                               <x>40</x>
                                <y>10</y>
-                               <width>361</width>
-                               <height>151</height>
+                               <width>311</width>
+                               <height>181</height>
                               </rect>
                              </property>
-                             <property name="title">
-                              <string>日运动时间可视化</string>
+                             <property name="styleSheet">
+                              <string notr="true">backgroundcolor:rgb(255, 255, 255);</string>
                              </property>
+                             <property name="frameShape">
+                              <enum>QFrame::Shape::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Shadow::Raised</enum>
+                             </property>
+                             <layout class="QHBoxLayout" name="horizontalLayout_27"/>
                             </widget>
-                            <widget class="QGroupBox" name="groupBox_4">
+                            <widget class="QFrame" name="week_visual">
                              <property name="geometry">
                               <rect>
-                               <x>410</x>
-                               <y>10</y>
-                               <width>361</width>
-                               <height>151</height>
+                               <x>440</x>
+                               <y>9</y>
+                               <width>321</width>
+                               <height>181</height>
                               </rect>
                              </property>
-                             <property name="title">
-                              <string>周运动时间可视化</string>
+                             <property name="frameShape">
+                              <enum>QFrame::Shape::StyledPanel</enum>
                              </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Shadow::Raised</enum>
+                             </property>
+                             <layout class="QHBoxLayout" name="horizontalLayout_28"/>
                             </widget>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_visual">
+                            <property name="text">
+                             <string>运动时长可视化展示</string>
+                            </property>
                            </widget>
                           </item>
                           <item alignment="Qt::AlignmentFlag::AlignBottom">
@@ -1934,19 +1952,42 @@ background-repeat: no-repeat;</string>
                              <item>
                               <widget class="QLabel" name="label_4">
                                <property name="text">
-                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;卡路里收支：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;卡路里摄入：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLineEdit" name="lineEdit"/>
+                              <widget class="QLineEdit" name="calories_intake_line"/>
                              </item>
                             </layout>
                            </widget>
                           </item>
-                          <item alignment="Qt::AlignmentFlag::AlignBottom">
+                          <item>
+                           <widget class="QWidget" name="widget_13" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout_29">
+                             <item>
+                              <widget class="QLabel" name="label_15">
+                               <property name="text">
+                                <string>卡路里消耗：</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="calories_consumption_line"/>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
                            <widget class="QWidget" name="widget_10" native="true">
                             <layout class="QHBoxLayout" name="horizontalLayout_25">
+                             <item>
+                              <widget class="QPushButton" name="btn_creat_tips">
+                               <property name="text">
+                                <string>点击查看健康小提示</string>
+                               </property>
+                              </widget>
+                             </item>
                              <item>
                               <widget class="QLabel" name="label_12">
                                <property name="text">
@@ -1955,10 +1996,10 @@ background-repeat: no-repeat;</string>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QLineEdit" name="lineEdit_2"/>
+                              <widget class="QLineEdit" name="health_tips_line"/>
                              </item>
                              <item>
-                              <widget class="QPushButton" name="pushButton">
+                              <widget class="QPushButton" name="btn_health_tips">
                                <property name="text">
                                 <string>下一个</string>
                                </property>
@@ -1979,7 +2020,55 @@ background-repeat: no-repeat;</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="week_step_numberpage"/>
+                     <widget class="QWidget" name="postpage">
+                      <layout class="QVBoxLayout" name="verticalLayout_28">
+                       <item>
+                        <widget class="QWidget" name="widget_16" native="true">
+                         <layout class="QHBoxLayout" name="horizontalLayout_32" stretch="8,1">
+                          <item>
+                           <widget class="QLabel" name="label_22">
+                            <property name="text">
+                             <string/>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_confimrpost">
+                            <property name="text">
+                             <string>确认发帖</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_9">
+                         <property name="frameShape">
+                          <enum>QFrame::Shape::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Shadow::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_27" stretch="1,1">
+                          <item>
+                           <widget class="QTextEdit" name="textEdit_4"/>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame_10">
+                            <property name="frameShape">
+                             <enum>QFrame::Shape::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Shadow::Raised</enum>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
                      <widget class="QWidget" name="goalsettingpage">
                       <layout class="QVBoxLayout" name="verticalLayout_23">
                        <item>
@@ -2576,59 +2665,103 @@ background-repeat: no-repeat;</string>
                          <property name="frameShadow">
                           <enum>QFrame::Shadow::Raised</enum>
                          </property>
-                         <widget class="QPushButton" name="btn_refresh">
-                          <property name="geometry">
-                           <rect>
-                            <x>700</x>
-                            <y>20</y>
-                            <width>75</width>
-                            <height>51</height>
-                           </rect>
-                          </property>
-                          <property name="text">
-                           <string>刷新</string>
-                          </property>
-                         </widget>
-                         <widget class="QFrame" name="frame_5">
-                          <property name="geometry">
-                           <rect>
-                            <x>40</x>
-                            <y>99</y>
-                            <width>731</width>
-                            <height>361</height>
-                           </rect>
-                          </property>
-                          <property name="cursor">
-                           <cursorShape>ArrowCursor</cursorShape>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::Shape::StyledPanel</enum>
-                          </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Shadow::Raised</enum>
-                          </property>
-                          <widget class="QLabel" name="label">
-                           <property name="geometry">
-                            <rect>
-                             <x>330</x>
-                             <y>140</y>
-                             <width>121</width>
-                             <height>81</height>
-                            </rect>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Segoe UI</family>
-                             <pointsize>10</pointsize>
-                             <italic>false</italic>
-                             <bold>false</bold>
-                            </font>
-                           </property>
-                           <property name="text">
-                            <string>帖子内容</string>
-                           </property>
-                          </widget>
-                         </widget>
+                         <layout class="QVBoxLayout" name="verticalLayout_25">
+                          <item>
+                           <widget class="QWidget" name="widget_14" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout_30" stretch="9,1,1">
+                             <item>
+                              <widget class="QLabel" name="label">
+                               <property name="text">
+                                <string/>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_post">
+                               <property name="text">
+                                <string>发帖子</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_refresh">
+                               <property name="text">
+                                <string>刷新</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QStackedWidget" name="stackedWidget_2">
+                            <widget class="QWidget" name="socialpage_2">
+                             <layout class="QVBoxLayout" name="verticalLayout_24" stretch="4,4,0">
+                              <item>
+                               <widget class="QTextEdit" name="textEdit_2"/>
+                              </item>
+                              <item>
+                               <widget class="QFrame" name="frame_5">
+                                <property name="frameShape">
+                                 <enum>QFrame::Shape::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Shadow::Raised</enum>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QWidget" name="widget_15" native="true">
+                                <layout class="QHBoxLayout" name="horizontalLayout_31" stretch="2,1,18">
+                                 <item>
+                                  <widget class="QPushButton" name="btn_like">
+                                   <property name="text">
+                                    <string>点赞</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QLineEdit" name="like_line"/>
+                                 </item>
+                                 <item>
+                                  <widget class="QLabel" name="label_21">
+                                   <property name="text">
+                                    <string/>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                            <widget class="QWidget" name="socialpage1">
+                             <layout class="QVBoxLayout" name="verticalLayout_26" stretch="4,4">
+                              <item>
+                               <widget class="QTextEdit" name="textEdit_3"/>
+                              </item>
+                              <item>
+                               <widget class="QFrame" name="frame_8">
+                                <property name="frameShape">
+                                 <enum>QFrame::Shape::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Shadow::Raised</enum>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_next_page">
+                            <property name="text">
+                             <string>下一页</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
                         </widget>
                        </item>
                       </layout>

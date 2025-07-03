@@ -177,28 +177,48 @@ class Health_report:
         }
 
     @staticmethod
-    def health_tips(username:str)->str:
+    def health_tips(username: str) -> dict:
         """健康建议方法
         :param username: 用户名
-        :return: str 健康提示或运动完成状态
+        :return:
+            str: 包含用户健康建议的字符串
         """
+
+        # 获取今日的运动数据
         today_data = Visualization.today_data(username)
+        # 初始化运动时间目标完成状态
         duration_status = "未完成"
-        
+        tips = "今天还没开始运动，抓紧时间完成目标吧"
         # 根据目标完成进度设置完成状态
         if today_data['total_duration'] >= today_data['total_goal']:
             duration_status = "已完成"
+            tips = "恭喜你完成今日目标"
         elif today_data['total_duration'] >= today_data['total_goal'] * 0.8:
             duration_status = "几乎完成"
+            tips = "今天目标就要完成了，终点就在眼前"
         elif today_data['total_duration'] >= today_data['total_goal'] * 0.5:
             duration_status = "已完成一半"
+            tips = "今天目标已经完成一半了，继续努力"
 
-        all_tips = [
-            "早睡早起身体好",
-            "避免久坐多运动",
-            "多吃蔬菜水果，保持均衡饮食",
-            "定期体检，及时了解身体状况",
-            "保持心情愉悦，心理健康同样重要"
-        ]
-        
-        return random.choice(all_tips) if duration_status == "已完成" else f"今日任务完成情况: {duration_status}"
+        # 获取健康数据
+        health_data = Health_report.health_analysis(username)
+        sleep_eval = health_data['sleep_eval']
+        heart_eval = health_data['heart_eval']
+        bp_eval = health_data['bp_eval']
+        glucose_eval = ['glucose_eval']
+
+        result = {'目标完成状况': f"今日目标{duration_status}。{tips}"}
+
+        if sleep_eval == "睡眠时间不足" or sleep_eval == "睡眠时间过长":
+            result['睡眠状况'] = f"今日睡眠状况:{sleep_eval}"
+
+        if heart_eval == "心率偏低" or heart_eval == "心率偏高":
+            result['心率状况'] = f"今日心率状况:{heart_eval}"
+
+        if bp_eval != "正常":
+            result['血压状况'] = f"今日血压状况:{bp_eval}"
+
+        if glucose_eval == "血糖较低" or glucose_eval == "血糖偏高":
+            result['空腹血糖状况'] = f"今日空腹血糖状况:{glucose_eval}"
+
+        return result

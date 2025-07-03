@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainHVaYie.ui'
+## Form generated from reading UI file 'mainNgfdTq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1169,47 +1169,105 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.sports_time_view)
 
         self.stackedWidget.addWidget(self.home)
-        self.week_step_numberpage = QWidget()
-        self.week_step_numberpage.setObjectName(u"week_step_numberpage")
-        self.stackedWidget.addWidget(self.week_step_numberpage)
+        self.postpage = QWidget()
+        self.postpage.setObjectName(u"postpage")
+        self.verticalLayout_28 = QVBoxLayout(self.postpage)
+        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
+        self.widget_16 = QWidget(self.postpage)
+        self.widget_16.setObjectName(u"widget_16")
+        self.horizontalLayout_32 = QHBoxLayout(self.widget_16)
+        self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
+        self.label_22 = QLabel(self.widget_16)
+        self.label_22.setObjectName(u"label_22")
+
+        self.horizontalLayout_32.addWidget(self.label_22)
+
+        self.btn_confirmpost = QPushButton(self.widget_16)
+        self.btn_confirmpost.setObjectName(u"btn_confirmpost")
+
+        self.horizontalLayout_32.addWidget(self.btn_confirmpost)
+
+        self.horizontalLayout_32.setStretch(0, 8)
+        self.horizontalLayout_32.setStretch(1, 1)
+
+        self.verticalLayout_28.addWidget(self.widget_16)
+
+        self.frame_9 = QFrame(self.postpage)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_27 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
+        self.textEdit_4 = QTextEdit(self.frame_9)
+        self.textEdit_4.setObjectName(u"textEdit_4")
+
+        self.verticalLayout_27.addWidget(self.textEdit_4)
+
+        self.widget_17 = QWidget(self.frame_9)
+        self.widget_17.setObjectName(u"widget_17")
+        self.horizontalLayout_33 = QHBoxLayout(self.widget_17)
+        self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
+        self.btn_image_load = QPushButton(self.widget_17)
+        self.btn_image_load.setObjectName(u"btn_image_load")
+
+        self.horizontalLayout_33.addWidget(self.btn_image_load)
+
+
+        self.verticalLayout_27.addWidget(self.widget_17, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.verticalLayout_27.setStretch(0, 3)
+        self.verticalLayout_27.setStretch(1, 1)
+
+        self.verticalLayout_28.addWidget(self.frame_9)
+
+        self.stackedWidget.addWidget(self.postpage)
         self.goalsettingpage = QWidget()
         self.goalsettingpage.setObjectName(u"goalsettingpage")
         self.verticalLayout_23 = QVBoxLayout(self.goalsettingpage)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.frame_6 = QFrame(self.goalsettingpage)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
-        self.horizontalLayout_26 = QHBoxLayout(self.frame_6)
+        self.widget_6 = QWidget(self.goalsettingpage)
+        self.widget_6.setObjectName(u"widget_6")
+        self.horizontalLayout_26 = QHBoxLayout(self.widget_6)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.label_13 = QLabel(self.frame_6)
+        self.label_13 = QLabel(self.widget_6)
         self.label_13.setObjectName(u"label_13")
 
         self.horizontalLayout_26.addWidget(self.label_13)
 
-        self.goalsetting_line = QLineEdit(self.frame_6)
+        self.goalsetting_line = QLineEdit(self.widget_6)
         self.goalsetting_line.setObjectName(u"goalsetting_line")
 
         self.horizontalLayout_26.addWidget(self.goalsetting_line)
 
-        self.label_14 = QLabel(self.frame_6)
+        self.label_14 = QLabel(self.widget_6)
         self.label_14.setObjectName(u"label_14")
 
         self.horizontalLayout_26.addWidget(self.label_14)
 
-        self.btn_goalsetting_confirm = QPushButton(self.frame_6)
-        self.btn_goalsetting_confirm.setObjectName(u"btn_goalsetting_confirm")
 
-        self.horizontalLayout_26.addWidget(self.btn_goalsetting_confirm)
-
-
-        self.verticalLayout_23.addWidget(self.frame_6)
+        self.verticalLayout_23.addWidget(self.widget_6)
 
         self.widget_12 = QWidget(self.goalsettingpage)
         self.widget_12.setObjectName(u"widget_12")
+        self.horizontalLayout_40 = QHBoxLayout(self.widget_12)
+        self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
+        self.widget_24 = QWidget(self.widget_12)
+        self.widget_24.setObjectName(u"widget_24")
+        self.horizontalLayout_41 = QHBoxLayout(self.widget_24)
+        self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
+        self.btn_goalsetting_confirm = QPushButton(self.widget_24)
+        self.btn_goalsetting_confirm.setObjectName(u"btn_goalsetting_confirm")
+
+        self.horizontalLayout_41.addWidget(self.btn_goalsetting_confirm)
+
+
+        self.horizontalLayout_40.addWidget(self.widget_24, 0, Qt.AlignmentFlag.AlignTop)
+
 
         self.verticalLayout_23.addWidget(self.widget_12)
 
+        self.verticalLayout_23.setStretch(0, 2)
+        self.verticalLayout_23.setStretch(1, 1)
         self.stackedWidget.addWidget(self.goalsettingpage)
         self.enterpage = QWidget()
         self.enterpage.setObjectName(u"enterpage")
@@ -1282,6 +1340,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.nickname)
 
+        self.horizontalLayout_11.setStretch(0, 1)
+        self.horizontalLayout_11.setStretch(1, 3)
 
         self.verticalLayout_19.addWidget(self.widget_4)
 
@@ -1300,26 +1360,30 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addWidget(self.gender)
 
+        self.horizontalLayout_12.setStretch(0, 1)
+        self.horizontalLayout_12.setStretch(1, 3)
 
         self.verticalLayout_19.addWidget(self.widget_5)
 
-        self.widget_6 = QWidget(self.frame_2)
-        self.widget_6.setObjectName(u"widget_6")
-        self.horizontalLayout_13 = QHBoxLayout(self.widget_6)
+        self.widget_61 = QWidget(self.frame_2)
+        self.widget_61.setObjectName(u"widget_61")
+        self.horizontalLayout_13 = QHBoxLayout(self.widget_61)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.label_7 = QLabel(self.widget_6)
+        self.label_7 = QLabel(self.widget_61)
         self.label_7.setObjectName(u"label_7")
 
         self.horizontalLayout_13.addWidget(self.label_7)
 
-        self.height = QLineEdit(self.widget_6)
+        self.height = QLineEdit(self.widget_61)
         self.height.setObjectName(u"height")
         self.height.setReadOnly(True)
 
         self.horizontalLayout_13.addWidget(self.height)
 
+        self.horizontalLayout_13.setStretch(0, 1)
+        self.horizontalLayout_13.setStretch(1, 3)
 
-        self.verticalLayout_19.addWidget(self.widget_6)
+        self.verticalLayout_19.addWidget(self.widget_61)
 
         self.widget_7 = QWidget(self.frame_2)
         self.widget_7.setObjectName(u"widget_7")
@@ -1336,6 +1400,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addWidget(self.weight)
 
+        self.horizontalLayout_14.setStretch(0, 1)
+        self.horizontalLayout_14.setStretch(1, 3)
 
         self.verticalLayout_19.addWidget(self.widget_7)
 
@@ -1354,6 +1420,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.birthdate)
 
+        self.horizontalLayout_15.setStretch(0, 1)
+        self.horizontalLayout_15.setStretch(1, 3)
 
         self.verticalLayout_19.addWidget(self.widget_8)
 
@@ -1374,47 +1442,132 @@ class Ui_MainWindow(object):
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
-        self.dateEdit = QDateEdit(self.frame_3)
+        self.verticalLayout_29 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.widget_23 = QWidget(self.frame_3)
+        self.widget_23.setObjectName(u"widget_23")
+        self.horizontalLayout_39 = QHBoxLayout(self.widget_23)
+        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.label_24 = QLabel(self.widget_23)
+        self.label_24.setObjectName(u"label_24")
+
+        self.horizontalLayout_39.addWidget(self.label_24)
+
+        self.btn_return = QPushButton(self.widget_23)
+        self.btn_return.setObjectName(u"btn_return")
+
+        self.horizontalLayout_39.addWidget(self.btn_return)
+
+        self.horizontalLayout_39.setStretch(0, 9)
+        self.horizontalLayout_39.setStretch(1, 1)
+
+        self.verticalLayout_29.addWidget(self.widget_23)
+
+        self.widget_18 = QWidget(self.frame_3)
+        self.widget_18.setObjectName(u"widget_18")
+        self.horizontalLayout_34 = QHBoxLayout(self.widget_18)
+        self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
+        self.label_16 = QLabel(self.widget_18)
+        self.label_16.setObjectName(u"label_16")
+
+        self.horizontalLayout_34.addWidget(self.label_16)
+
+        self.name_change = QLineEdit(self.widget_18)
+        self.name_change.setObjectName(u"name_change")
+
+        self.horizontalLayout_34.addWidget(self.name_change)
+
+        self.horizontalLayout_34.setStretch(0, 1)
+        self.horizontalLayout_34.setStretch(1, 3)
+
+        self.verticalLayout_29.addWidget(self.widget_18)
+
+        self.widget_19 = QWidget(self.frame_3)
+        self.widget_19.setObjectName(u"widget_19")
+        self.horizontalLayout_35 = QHBoxLayout(self.widget_19)
+        self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.label_17 = QLabel(self.widget_19)
+        self.label_17.setObjectName(u"label_17")
+
+        self.horizontalLayout_35.addWidget(self.label_17)
+
+        self.sex_change = QLineEdit(self.widget_19)
+        self.sex_change.setObjectName(u"sex_change")
+
+        self.horizontalLayout_35.addWidget(self.sex_change)
+
+        self.horizontalLayout_35.setStretch(0, 1)
+        self.horizontalLayout_35.setStretch(1, 3)
+
+        self.verticalLayout_29.addWidget(self.widget_19)
+
+        self.widget_20 = QWidget(self.frame_3)
+        self.widget_20.setObjectName(u"widget_20")
+        self.horizontalLayout_36 = QHBoxLayout(self.widget_20)
+        self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
+        self.label_18 = QLabel(self.widget_20)
+        self.label_18.setObjectName(u"label_18")
+
+        self.horizontalLayout_36.addWidget(self.label_18)
+
+        self.height_change = QLineEdit(self.widget_20)
+        self.height_change.setObjectName(u"height_change")
+
+        self.horizontalLayout_36.addWidget(self.height_change)
+
+        self.horizontalLayout_36.setStretch(0, 1)
+        self.horizontalLayout_36.setStretch(1, 3)
+
+        self.verticalLayout_29.addWidget(self.widget_20)
+
+        self.widget_21 = QWidget(self.frame_3)
+        self.widget_21.setObjectName(u"widget_21")
+        self.horizontalLayout_37 = QHBoxLayout(self.widget_21)
+        self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
+        self.label_19 = QLabel(self.widget_21)
+        self.label_19.setObjectName(u"label_19")
+
+        self.horizontalLayout_37.addWidget(self.label_19)
+
+        self.weight_change = QLineEdit(self.widget_21)
+        self.weight_change.setObjectName(u"weight_change")
+
+        self.horizontalLayout_37.addWidget(self.weight_change)
+
+        self.horizontalLayout_37.setStretch(0, 1)
+        self.horizontalLayout_37.setStretch(1, 3)
+
+        self.verticalLayout_29.addWidget(self.widget_21)
+
+        self.widget_22 = QWidget(self.frame_3)
+        self.widget_22.setObjectName(u"widget_22")
+        self.horizontalLayout_38 = QHBoxLayout(self.widget_22)
+        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
+        self.label_20 = QLabel(self.widget_22)
+        self.label_20.setObjectName(u"label_20")
+
+        self.horizontalLayout_38.addWidget(self.label_20)
+
+        self.dateEdit = QDateEdit(self.widget_22)
         self.dateEdit.setObjectName(u"dateEdit")
-        self.dateEdit.setGeometry(QRect(300, 220, 122, 22))
         self.dateEdit.setMaximumDateTime(QDateTime(QDate(2025, 12, 31), QTime(23, 59, 59)))
         self.dateEdit.setMaximumDate(QDate(2025, 12, 31))
         self.dateEdit.setMinimumDate(QDate(1900, 9, 14))
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setCurrentSectionIndex(0)
-        self.label_16 = QLabel(self.frame_3)
-        self.label_16.setObjectName(u"label_16")
-        self.label_16.setGeometry(QRect(160, 50, 54, 16))
-        self.label_17 = QLabel(self.frame_3)
-        self.label_17.setObjectName(u"label_17")
-        self.label_17.setGeometry(QRect(160, 96, 54, 20))
-        self.label_18 = QLabel(self.frame_3)
-        self.label_18.setObjectName(u"label_18")
-        self.label_18.setGeometry(QRect(160, 140, 54, 16))
-        self.label_19 = QLabel(self.frame_3)
-        self.label_19.setObjectName(u"label_19")
-        self.label_19.setGeometry(QRect(160, 180, 54, 16))
-        self.label_20 = QLabel(self.frame_3)
-        self.label_20.setObjectName(u"label_20")
-        self.label_20.setGeometry(QRect(160, 220, 54, 16))
-        self.name_change = QLineEdit(self.frame_3)
-        self.name_change.setObjectName(u"name_change")
-        self.name_change.setGeometry(QRect(300, 50, 113, 20))
-        self.sex_change = QLineEdit(self.frame_3)
-        self.sex_change.setObjectName(u"sex_change")
-        self.sex_change.setGeometry(QRect(300, 100, 113, 20))
-        self.height_change = QLineEdit(self.frame_3)
-        self.height_change.setObjectName(u"height_change")
-        self.height_change.setGeometry(QRect(300, 140, 113, 20))
-        self.weight_change = QLineEdit(self.frame_3)
-        self.weight_change.setObjectName(u"weight_change")
-        self.weight_change.setGeometry(QRect(300, 190, 113, 20))
+
+        self.horizontalLayout_38.addWidget(self.dateEdit)
+
+        self.horizontalLayout_38.setStretch(0, 1)
+        self.horizontalLayout_38.setStretch(1, 3)
+
+        self.verticalLayout_29.addWidget(self.widget_22)
+
         self.btn_confirm = QPushButton(self.frame_3)
         self.btn_confirm.setObjectName(u"btn_confirm")
-        self.btn_confirm.setGeometry(QRect(290, 290, 75, 24))
-        self.btn_return = QPushButton(self.frame_3)
-        self.btn_return.setObjectName(u"btn_return")
-        self.btn_return.setGeometry(QRect(690, 10, 75, 24))
+
+        self.verticalLayout_29.addWidget(self.btn_confirm)
+
 
         self.verticalLayout_15.addWidget(self.frame_3)
 
@@ -1455,6 +1608,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_23.addWidget(self.btn_food_load)
 
+        self.horizontalLayout_23.setStretch(0, 4)
+        self.horizontalLayout_23.setStretch(1, 9)
+        self.horizontalLayout_23.setStretch(2, 1)
+        self.horizontalLayout_23.setStretch(3, 3)
 
         self.gridLayout.addWidget(self.widget_2, 1, 0, 1, 1)
 
@@ -1507,6 +1664,8 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 1)
 
+        self.gridLayout.setRowStretch(0, 4)
+        self.gridLayout.setRowStretch(1, 1)
 
         self.verticalLayout_16.addWidget(self.frame)
 
@@ -1522,19 +1681,125 @@ class Ui_MainWindow(object):
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
-        self.btn_refresh = QPushButton(self.frame_4)
+        self.verticalLayout_25 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.widget_14 = QWidget(self.frame_4)
+        self.widget_14.setObjectName(u"widget_14")
+        self.horizontalLayout_30 = QHBoxLayout(self.widget_14)
+        self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
+        self.label = QLabel(self.widget_14)
+        self.label.setObjectName(u"label")
+
+        self.horizontalLayout_30.addWidget(self.label)
+
+        self.btn_post = QPushButton(self.widget_14)
+        self.btn_post.setObjectName(u"btn_post")
+
+        self.horizontalLayout_30.addWidget(self.btn_post)
+
+        self.btn_refresh = QPushButton(self.widget_14)
         self.btn_refresh.setObjectName(u"btn_refresh")
-        self.btn_refresh.setGeometry(QRect(700, 20, 75, 51))
-        self.frame_5 = QFrame(self.frame_4)
+
+        self.horizontalLayout_30.addWidget(self.btn_refresh)
+
+        self.horizontalLayout_30.setStretch(0, 9)
+        self.horizontalLayout_30.setStretch(1, 1)
+        self.horizontalLayout_30.setStretch(2, 1)
+
+        self.verticalLayout_25.addWidget(self.widget_14)
+
+        self.stackedWidget_2 = QStackedWidget(self.frame_4)
+        self.stackedWidget_2.setObjectName(u"stackedWidget_2")
+        self.socialpage_2 = QWidget()
+        self.socialpage_2.setObjectName(u"socialpage_2")
+        self.verticalLayout_24 = QVBoxLayout(self.socialpage_2)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.textEdit_2 = QTextEdit(self.socialpage_2)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+
+        self.verticalLayout_24.addWidget(self.textEdit_2)
+
+        self.widget_25 = QWidget(self.socialpage_2)
+        self.widget_25.setObjectName(u"widget_25")
+        self.label_26 = QLabel(self.widget_25)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setGeometry(QRect(10, 0, 54, 16))
+        self.label_27 = QLabel(self.widget_25)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setGeometry(QRect(740, 0, 54, 16))
+
+        self.verticalLayout_24.addWidget(self.widget_25)
+
+        self.frame_5 = QFrame(self.socialpage_2)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setGeometry(QRect(40, 99, 731, 361))
-        self.frame_5.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
-        self.label = QLabel(self.frame_5)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(330, 140, 121, 81))
-        self.label.setFont(font)
+        self.horizontalLayout_42 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
+        self.label_28 = QLabel(self.frame_5)
+        self.label_28.setObjectName(u"label_28")
+
+        self.horizontalLayout_42.addWidget(self.label_28)
+
+        self.label_25 = QLabel(self.frame_5)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setScaledContents(True)
+
+        self.horizontalLayout_42.addWidget(self.label_25)
+
+        self.label_29 = QLabel(self.frame_5)
+        self.label_29.setObjectName(u"label_29")
+
+        self.horizontalLayout_42.addWidget(self.label_29)
+
+        self.horizontalLayout_42.setStretch(0, 1)
+        self.horizontalLayout_42.setStretch(1, 3)
+        self.horizontalLayout_42.setStretch(2, 1)
+
+        self.verticalLayout_24.addWidget(self.frame_5)
+
+        self.widget_15 = QWidget(self.socialpage_2)
+        self.widget_15.setObjectName(u"widget_15")
+        self.horizontalLayout_31 = QHBoxLayout(self.widget_15)
+        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
+        self.btn_like = QPushButton(self.widget_15)
+        self.btn_like.setObjectName(u"btn_like")
+
+        self.horizontalLayout_31.addWidget(self.btn_like)
+
+        self.like_line = QLineEdit(self.widget_15)
+        self.like_line.setObjectName(u"like_line")
+
+        self.horizontalLayout_31.addWidget(self.like_line)
+
+        self.label_21 = QLabel(self.widget_15)
+        self.label_21.setObjectName(u"label_21")
+
+        self.horizontalLayout_31.addWidget(self.label_21)
+
+        self.horizontalLayout_31.setStretch(0, 2)
+        self.horizontalLayout_31.setStretch(1, 1)
+        self.horizontalLayout_31.setStretch(2, 18)
+
+        self.verticalLayout_24.addWidget(self.widget_15)
+
+        self.verticalLayout_24.setStretch(0, 2)
+        self.verticalLayout_24.setStretch(2, 6)
+        self.verticalLayout_24.setStretch(3, 1)
+        self.stackedWidget_2.addWidget(self.socialpage_2)
+        self.socialpage1 = QWidget()
+        self.socialpage1.setObjectName(u"socialpage1")
+        self.verticalLayout_26 = QVBoxLayout(self.socialpage1)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.stackedWidget_2.addWidget(self.socialpage1)
+
+        self.verticalLayout_25.addWidget(self.stackedWidget_2)
+
+        self.btn_next_page = QPushButton(self.frame_4)
+        self.btn_next_page.setObjectName(u"btn_next_page")
+
+        self.verticalLayout_25.addWidget(self.btn_next_page)
+
 
         self.verticalLayout.addWidget(self.frame_4)
 
@@ -1792,6 +2057,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.addWidget(self.sports_stackedWidget, 0, Qt.AlignmentFlag.AlignBottom)
 
+        self.verticalLayout_17.setStretch(0, 4)
+        self.verticalLayout_17.setStretch(1, 1)
+        self.verticalLayout_17.setStretch(2, 4)
 
         self.verticalLayout_20.addWidget(self.frame_7)
 
@@ -1937,7 +2205,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2004,6 +2272,9 @@ class Ui_MainWindow(object):
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5065\u5eb7\u5c0f\u63d0\u793a", None))
         self.btn_health_tips.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u4e2a", None))
         self.btn_goalsetting.setText(QCoreApplication.translate("MainWindow", u"\u8bbe\u7f6e\u6bcf\u65e5\u8fd0\u52a8\u65f6\u957f\u76ee\u6807", None))
+        self.label_22.setText("")
+        self.btn_confirmpost.setText(QCoreApplication.translate("MainWindow", u"\u786e\u8ba4\u53d1\u5e16", None))
+        self.btn_image_load.setText(QCoreApplication.translate("MainWindow", u"\u4e0a\u4f20\u56fe\u7247", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u8bf7\u8f93\u5165\u6bcf\u65e5\u76ee\u6807\u8fd0\u52a8\u65f6\u957f\uff1a", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"min", None))
         self.btn_goalsetting_confirm.setText(QCoreApplication.translate("MainWindow", u"\u786e\u8ba4\u4e0a\u4f20", None))
@@ -2018,14 +2289,15 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u4f53       \u91cd\uff1a", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u51fa\u751f\u65e5\u671f\uff1a", None))
         self.btn_edit_information.setText(QCoreApplication.translate("MainWindow", u"\u7f16\u8f91\u4e2a\u4eba\u4fe1\u606f", None))
-        self.dateEdit.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy/MM/dd", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u6027\u522b", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"\u8eab\u9ad8", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u4f53\u91cd", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u51fa\u751f\u65e5\u671f", None))
-        self.btn_confirm.setText(QCoreApplication.translate("MainWindow", u"\u786e\u8ba4\u66f4\u6539", None))
+        self.label_24.setText("")
         self.btn_return.setText(QCoreApplication.translate("MainWindow", u"\u8fd4\u56de", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u6635\u79f0:", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u6027\u522b:", None))
+        self.label_18.setText(QCoreApplication.translate("MainWindow", u"\u8eab\u9ad8:", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u4f53\u91cd:", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u51fa\u751f\u65e5\u671f:", None))
+        self.dateEdit.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy/MM/dd", None))
+        self.btn_confirm.setText(QCoreApplication.translate("MainWindow", u"\u786e\u8ba4\u66f4\u6539", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u98df\u7269\u6444\u5165\u91cf\uff1a", None))
         self.food_intake.setInputMask("")
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"g\u6216ml", None))
@@ -2036,8 +2308,17 @@ class Ui_MainWindow(object):
         self.btn_animalderived_foods.setText(QCoreApplication.translate("MainWindow", u"\u52a8\u7269\u6027\u98df\u7269", None))
         self.btn_soybeans_products_nuts.setText(QCoreApplication.translate("MainWindow", u"\u8c46\u5236\u54c1\uff0c\u575a\u679c\u7c7b", None))
         self.btn_empty_calorie_foods.setText(QCoreApplication.translate("MainWindow", u"\u7eaf\u80fd\u91cf\u98df\u7269", None))
+        self.label.setText("")
+        self.btn_post.setText(QCoreApplication.translate("MainWindow", u"\u53d1\u5e16\u5b50", None))
         self.btn_refresh.setText(QCoreApplication.translate("MainWindow", u"\u5237\u65b0", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u5e16\u5b50\u5185\u5bb9", None))
+        self.label_26.setText("")
+        self.label_27.setText("")
+        self.label_28.setText("")
+        self.label_25.setText("")
+        self.label_29.setText("")
+        self.btn_like.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u8d5e", None))
+        self.label_21.setText("")
+        self.btn_next_page.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u9875", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"\u8fd0\u52a8\u79cd\u7c7b", None))
         self.btn_moderate_aerobic_exercise.setText(QCoreApplication.translate("MainWindow", u"\u6709\u6c27\u8fd0\u52a8", None))
         self.btn_HIIT.setText(QCoreApplication.translate("MainWindow", u"\u9ad8\u5f3a\u5ea6\u95f4\u6b47\u8fd0\u52a8", None))

@@ -18,8 +18,10 @@ class ReportWindow:
         self.ui.btn_health_tips.clicked.connect(self.handle_report)
 
     def creat_tips(self):
-        self.data_dict=self.report_w.health_report(self.main_window.current_username)
+        self.data_dict=self.report_w.health_tips(self.main_window.current_username)
+        print(self.data_dict)
         self.keys=list(self.data_dict.keys())
+        self.handle_report()
 
     def next(self):
         """获取下一个键"""
