@@ -206,4 +206,14 @@ class PostService:
         except Exception :
             return None
 
-   
+    def get_max_post_id(self) -> int:
+        """
+        获取当前最大的帖子ID
+        
+        Returns:
+            int: 最大帖子ID，若无帖子则返回0
+        """
+        try:
+            return PostManager.get_max_post_id()
+        except Exception :
+            return 0
