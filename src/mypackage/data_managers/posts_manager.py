@@ -39,7 +39,7 @@ class PostManager:
         """
         params = (user_id, content, image_data, mime_type)
         
-        result = AutoDBContext.execute_query(query, params, commit=True, return_lastrowid=True)
+        result = AutoDBContext.execute_query(query, params, commit=True)
         return result if result else 0
 
     @staticmethod
