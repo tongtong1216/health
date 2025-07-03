@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainweshdp.ui'
+## Form generated from reading UI file 'mainmYZplq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1069,14 +1069,28 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.widget_11 = QWidget(self.sports_time_view)
         self.widget_11.setObjectName(u"widget_11")
-        self.groupBox_3 = QGroupBox(self.widget_11)
-        self.groupBox_3.setObjectName(u"groupBox_3")
-        self.groupBox_3.setGeometry(QRect(20, 10, 361, 151))
-        self.groupBox_4 = QGroupBox(self.widget_11)
-        self.groupBox_4.setObjectName(u"groupBox_4")
-        self.groupBox_4.setGeometry(QRect(410, 10, 361, 151))
+        self.day_visual = QFrame(self.widget_11)
+        self.day_visual.setObjectName(u"day_visual")
+        self.day_visual.setGeometry(QRect(40, 10, 291, 121))
+        self.day_visual.setStyleSheet(u"backgroundcolor:rgb(255, 255, 255);")
+        self.day_visual.setFrameShape(QFrame.Shape.StyledPanel)
+        self.day_visual.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_27 = QHBoxLayout(self.day_visual)
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.week_visual = QFrame(self.widget_11)
+        self.week_visual.setObjectName(u"week_visual")
+        self.week_visual.setGeometry(QRect(470, 9, 291, 121))
+        self.week_visual.setFrameShape(QFrame.Shape.StyledPanel)
+        self.week_visual.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_28 = QHBoxLayout(self.week_visual)
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
 
         self.verticalLayout_22.addWidget(self.widget_11)
+
+        self.btn_visual = QPushButton(self.sports_time_view)
+        self.btn_visual.setObjectName(u"btn_visual")
+
+        self.verticalLayout_22.addWidget(self.btn_visual)
 
         self.widget_3 = QWidget(self.sports_time_view)
         self.widget_3.setObjectName(u"widget_3")
@@ -1960,8 +1974,7 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"\u65e5\u8fd0\u52a8\u65f6\u95f4\u53ef\u89c6\u5316", None))
-        self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"\u5468\u8fd0\u52a8\u65f6\u95f4\u53ef\u89c6\u5316", None))
+        self.btn_visual.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u52a8\u65f6\u957f\u53ef\u89c6\u5316\u5c55\u793a", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u5361\u8def\u91cc\u6536\u652f\uff1a</span></p></body></html>", None))
         self.btn_creat_tips.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u51fb\u67e5\u770b\u5065\u5eb7\u5c0f\u63d0\u793a", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5065\u5eb7\u5c0f\u63d0\u793a", None))

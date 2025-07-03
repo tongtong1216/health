@@ -10,6 +10,7 @@ from src.mypackage.uploadwindow import UploadWindow
 from src.mypackage.informationwindow import InformationWindow
 from src.mypackage.goalsettingwindow import GoalSettingWindow
 from src.mypackage.reportwindow import ReportWindow
+from src.mypackage.visualizationwindow import VisualizationWindow
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -32,6 +33,7 @@ class MainWindow(QMainWindow):
         self.information_window = InformationWindow(self)
         self.goalsetting_window = GoalSettingWindow(self)
         self.report_window = ReportWindow(self)
+        self.visualization_window = VisualizationWindow(self)
         # self.information_window = InformationWindow(self)
 
         global widgets

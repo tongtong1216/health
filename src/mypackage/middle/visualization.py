@@ -61,7 +61,8 @@ class Visualization:
         while current_date <= today:
             current_data = Visualization.daily_data(username,current_date)
             current_duration = current_data['total_duration']
-            result_list.append({"date":current_date,"total_duration":current_duration})
+            date_str = str(current_date)
+            result_list.append({"date":date_str,"total_duration":current_duration})
             current_date += timedelta(days=1)
         
         return result_list
