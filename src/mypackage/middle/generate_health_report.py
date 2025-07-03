@@ -72,7 +72,7 @@ def generate_health_report(username: str) -> None:
 
     # 自定义模板路径和输出目录（相对于脚本目录）
     template_path = os.path.join(script_dir, 'health_report_template.docx')
-    output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'reports')
+    output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'reports')
 
     # 加载模板
     doc =   Document(template_path)
