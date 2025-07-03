@@ -4,20 +4,19 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any, Union
 from data_managers.posts_manager import PostManager
 from data_managers.usrname_to_id import get_user_id
-from read_image import read_image
+from .read_image import read_image
 
 class PostService:
     @staticmethod
     def create_post(username: str, content: str, 
-                   image_path: Optional[str] = None,
-                   mime_type: Optional[str] = None) -> int:
+                   image_path: Optional[str] = None,) -> int:
         """
         创建新帖子
         
         Args:
             username: 发帖用户名
             content: 帖子内容
-            image_path: 可选 - Base64编码的图片路径
+            image_path: 可选 - 图片路径
             mime_type: 可选 - 图片MIME类型
             
         Returns:
@@ -31,7 +30,6 @@ class PostService:
         image_data = None
         if image_path:
             try:
-                # 将Base64字符串解码为字节数据
                 image = read_image(image_path)
                 image_data = image['image_data']
                 mime_type = image['mime_type']
@@ -46,6 +44,8 @@ class PostService:
             # 调用PostManager创建帖子
             return PostManager.create_post(username, content, image_data, mime_type)
         except ValueError :
+            # 如果没有提供MIME类型但提供了图片数据，抛出异常
+            print("Error: 提供图片时必须指定MIME类型")
             return 0
         except Exception :
             return 0
