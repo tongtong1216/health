@@ -128,7 +128,7 @@ class PostService:
             return 0
 
     @staticmethod
-    def get_post_by_id(post_id: int, include_image: bool = False) -> Optional[Dict[str, Any]]:
+    def get_post_by_id(post_id: int, include_image: bool =True ) -> Optional[Dict[str, Any]]:
         """
         获取单个帖子的详细信息
         
