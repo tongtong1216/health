@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainmYZplq.ui'
+## Form generated from reading UI file 'mainHVaYie.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.1
 ##
@@ -1071,7 +1071,7 @@ class Ui_MainWindow(object):
         self.widget_11.setObjectName(u"widget_11")
         self.day_visual = QFrame(self.widget_11)
         self.day_visual.setObjectName(u"day_visual")
-        self.day_visual.setGeometry(QRect(40, 10, 291, 121))
+        self.day_visual.setGeometry(QRect(40, 10, 311, 181))
         self.day_visual.setStyleSheet(u"backgroundcolor:rgb(255, 255, 255);")
         self.day_visual.setFrameShape(QFrame.Shape.StyledPanel)
         self.day_visual.setFrameShadow(QFrame.Shadow.Raised)
@@ -1079,7 +1079,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
         self.week_visual = QFrame(self.widget_11)
         self.week_visual.setObjectName(u"week_visual")
-        self.week_visual.setGeometry(QRect(470, 9, 291, 121))
+        self.week_visual.setGeometry(QRect(440, 9, 321, 181))
         self.week_visual.setFrameShape(QFrame.Shape.StyledPanel)
         self.week_visual.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_28 = QHBoxLayout(self.week_visual)
@@ -1102,13 +1102,30 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_24.addWidget(self.label_4)
 
-        self.lineEdit = QLineEdit(self.widget_3)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.calories_intake_line = QLineEdit(self.widget_3)
+        self.calories_intake_line.setObjectName(u"calories_intake_line")
 
-        self.horizontalLayout_24.addWidget(self.lineEdit)
+        self.horizontalLayout_24.addWidget(self.calories_intake_line)
 
 
         self.verticalLayout_22.addWidget(self.widget_3, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.widget_13 = QWidget(self.sports_time_view)
+        self.widget_13.setObjectName(u"widget_13")
+        self.horizontalLayout_29 = QHBoxLayout(self.widget_13)
+        self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
+        self.label_15 = QLabel(self.widget_13)
+        self.label_15.setObjectName(u"label_15")
+
+        self.horizontalLayout_29.addWidget(self.label_15)
+
+        self.calories_consumption_line = QLineEdit(self.widget_13)
+        self.calories_consumption_line.setObjectName(u"calories_consumption_line")
+
+        self.horizontalLayout_29.addWidget(self.calories_consumption_line)
+
+
+        self.verticalLayout_22.addWidget(self.widget_13)
 
         self.widget_10 = QWidget(self.sports_time_view)
         self.widget_10.setObjectName(u"widget_10")
@@ -1142,6 +1159,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_22.addWidget(self.btn_goalsetting)
 
+        self.verticalLayout_22.setStretch(0, 4)
+        self.verticalLayout_22.setStretch(1, 1)
+        self.verticalLayout_22.setStretch(2, 1)
+        self.verticalLayout_22.setStretch(3, 1)
+        self.verticalLayout_22.setStretch(4, 2)
+        self.verticalLayout_22.setStretch(5, 1)
 
         self.horizontalLayout_6.addWidget(self.sports_time_view)
 
@@ -1975,7 +1998,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
         self.btn_visual.setText(QCoreApplication.translate("MainWindow", u"\u8fd0\u52a8\u65f6\u957f\u53ef\u89c6\u5316\u5c55\u793a", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u5361\u8def\u91cc\u6536\u652f\uff1a</span></p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">\u5361\u8def\u91cc\u6444\u5165\uff1a</span></p></body></html>", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u5361\u8def\u91cc\u6d88\u8017\uff1a", None))
         self.btn_creat_tips.setText(QCoreApplication.translate("MainWindow", u"\u70b9\u51fb\u67e5\u770b\u5065\u5eb7\u5c0f\u63d0\u793a", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5065\u5eb7\u5c0f\u63d0\u793a", None))
         self.btn_health_tips.setText(QCoreApplication.translate("MainWindow", u"\u4e0b\u4e00\u4e2a", None))
