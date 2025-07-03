@@ -240,3 +240,15 @@ class PostManager:
         if not result or not result[0]['image_data']:
             return None
         return result[0]
+    
+    @staticmethod
+    def get_max_id() -> int:
+        """
+        获取当前帖子表中最大的post_id
+        
+        Returns:
+            int: 最大的post_id，如果表为空则返回0
+        """
+        query = "SELECT MAX(post_id) AS max_id FROM posts"
+        result = AutoDBContext.execute_query(query)
+        return result[0]['max_id'] if result and result[0]['max_id'] is not None else 0
