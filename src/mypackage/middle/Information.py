@@ -124,7 +124,9 @@ class ProfileEditor:
             profile['birthdate'] = profile['birthdate'].strftime('%Y-%m-%d') if profile['birthdate'] else None
             profile['weight'] = str(profile['weight']) if profile['weight'] is not None else None   
             profile['height'] = str(profile['height']) if profile['height'] is not None else None    
-            
+
+        return profile
+
     @staticmethod
     def upload_avatar(username: str, image_path: str) -> bool:
         """

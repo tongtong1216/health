@@ -12,6 +12,7 @@ from src.mypackage.goalsettingwindow import GoalSettingWindow
 from src.mypackage.reportwindow import ReportWindow
 from src.mypackage.visualizationwindow import VisualizationWindow
 from src.mypackage.socialwindow import SocialWindow
+from src.mypackage.middle.generate_health_report import generate_health_report
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -90,6 +91,10 @@ class MainWindow(QMainWindow):
         widgets.btn_goalsetting.clicked.connect(self.buttonClick)
         #切换到发帖页面
         widgets.btn_post.clicked.connect(self.buttonClick)
+        widgets.btn_exit.clicked.connect(self.buttonClick)
+
+
+        widgets.btn_return.clicked.connect(self.buttonClick)
 
 
         # EXTRA LEFT BOX
@@ -262,6 +267,14 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
+
+        if btnName == "btn_exit":
+            generate_health_report(self.current_username)
+
+        if btnName == "btn_return":
+            widgets.stackedWidget.setCurrentWidget(widgets.informationpage)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
     # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')

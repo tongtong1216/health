@@ -36,7 +36,8 @@ class VisualizationWindow:
 
         # 初始化坐标轴
         self.ax = None
-        self.index=-1
+        self.diets_index=0
+        self.sports_index=0
         self.diets_keys=[]
         self.sports_keys=[]
         self.sports_dict={}
@@ -53,35 +54,46 @@ class VisualizationWindow:
 
 
 
-    def next(self):
-        """获取下一个键"""
-        if not self.keys:
-            return None  # 空字典返回None
+    def diets_next(self):
+        self.diets_index = (self.diets_index + 1) % len(self.diets_list)
+        return self.diets_index
 
-        self.index = (self.index + 1) % len(self.keys)
-        return self.keys[self.index]
+    def sports_next(self):
+        self.sports_index = (self.sports_index + 1) % len(self.sports_list)
+        return self.sports_index
 
     def diets_show(self):
-        self.diets_dict = self.visual_w.get_today_exercise_records(self.main_window.current_username)
-        self.diets_keys = list(self.diets_dict.keys())
-
+        self.diets_list = self.visual_w.get_today_food_records(self.main_window.current_username)
+        self.diets_dict = self.diets_list[0]
+        self.diets_index = 0
+        print(self.diets_dict)
+        tip=f"食物名称：{self.diets_dict['食物名称']}，摄入数量：{self.diets_dict['摄入数量']}，摄入卡路里：{self.diets_dict['卡路里摄入']}，"
+        self.ui.lineEdit_2.setText(tip)
 
     def sports_show(self):
-        self.sports_dict=self.visual_w.get_today_exercise_records(self.main_window.current_username)
-        self.sports_keys=list(self.sports_dict.keys())
-
+        self.sports_list=self.visual_w.get_today_exercise_records(self.main_window.current_username)
+        self.sports_dict = self.sports_list[0]
+        self.spors_index = 0
+        print(self.sports_dict)
+        print(self.sports_list)
+        tip=f"运动日期：{self.sports_dict['运动日期']}，运动类型：{self.sports_dict['运动类型']}，运动时间：{self.sports_dict['运动时间']}，卡路里消耗{self.sports_dict['卡路里消耗']}，"
+        self.ui.lineEdit.setText(tip)
 
 
     def next_sports(self):
-        key = self.next()
-        tip = self.sports_dict[key]
-        self.ui.lineEdit_2.setText(tip)
+        key = self.sports_next()
+        print(key)
+        self.sports_dict = self.sports_list[key]
+        tip = f"运动日期：{self.sports_dict['运动日期']}，运动类型：{self.sports_dict['运动类型']}，运动时间：{self.sports_dict['运动时间']}，卡路里消耗{self.sports_dict['卡路里消耗']}，"
+        self.ui.lineEdit.setText(tip)
 
 
     def next_diets(self):
-        key = self.next()
-        tip = self.diets_dict[key]
-        self.ui.lineEdit.setText(tip)
+        key = self.diets_next()
+        print(key)
+        self.diets_dict = self.diets_list[key]
+        tip = f"食物名称：{self.diets_dict['食物名称']}，摄入数量：{self.diets_dict['摄入数量']}，摄入卡路里：{self.diets_dict['卡路里摄入']}，"
+        self.ui.lineEdit_2.setText(tip)
 
 
     def handle_visual(self):

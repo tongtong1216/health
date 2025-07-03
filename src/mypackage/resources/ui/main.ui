@@ -1874,7 +1874,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>6</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -2460,6 +2460,14 @@ background-repeat: no-repeat;</string>
                              </item>
                              <item>
                               <widget class="QPushButton" name="btn_food_load">
+                               <property name="styleSheet">
+                                <string notr="true">QWidget:pressed {
+    background-color: #9D4EDD;  /* 浅紫色，RGB值可调整 */
+    color: white;               /* 文字白色 */
+}
+
+</string>
+                               </property>
                                <property name="text">
                                 <string>确认上传</string>
                                </property>
@@ -2515,6 +2523,14 @@ background-repeat: no-repeat;</string>
                                <property name="cursor">
                                 <cursorShape>PointingHandCursor</cursorShape>
                                </property>
+                               <property name="styleSheet">
+                                <string notr="true">QWidget:pressed {
+    background-color: #9D4EDD;  /* 浅紫色，RGB值可调整 */
+    color: white;               /* 文字白色 */
+}
+
+</string>
+                               </property>
                                <property name="text">
                                 <string>动物性食物</string>
                                </property>
@@ -2525,6 +2541,14 @@ background-repeat: no-repeat;</string>
                                <property name="cursor">
                                 <cursorShape>PointingHandCursor</cursorShape>
                                </property>
+                               <property name="styleSheet">
+                                <string notr="true">QWidget:pressed {
+    background-color: #9D4EDD;  /* 浅紫色，RGB值可调整 */
+    color: white;               /* 文字白色 */
+}
+
+</string>
+                               </property>
                                <property name="text">
                                 <string>豆制品，坚果类</string>
                                </property>
@@ -2534,6 +2558,14 @@ background-repeat: no-repeat;</string>
                               <widget class="QPushButton" name="btn_empty_calorie_foods">
                                <property name="cursor">
                                 <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QWidget:pressed {
+    background-color: #9D4EDD;  /* 浅紫色，RGB值可调整 */
+    color: white;               /* 文字白色 */
+}
+
+</string>
                                </property>
                                <property name="text">
                                 <string>纯能量食物</string>

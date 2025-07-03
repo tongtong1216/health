@@ -1,7 +1,7 @@
 from docx import Document
 from docx.oxml.ns import qn
 from datetime import datetime
-from middle.report import Health_report
+from src.mypackage.middle.report import Health_report
 import os
 
 def _set_document_font(document, font_name='宋体'):

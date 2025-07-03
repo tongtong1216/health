@@ -705,7 +705,7 @@ class Ui_MainWindow(object):
         self.btn_exit.setFont(font)
         self.btn_exit.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_exit.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
+        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/health.png);")
 
         self.verticalLayout_8.addWidget(self.btn_exit)
 

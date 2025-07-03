@@ -26,6 +26,7 @@ class InformationWindow:
         print(self.information_dict)
         self.information_dict = self.profileeditor_w.get_user_profile(self.main_window.current_username)
         print("update2")
+        print(self.main_window.current_username)
         print(self.information_dict)
         height_str=str(self.information_dict['height'])
         weight_str=str(self.information_dict['weight'])
@@ -53,28 +54,26 @@ class InformationWindow:
         print("edit")
         print(status)
         self.update_information()
-        self.show_edit_result(status)
 
-    def show_edit_result(self, status):
-        messages = {
-            1: ("操作成功", "修改个人信息成功"),
-        }
-
-        title, message = messages.get(status, ("未知状态", "发生未知错误"))
-
-        # 创建消息框
-        msg_box = QMessageBox(self.main_window)
-        msg_box.setWindowTitle(title)
-        msg_box.setText(message)
-
-        # 根据状态设置图标
-        if status == 1:
-            msg_box.setIcon(QMessageBox.Information)
-        else:
-            msg_box.setIcon(QMessageBox.Warning)
-
-        # 添加确定按钮
-        msg_box.addButton(QMessageBox.Ok)
-
-        # 显示消息框
-        msg_box.exec()
+    # def show_edit_result(self, status):
+    #     messages = {
+    #         1: ("操作成功", "修改个人信息成功"),
+    #     }
+    #
+    #     title, message = messages.get(status, ("未知状态", "发生未知错误"))
+    #
+    #     # 创建消息框
+    #     msg_box = QMessageBox(self.main_window)
+    #     msg_box.setWindowTitle(title)
+    #     msg_box.setText(message)
+    #
+    #     # 根据状态设置图标
+    #
+    #     msg_box.setIcon(QMessageBox.Information)
+    #
+    #
+    #     # 添加确定按钮
+    #     msg_box.addButton(QMessageBox.Ok)
+    #
+    #     # 显示消息框
+    #     msg_box.exec()
