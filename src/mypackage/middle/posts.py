@@ -140,7 +140,9 @@ class PostService:
             Optional[Dict]: 帖子详情字典
         """
         try:
-            return PostManager.get_post_by_id(post_id, include_image)
+            post = PostManager.get_post_by_id(post_id, include_image)
+            post['nickname'] = get_user_id(post['user_id'])
+            return post
         except Exception :
             return 0
 
