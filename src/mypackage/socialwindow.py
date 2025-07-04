@@ -62,6 +62,7 @@ class SocialWindow():
             posts = self.social_w.get_post_by_id(self.nowid, include_image=True)
             self.ui.textEdit_2.setText(str(posts['content']))
             self.ui.like_line.setText(str(posts['like_count']))
+            self.ui.lable_username.setText(str(posts['nickname']))
             image_date=posts['image_data']
             image = QImage()
             if not image.loadFromData(image_date):
@@ -74,12 +75,13 @@ class SocialWindow():
     def next_page(self):
         self.ui.label_25.clear()
         self.nowid=self.nowid-1
-        if(self.nowid<=0):
-            self.nowid=0
+        if(self.nowid<=6):
+            self.nowid=6
         else:
             posts = self.social_w.get_post_by_id(self.nowid, include_image=True)
             self.ui.textEdit_2.setText(str(posts['content']))
             self.ui.like_line.setText(str(posts['like_count']))
+            self.ui.lable_username.setText(str(posts['nickname']))
             image_date = posts['image_data']
             image = QImage()
             if not image.loadFromData(image_date):
@@ -97,6 +99,8 @@ class SocialWindow():
             self.social_w.create_post(self.main_window.current_usernmae,content)
         else:
             self.social_w.create_post(self.main_window.current_username,content,image_date)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.socialpage)
+        self.ui.stackedWidget.setCurrentWidget(self.ui.socialpage)
 
 
     def select_image(self):

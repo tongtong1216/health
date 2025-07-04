@@ -2282,7 +2282,7 @@ class Ui_MainWindow(object):
         self.btn_sports.setText(QCoreApplication.translate("MainWindow", u"sports", None))
         self.btn_diets.setText(QCoreApplication.translate("MainWindow", u"diets", None))
         self.btn_social.setText(QCoreApplication.translate("MainWindow", u"social", None))
-        self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
+        self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"health report", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
